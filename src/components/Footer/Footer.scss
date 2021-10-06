@@ -1,0 +1,19 @@
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-space-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mainFooter {
+  @include flex-center;
+  background-color: black;
+  color: white;
+  font-family: 'notokrR', Malgun Gothic, '맑은 고딕', AppleGothic, Dotum, '돋움',
+    sans-serif;
+}
