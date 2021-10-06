@@ -8,7 +8,7 @@ class DropMenu extends Component {
       <div className="dropMenu">
         {MENU_LIST.map(e => {
           return (
-            <ul>
+            <ul key={e.menu}>
               <li key={e.subMenu1}>
                 <Link to={e.subMenu1Link}>{e.subMenu1}</Link>
               </li>
