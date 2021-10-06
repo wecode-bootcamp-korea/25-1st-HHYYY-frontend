@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './ProductCard.scss';
 
 class ProductCard extends Component {
   render() {
@@ -6,7 +7,7 @@ class ProductCard extends Component {
     return (
       <div className="productCard">
         <div className="productImg">
-          <img src={products.thumbnail_image} />
+          <img src={products.thumbnail_image} alt={products.name} />
         </div>
         <p className="productName">{products.name}</p>
         <p className="productTag">{products.tags}</p>

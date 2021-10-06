@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './TitleBanner.scss';
 
 class TitleBanner extends Component {
   render() {
@@ -9,7 +10,7 @@ class TitleBanner extends Component {
           <p className="smallText">
             딸기 향을 만끽하며
             <br />
-            씻어 봐요
+            씻어 보세요
           </p>
         </div>
         <img

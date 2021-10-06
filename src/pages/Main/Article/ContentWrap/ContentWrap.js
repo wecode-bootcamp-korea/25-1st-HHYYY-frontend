@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ProductCard from './ProductCard';
+import './ContentWrap.scss';
 
 class ContentWrap extends Component {
   render() {
@@ -13,7 +14,12 @@ class ContentWrap extends Component {
             })}
           </div>
         </div>
-        <div className="bannerRolling"></div>
+        <div className="bannerRolling">
+          <img
+            src="./images/main/banner/middle/pinkbeach.jpg"
+            alt="pink beach"
+          />
+        </div>
       </article>
     );
   }
@@ -22,15 +28,15 @@ class ContentWrap extends Component {
 const COMMENT_LIST = [
   {
     id: 1,
-    name: '비비 씨위드',
+    name: '지훈님바보',
     thumbnail_image:
-      'https://lush.co.kr/data/goods/11/01/20/37/37_main_019.jpg',
+      'https://cdn.pixabay.com/photo/2016/11/26/12/52/bottle-1860617_1280.png',
     price: '25,000',
     tags: ['장미의촉촉함', '해초팩'],
   },
   {
     id: 2,
-    name: '매그너민 티',
+    name: '치훈님짱짱',
     thumbnail_image:
       'https://lush.co.kr/data/goods/12/03/07/97/97_main_074.jpg',
     price: '20,000',
