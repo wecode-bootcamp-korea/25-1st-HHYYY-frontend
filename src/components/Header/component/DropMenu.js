@@ -6,14 +6,14 @@ class DropMenu extends Component {
   render() {
     return (
       <div className="dropMenu">
-        {MENU_LIST.map(e => {
+        {MENU_LIST.map(category => {
           return (
-            <ul key={e.menu}>
-              <li key={e.subMenu1}>
-                <Link to={e.subMenu1Link}>{e.subMenu1}</Link>
+            <ul key={category.menu}>
+              <li key={category.subMenu1}>
+                <Link to={category.subMenu1Link}>{category.subMenu1}</Link>
               </li>
-              <li key={e.subMenu2}>
-                <Link to={e.subMenu2Link}>{e.subMenu2}</Link>
+              <li key={category.subMenu2}>
+                <Link to={category.subMenu2Link}>{category.subMenu2}</Link>
               </li>
             </ul>
           );

@@ -1,16 +1,27 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import Menu from './component/Menu';
 import DropMenu from './component/DropMenu';
+import Search from '../../pages/Search/Search';
 import './header.scss';
 
 class Header extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      dropdownOpen: false,
+      isDropdownOpen: false,
+      isClickSearch: false,
     };
   }
+
+  handlerDropdownOpen = e => {
+    e.preventDefault();
+    const { isDropdownOpen } = this.state;
+    this.setState({
+      isDropdownOpen: !isDropdownOpen,
+    });
+  };
+
   render() {
     return (
       <header className="header">
@@ -18,10 +29,10 @@ class Header extends Component {
           <div className="logo">
             <Link to="/main">훈훈한 연들</Link>
           </div>
-          <Menu />
+          <Menu mouseEvent={this.handlerDropdownOpen} />
           <div className="menuIcons">
             <ul>
-              <li>
+              <li onClick={this.state.isClickSearch && <Search />}>
                 <i className="fas fa-search" />
               </li>
               <li>
@@ -33,10 +44,10 @@ class Header extends Component {
             </ul>
           </div>
         </nav>
-        {<DropMenu />}
+        {this.state.isDropdownOpen && <DropMenu />}
       </header>
     );
   }
 }
 
-export default Header;
+export default withRouter(Header);

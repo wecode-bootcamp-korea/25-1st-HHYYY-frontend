@@ -5,7 +5,7 @@ import MENU_LIST from './MenuData';
 class Menu extends Component {
   render() {
     return (
-      <div className="menu">
+      <div className="menu" onMouseEnter={this.props.mouseEvent}>
         {MENU_LIST.map(e => {
           return (
             <li key={e.menu}>
