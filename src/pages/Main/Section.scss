@@ -1,0 +1,102 @@
+section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  .titleBanner {
+    width: 100%;
+    height: 580px;
+    background-color: beige;
+  }
+
+  .contentWrap {
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    margin: 0 auto;
+    padding: 80px 0;
+
+    .productWrap {
+      display: inline-block;
+
+      h2 {
+        font-weight: bold;
+        font-size: 30pt;
+      }
+
+      .productRolling {
+        display: inline-block;
+        width: 900px;
+        height: 476px;
+        background-color: cadetblue;
+      }
+    }
+
+    .bannerRolling {
+      display: inline-block;
+      width: 280px;
+      min-width: 400px;
+      height: 596px;
+      margin-top: -80px;
+      background-color: coral;
+      z-index: 9999;
+    }
+  }
+
+  .bannerWrap {
+    display: inline-grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    width: 90%;
+    height: 560px;
+    margin-bottom: 100px;
+    background-color: cornflowerblue;
+    z-index: -9999;
+
+    .banner1 {
+      grid-column-start: 1;
+      grid-column-end: 3;
+      grid-row-start: 1;
+      grid-row-end: 3;
+      background-color: darkolivegreen;
+    }
+
+    .banner2 {
+      grid-column-start: 3;
+      grid-column-end: 5;
+      grid-row-start: 1;
+      grid-row-end: 2;
+      background-color: darksalmon;
+    }
+
+    .banner3 {
+      background-color: springgreen;
+    }
+
+    .banner4 {
+      background-color: blueviolet;
+    }
+  }
+
+  .newProductWrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    height: 480px;
+    background-color: orchid;
+
+    .productText {
+      width: 380px;
+      height: 300px;
+      background-color: paleturquoise;
+    }
+
+    .productImg {
+      width: 380px;
+      height: 300px;
+      background-color: black;
+    }
+  }
+}
