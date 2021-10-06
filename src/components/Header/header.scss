@@ -1,0 +1,72 @@
+.header {
+  width: 100%;
+  background-color: black;
+  color: white;
+
+  nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .logo a {
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+  }
+
+  .menu {
+    display: flex;
+
+    li {
+      list-style: none;
+    }
+
+    a {
+      padding: 50px;
+      text-decoration: none;
+      color: white;
+      font-size: 17px;
+    }
+    li:hover .dropMenu {
+      display: flex;
+      color: #9b9b9b;
+      background-color: #333;
+    }
+  }
+
+  .dropMenu,
+  .dropMenu li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #333;
+    z-index: 1;
+
+    li {
+      width: 80%;
+    }
+
+    li a {
+      width: 100px;
+      font-size: 13px;
+      text-decoration: none;
+      color: #9b9b9b;
+      text-align: center;
+    }
+
+    li a:hover {
+      color: white;
+    }
+  }
+
+  .menuIcons li {
+    display: inline-block;
+    padding: 20px;
+  }
+}
