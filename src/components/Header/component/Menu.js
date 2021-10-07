@@ -23,7 +23,7 @@ class Menu extends Component {
   render() {
     const { mouseEvent } = this.props;
     return (
-      <div className="menu" onMouseEnter={mouseEvent}>
+      <div className="menu" onMouseEnter={mouseEvent} onMouseLeave={mouseEvent}>
         {MENU_LIST.map(menu => {
           return (
             <ul key={menu.id}>
