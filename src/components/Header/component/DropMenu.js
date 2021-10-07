@@ -1,21 +1,23 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-import MENU_LIST from './MenuData';
+import DROP_LIST from './DropMenuData';
 import './dropMenu.scss';
 
 class DropMenu extends Component {
   render() {
     return (
       <div className="dropMenu">
-        {MENU_LIST.map(submenu => {
+        {DROP_LIST.map(submenu => {
+          const { id, subMenu1, subMenu1Link, subMenu2, subMenu2Link } =
+            submenu;
           return (
-            <ul key={submenu.id}>
-              <li key={submenu.subMenu1}>
-                <Link to={submenu.subMenu1Link}>{submenu.subMenu1}</Link>
+            <ul key={id}>
+              <li key={subMenu1}>
+                <Link to={subMenu1Link}>{subMenu1}</Link>
               </li>
-              <li key={submenu.subMenu2}>
-                <Link to={submenu.subMenu2Link}>{submenu.subMenu2}</Link>
+              <li key={subMenu2}>
+                <Link to={subMenu2Link}>{subMenu2}</Link>
               </li>
             </ul>
           );

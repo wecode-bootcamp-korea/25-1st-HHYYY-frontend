@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import Menu from './component/Menu';
 import DropMenu from './component/DropMenu';
@@ -35,7 +35,7 @@ class Header extends Component {
           <div className="logo">
             <Link to="/main">훈훈한 연들</Link>
           </div>
-          <Menu mouseEvent={this.handlerDropdownOpen} />
+          <Menu onMouseEnter={this.handlerDropdownOpen} />
           <div className="menuIcons">
             <ul>
               <li onClick={this.handelerSearch}>
@@ -50,11 +50,12 @@ class Header extends Component {
             </ul>
           </div>
         </nav>
-        {isDropdownOpen && <DropMenu />}
+        <DropMenu />
+        {/* {isDropdownOpen && <DropMenu />} */}
         {isSearch && <Search />}
       </header>
     );
   }
 }
 
-export default withRouter(Header);
+export default Header;

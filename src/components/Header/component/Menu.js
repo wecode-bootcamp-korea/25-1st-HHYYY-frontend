@@ -21,14 +21,15 @@ class Menu extends Component {
   }
 
   render() {
-    const { mouseEvent } = this.props;
+    const { onMouseEnter } = this.props;
     return (
-      <div className="menu" onMouseEnter={mouseEvent} onMouseLeave={mouseEvent}>
-        {MENU_LIST.map(menu => {
+      <div className="menu" onMouseEnter={onMouseEnter}>
+        {MENU_LIST.map(mainmenu => {
+          const { id, menu, menuLink } = mainmenu;
           return (
-            <ul key={menu.id}>
-              <li key={menu.id}>
-                <Link to={menu.menuLink}>{menu.menu}</Link>
+            <ul key={id}>
+              <li key={id}>
+                <Link to={menuLink}>{menu}</Link>
               </li>
             </ul>
           );
