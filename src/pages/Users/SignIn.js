@@ -25,7 +25,7 @@ class SignIn extends Component {
                 <button>로그인</button>
               </div>
               <div className="signup">
-                <button className="/">회원가입</button>
+                <button className="signup">회원가입</button>
               </div>
             </form>
           </div>
