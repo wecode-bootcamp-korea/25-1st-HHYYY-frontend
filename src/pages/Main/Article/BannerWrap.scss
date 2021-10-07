@@ -8,11 +8,25 @@
   z-index: -9999;
 
   .banner1 {
+    position: relative;
     grid-column-start: 1;
     grid-column-end: 3;
     grid-row-start: 1;
     grid-row-end: 3;
     background-color: darkolivegreen;
+    overflow: hidden;
+
+    h2 {
+      position: absolute;
+      top: 50px;
+      right: 135px;
+      font-weight: bold;
+      font-size: 40pt;
+    }
+
+    img {
+      width: 100%;
+    }
   }
 
   .banner2 {
@@ -21,13 +35,27 @@
     grid-row-start: 1;
     grid-row-end: 2;
     background-color: darksalmon;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
   }
 
   .banner3 {
     background-color: springgreen;
+    img {
+      width: 100%;
+      height: 100%;
+    }
   }
 
   .banner4 {
+    width: 100%;
     background-color: blueviolet;
+    img {
+      width: 100%;
+      height: 100%;
+    }
   }
 }

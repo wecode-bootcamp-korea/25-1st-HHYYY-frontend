@@ -10,7 +10,9 @@ class ProductCard extends Component {
           <img src={products.thumbnail_image} alt={products.name} />
         </div>
         <p className="productName">{products.name}</p>
-        <p className="productTag">{products.tags}</p>
+        <p className="productTag">
+          #{products.tags[0]}&nbsp;#{products.tags[1]}
+        </p>
         <p className="productPrice">₩ {products.price}</p>
       </div>
     );

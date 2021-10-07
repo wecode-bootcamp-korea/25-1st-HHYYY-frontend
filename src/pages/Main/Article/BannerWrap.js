@@ -6,6 +6,7 @@ class bannerWrap extends Component {
     return (
       <article className="bannerWrap">
         <div className="banner1">
+          <h2>아보카도를 피부에 양보하세요</h2>
           <img src="./images/main/banner/middle/banner01.jpg" />
         </div>
         <div className="banner2">
