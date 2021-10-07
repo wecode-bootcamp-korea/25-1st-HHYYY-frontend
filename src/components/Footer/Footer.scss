@@ -10,10 +10,15 @@
   align-items: center;
 }
 
+footer {
+  margin-top: 150px;
+  padding-bottom: 55px;
+}
+
 .mainFooter {
   @include flex-center;
   background-color: black;
   color: white;
-  font-family: 'notokrR', Malgun Gothic, '맑은 고딕', AppleGothic, Dotum, '돋움',
-    sans-serif;
+  padding-top: 45px;
+  margin-bottom: 20px;
 }

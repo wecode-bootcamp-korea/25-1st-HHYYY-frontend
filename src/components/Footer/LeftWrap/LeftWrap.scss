@@ -14,8 +14,44 @@
   padding-left: 100px;
 }
 
-.logo {
+.logo a {
   font-size: 30px;
   font-weight: bold;
   text-decoration: none;
+  color: white;
+}
+
+.serviceWrap {
+  padding-top: 55px;
+  color: white;
+
+  a {
+    color: white;
+  }
+}
+
+.corporation {
+  padding-top: 33px;
+  a {
+    color: white;
+  }
+}
+
+.email {
+  padding-top: 4px;
+  padding-bottom: 2px;
+}
+
+.snsWrap {
+  margin-top: 36px;
+  display: flex;
+  text-align: center;
+  justify-content: space-evenly;
+  align-items: center;
+
+  i {
+    width: 6px;
+    height: 60px;
+    color: white;
+  }
 }

@@ -1,1 +1,25 @@
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+@mixin flex-space-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footerLinks {
+  @include flex-space-between;
+  font-size: 14px;
+}
+
+.copyright,
+.copy {
+  color: #535353;
+}
+
+.copy {
+  margin-top: 30px;
+}

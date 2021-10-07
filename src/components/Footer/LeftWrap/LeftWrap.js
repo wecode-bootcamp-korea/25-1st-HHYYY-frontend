@@ -9,20 +9,20 @@ class LeftWrap extends Component {
         <div className="logo">
           <Link to="/main">훈훈한 연들</Link>
         </div>
-        <dl>
+        <dl className="serviceWrap">
           <dt>
-            "고객센터 "<span>1644-2357</span>
+            고객센터 <span>1644-2357</span>
           </dt>
           <dd class="email">
             <a href="mailto:order@lush.co.kr">order@hoonhoons.co.kr</a>
           </dd>
           <dd>
-            "상담전화 10/5-10/19" <br />
-            "상담톡 10:00-16:00(평일)"
+            상담전화 10/5-10/19 <br />
+            상담톡 10:00-16:00(평일)
           </dd>
         </dl>
 
-        <dl>
+        <dl className="corporation">
           <dt>
             기업선물
             <span>070-2349-3411</span>
@@ -44,9 +44,9 @@ class LeftWrap extends Component {
             <i className="fab fa-youtube" alt="Youtube" title="Youtube"></i>
           </Link>
 
-          <Link to="/main" target="_blank">
+          {/*          <Link to="/main" target="_blank">
             <img
-              src="./images/footer/kakaoicon.png"
+              src="./images/footer/kakaotalk.png"
               className="kakaotalk"
               alt="kakaotalk"
               title="kakaotalk"
@@ -55,12 +55,11 @@ class LeftWrap extends Component {
 
           <Link to="/main" target="_blank">
             <img
-              src="./images/footer/navericon.png"
+              src="./images/footer/naver.png"
               className="naver"
               alt="naver"
-              title="naver"
-            />
-          </Link>
+              title="naver" /> 
+          </Link>*/}
         </div>
       </div>
     );
