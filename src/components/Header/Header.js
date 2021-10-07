@@ -33,25 +33,26 @@ class Header extends Component {
       <header className="header">
         <nav>
           <div className="logo">
-            <Link to="/main">훈훈한 연들</Link>
+            <Link to="/main" className="logo">
+              훈훈한 연들
+            </Link>
           </div>
           <Menu onMouseEnter={this.handlerDropdownOpen} />
           <div className="menuIcons">
             <ul>
-              <li onClick={this.handelerSearch}>
+              <li className="menuIconsList" onClick={this.handelerSearch}>
                 <i className="fas fa-search" />
               </li>
-              <li>
+              <li className="menuIconsList">
                 <i className="fas fa-shopping-bag" />
               </li>
-              <li>
+              <li className="menuIconsList">
                 <i className="fas fa-user-circle" />
               </li>
             </ul>
           </div>
         </nav>
-        <DropMenu />
-        {/* {isDropdownOpen && <DropMenu />} */}
+        {isDropdownOpen && <DropMenu />}
         {isSearch && <Search />}
       </header>
     );
