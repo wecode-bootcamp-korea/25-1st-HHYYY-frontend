@@ -4,7 +4,6 @@
   grid-template-columns: repeat(4, 1fr);
   width: 90%;
   height: 560px;
-  background-color: cornflowerblue;
   z-index: -9999;
 
   .banner1 {
@@ -13,7 +12,6 @@
     grid-column-end: 3;
     grid-row-start: 1;
     grid-row-end: 3;
-    background-color: darkolivegreen;
     overflow: hidden;
 
     h2 {
@@ -22,6 +20,11 @@
       right: 135px;
       font-weight: bold;
       font-size: 40pt;
+
+      .abocado {
+        color: white;
+        background-color: #8db72a;
+      }
     }
 
     img {
@@ -30,11 +33,19 @@
   }
 
   .banner2 {
+    position: relative;
     grid-column-start: 3;
     grid-column-end: 5;
     grid-row-start: 1;
     grid-row-end: 2;
-    background-color: darksalmon;
+
+    h2 {
+      position: absolute;
+      top: 50px;
+      right: 100px;
+      font-weight: bold;
+      font-size: 40pt;
+    }
 
     img {
       width: 100%;
@@ -43,16 +54,39 @@
   }
 
   .banner3 {
-    background-color: springgreen;
-    img {
+    position: relative;
+    background-color: black;
+
+    h2 {
+      position: absolute;
+      top: 70px;
+      right: 40px;
+      text-align: center;
+      font-weight: bold;
+      font-size: 60pt;
+      color: white;
+    }
+
+    .banner5 {
       width: 100%;
       height: 100%;
+      opacity: 0.4;
     }
   }
 
   .banner4 {
     width: 100%;
-    background-color: blueviolet;
+    position: relative;
+
+    h2 {
+      position: absolute;
+      top: 200px;
+      right: 115px;
+      font-weight: bold;
+      font-size: 30pt;
+      color: #d8d8d8;
+    }
+
     img {
       width: 100%;
       height: 100%;

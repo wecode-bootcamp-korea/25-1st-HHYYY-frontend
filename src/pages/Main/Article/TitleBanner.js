@@ -6,9 +6,11 @@ class TitleBanner extends Component {
     return (
       <div className="titleBanner">
         <div class="titleText01">
-          <h2>딸기의 변신은 무죄!</h2>
+          <h2>
+            <span className="strawberry">딸기</span>의 변신은 무죄!
+          </h2>
           <p className="smallText">
-            딸기 향을 만끽하며
+            딸기향을 만끽하며
             <br />
             씻어 보세요
           </p>
