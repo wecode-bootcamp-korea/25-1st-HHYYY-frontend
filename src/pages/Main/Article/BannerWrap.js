@@ -7,7 +7,8 @@ class bannerWrap extends Component {
       <article className="bannerWrap">
         <div className="banner1">
           <h2>
-            <span class="abocado">아보카도</span>는 피부에 양보하세요
+            <span class="abocado">아보카도</span>는{' '}
+            <span class="piboo">피부</span>에 양보하세요
           </h2>
           <img src="./images/main/banner/middle/banner01.jpg" alt="banner1" />
         </div>
@@ -23,8 +24,8 @@ class bannerWrap extends Component {
           </h2>
           <img
             src="./images/main/banner/middle/banner05.jpg"
-            alt="banner5"
-            className="banner5"
+            alt="banner3_img"
+            className="banner3_img"
           />
         </div>
         <div className="banner4">

@@ -8,7 +8,7 @@ import './Section.scss';
 class Section extends Component {
   render() {
     return (
-      <section>
+      <section className="mainSection">
         <TitleBanner />
         <ContentWrap />
         <BannerWrap />
