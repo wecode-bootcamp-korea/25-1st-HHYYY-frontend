@@ -36,3 +36,10 @@
     opacity: 0.4;
   }
 }
+
+.productSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}

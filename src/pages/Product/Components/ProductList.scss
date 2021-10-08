@@ -1,0 +1,23 @@
+.productsWrap {
+  width: 90%;
+
+  .selectType {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+
+    .productFilter {
+      .filterList {
+        float: left;
+        margin-left: 15px;
+      }
+    }
+  }
+
+  .prdList {
+    display: flex;
+    margin-top: 20px;
+    background-color: skyblue;
+  }
+}
