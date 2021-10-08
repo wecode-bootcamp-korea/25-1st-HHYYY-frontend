@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
-import Header from '../../components/Header/Header';
+import Header from '../../../components/Header/Header';
 import SignInBox from './SignInBox';
 
 import './signin.scss';
@@ -14,8 +14,26 @@ class SignIn extends Component {
     };
   }
 
-  componentDidMount() {
-    fetch('http://localhost:3001', {
+  handleInput = e => {
+    const { name, value } = e.target;
+    this.setState({
+      [name]: value,
+    });
+  };
+
+  // handleLoginBtn = () => {
+  //   const { inputIdValue, inputPwValue } = this.state;
+  //   this.setState({
+  //     isBtnOn:
+  //       inputIdValue.indexOf('@') !== -1 &&
+  //       inputPwValue.length >= 5 &&
+  //       inputPwValue.indexOf('#') !== -1,
+  //   });
+  // };
+
+  goToMain = e => {
+    e.preventDefault();
+    fetch('http://10.58.7.20:8000/users/signin', {
       method: 'POST',
       body: JSON.stringify({
         email: this.state.inputIdValue,
@@ -31,27 +49,6 @@ class SignIn extends Component {
           alert('회원정보를 찾을 수 없습니다');
         }
       });
-  }
-
-  handleInput = e => {
-    const { name, value } = e.target;
-    this.setState({
-      [name]: value,
-    });
-  };
-
-  handleLoginBtn = () => {
-    const { inputIdValue, inputPwValue } = this.state;
-    this.setState({
-      isBtnOn:
-        inputIdValue.indexOf('@') !== -1 &&
-        inputPwValue.length >= 5 &&
-        inputPwValue.indexOf('#') !== -1,
-    });
-  };
-
-  goToMain = () => {
-    this.props.history.push('/main');
   };
 
   render() {
@@ -59,7 +56,7 @@ class SignIn extends Component {
     return (
       <>
         <Header />
-        <article className="signIn">
+        <article className="SignIn">
           <div className="subject">
             <h1>로그인</h1>
           </div>
@@ -72,7 +69,6 @@ class SignIn extends Component {
               <div>
                 <button
                   className={isBtnOn ? 'changeBtnColor' : 'siginBtn'}
-                  disabled={!isBtnOn}
                   onClick={this.goToMain}
                 >
                   로그인
