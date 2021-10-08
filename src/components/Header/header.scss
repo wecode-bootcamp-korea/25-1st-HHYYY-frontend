@@ -3,10 +3,10 @@
   color: white;
 
   nav {
+    position: relative;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    position: relative;
     margin: 0 auto;
     padding: 20px;
     width: 90%;
@@ -18,7 +18,6 @@
     font-weight: bold;
     color: white;
   }
-
   .menuIconsList {
     display: inline-block;
     padding: 20px;
