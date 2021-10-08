@@ -1,9 +1,61 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import Header from '../../components/Header/Header';
+import SignInBox from './SignInBox';
+
 import './signin.scss';
 
 class SignIn extends Component {
+  constructor() {
+    super();
+    this.state = {
+      inputIdValue: '',
+      inputPwValue: '',
+    };
+  }
+
+  componentDidMount() {
+    fetch('http://localhost:3001', {
+      method: 'POST',
+      body: JSON.stringify({
+        email: this.state.inputIdValue,
+        password: this.state.inputPwValue,
+      }),
+    })
+      .then(response => response.json())
+      .then(data => {
+        if (data.token) {
+          localStorage.setItem('token', data.token); // 토큰 저장. ('토큰키값', '키의 벨류값')
+          this.props.history.push('/main');
+        } else {
+          alert('회원정보를 찾을 수 없습니다');
+        }
+      });
+  }
+
+  handleInput = e => {
+    const { name, value } = e.target;
+    this.setState({
+      [name]: value,
+    });
+  };
+
+  handleLoginBtn = () => {
+    const { inputIdValue, inputPwValue } = this.state;
+    this.setState({
+      isBtnOn:
+        inputIdValue.indexOf('@') !== -1 &&
+        inputPwValue.length >= 5 &&
+        inputPwValue.indexOf('#') !== -1,
+    });
+  };
+
+  goToMain = () => {
+    this.props.history.push('/main');
+  };
+
   render() {
+    const { isBtnOn } = this.state;
     return (
       <>
         <Header />
@@ -13,16 +65,18 @@ class SignIn extends Component {
           </div>
           <div className="signInBox">
             <form>
-              <div className="InputSignIn">
-                <input className="idInput" type="text" placeholder="아이디" />
-                <input
-                  className="pwInput"
-                  type="password"
-                  placeholder="비밀번호"
-                />
-              </div>
+              <SignInBox
+                onChange={this.handleInput}
+                handleLoginBtn={this.handleLoginBtn}
+              />
               <div>
-                <button className="siginBtn">로그인</button>
+                <button
+                  className={isBtnOn ? 'changeBtnColor' : 'siginBtn'}
+                  disabled={!isBtnOn}
+                  onClick={this.goToMain}
+                >
+                  로그인
+                </button>
               </div>
               <div className="signup">
                 <button className="signup">회원가입</button>
@@ -35,4 +89,4 @@ class SignIn extends Component {
   }
 }
 
-export default SignIn;
+export default withRouter(SignIn);
