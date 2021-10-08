@@ -22,7 +22,7 @@ class SignIn extends Component {
                 />
               </div>
               <div>
-                <button>로그인</button>
+                <button className="siginBtn">로그인</button>
               </div>
               <div className="signup">
                 <button className="signup">회원가입</button>
