@@ -13,7 +13,7 @@ class DropMenu extends Component {
             submenu;
           return (
             <ul key={id}>
-              <li class name="dropMenuList" key={subMenu1}>
+              <li className="dropMenuList" key={subMenu1}>
                 <Link to={subMenu1Link}>{subMenu1}</Link>
               </li>
               <li key={subMenu2}>
