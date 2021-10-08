@@ -12,9 +12,7 @@ class Search extends Component {
           placeholder="더 풍성하게 돌아온 NEW 기프트"
         />
         <button className="searchBtn">
-          <i className="fas fa-search">
-            <div className="empty"></div>
-          </i>
+          <i className="fas fa-search fa-2x" />
         </button>
       </div>
     );
