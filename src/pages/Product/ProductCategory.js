@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
+import ProductList from '../../components/Product/ProductCategory/ProductList';
 import './ProductCategory.scss';
+import '../../components/Product/ProductCategory/ProductList.scss';
 
 class ProductCategory extends Component {
   render() {
     return (
       <section>
+        {/* 상위 컴포넌트 */}
         <div className="categoryTitle">
           <p className="subBigText">베스트</p>
           <p className="subSmallText">
@@ -16,7 +19,8 @@ class ProductCategory extends Component {
             alt="product List img"
           />
         </div>
-        <div className="allProductList"></div>
+        {/* 하위 컴포넌트 */}
+        <ProductList />
       </section>
     );
   }
