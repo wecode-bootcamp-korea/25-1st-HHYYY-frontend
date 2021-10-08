@@ -1,25 +1,24 @@
-@mixin flex-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+@import '../../../styles/variable.scss';
 
-@mixin flex-space-between {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.footerWrap {
+  width: 90%;
+  font-size: 14px;
 }
 
 .footerLinks {
   @include flex-space-between;
-  font-size: 14px;
 }
 
 .copyright,
 .copy {
   color: #535353;
+  font-weight: 300;
+}
+
+.copyright {
+  padding-top: 69px;
 }
 
 .copy {
-  margin-top: 30px;
+  padding-top: 60px;
 }

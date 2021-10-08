@@ -11,12 +11,12 @@ class LeftWrap extends Component {
         </div>
         <dl className="serviceWrap">
           <dt>
-            고객센터 <span>1644-2357</span>
+            고객센터 <span> 1644-2357</span>
           </dt>
           <dd class="email">
             <a href="mailto:order@lush.co.kr">order@hoonhoons.co.kr</a>
           </dd>
-          <dd>
+          <dd className="phoneLine">
             상담전화 10/5-10/19 <br />
             상담톡 10:00-16:00(평일)
           </dd>

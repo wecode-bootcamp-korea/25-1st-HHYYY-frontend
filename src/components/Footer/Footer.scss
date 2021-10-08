@@ -1,22 +1,12 @@
-@mixin flex-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-@mixin flex-space-between {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
 footer {
   margin-top: 150px;
   padding-bottom: 55px;
 }
 
 .mainFooter {
-  @include flex-center;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
   background-color: black;
   color: white;
   padding-top: 45px;
