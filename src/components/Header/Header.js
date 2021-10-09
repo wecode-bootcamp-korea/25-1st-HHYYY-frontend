@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import Menu from './component/Menu';
 import DropMenu from './component/DropMenu';
 import Search from '../../pages/Search/Search';
+import PopMyPage from './component/PopMyPage';
 import './header.scss';
 
 class Header extends Component {
@@ -12,6 +13,7 @@ class Header extends Component {
     this.state = {
       isDropdownOpen: false,
       isSearch: false,
+      isPopMyPage: false,
     };
   }
 
@@ -27,8 +29,15 @@ class Header extends Component {
     this.setState({ isSearch: !isSearch });
   };
 
+  handlerPopMyPage = () => {
+    const { isPopMyPage } = this.state;
+    this.setState({
+      isPopMyPage: !isPopMyPage,
+    });
+  };
+
   render() {
-    const { isDropdownOpen, isSearch } = this.state;
+    const { isDropdownOpen, isSearch, isPopMyPage } = this.state;
     return (
       <header className="header">
         <nav>
@@ -46,8 +55,12 @@ class Header extends Component {
               <li className="menuIconsList">
                 <i className="fas fa-shopping-bag" />
               </li>
-              <li className="menuIconsList">
+              <li
+                className="menuIconsList"
+                onMouseEnter={this.handlerPopMyPage}
+              >
                 <i className="fas fa-user-circle" />
+                {isPopMyPage && <PopMyPage />}
               </li>
             </ul>
           </div>
