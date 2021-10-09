@@ -118,6 +118,86 @@
 
   .photoReviewWrap {
     width: 90%;
-    background-color: bisque;
+
+    .photoReviewText {
+      font-size: 20pt;
+      font-weight: bold;
+    }
+
+    .photoList {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+
+      .photoListWrap {
+        width: 64%;
+        padding: 20px;
+        border: 1px solid #808080;
+
+        .photoListText {
+          margin-bottom: 20px;
+          font-size: 13pt;
+          color: #808080;
+        }
+
+        .photoImgList {
+          .photoWrap {
+            .reviewImg {
+              width: 100px;
+              height: 100px;
+              margin-right: 10px;
+
+              &:last-child {
+                margin-right: 0px;
+              }
+            }
+          }
+        }
+      }
+
+      .reviewCountWrap {
+        display: flex;
+        width: 34%;
+        padding: 20px;
+        border: 1px solid #808080;
+
+        .productScore {
+          width: 50%;
+          padding-top: 25px;
+          text-align: center;
+
+          .scoreText {
+            font-size: 16pt;
+            margin-bottom: 10px;
+          }
+
+          .score {
+            font-size: 35pt;
+            font-weight: bold;
+            margin-bottom: 10px;
+          }
+
+          .scoreStars {
+            font-size: 16pt;
+          }
+        }
+
+        .reviewCounter {
+          width: 50%;
+          padding-top: 40px;
+          text-align: center;
+
+          .reviewCountInfo {
+            font-size: 16pt;
+            margin-bottom: 20px;
+
+            .infoName {
+              color: #808080;
+              margin-right: 10px;
+            }
+          }
+        }
+      }
+    }
   }
 }

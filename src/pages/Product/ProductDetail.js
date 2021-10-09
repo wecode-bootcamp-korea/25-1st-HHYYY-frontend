@@ -51,8 +51,60 @@ class ProductDetail extends Component {
         </article>
         <article className="photoReviewWrap">
           <h2 className="photoReviewText">Photo Review</h2>
-          <div className="photoImg">
-            <h2 className="photoImgText">포토리뷰 모아보기</h2>
+          <div className="photoList">
+            <div className="photoListWrap">
+              <h2 className="photoListText">포토리뷰 모아보기</h2>
+              <div className="photoImgList">
+                <span className="photoWrap">
+                  <img
+                    src="/images/main/banner/middle/banner05.jpg"
+                    className="reviewImg"
+                    alt="reviewImg"
+                  />
+                  <img
+                    src="/images/main/banner/middle/banner05.jpg"
+                    className="reviewImg"
+                    alt="reviewImg"
+                  />
+                  <img
+                    src="/images/main/banner/middle/banner05.jpg"
+                    className="reviewImg"
+                    alt="reviewImg"
+                  />
+                  <img
+                    src="/images/main/banner/middle/banner05.jpg"
+                    className="reviewImg"
+                    alt="reviewImg"
+                  />
+                  <img
+                    src="/images/main/banner/middle/banner05.jpg"
+                    className="reviewImg"
+                    alt="reviewImg"
+                  />
+                  <img
+                    src="/images/main/banner/middle/banner05.jpg"
+                    className="reviewImg"
+                    alt="reviewImg"
+                  />
+                </span>
+              </div>
+            </div>
+
+            <div className="reviewCountWrap">
+              <ul className="productScore">
+                <li className="scoreText">평가</li>
+                <li className="score">5</li>
+                <li className="scoreStars">*****</li>
+              </ul>
+              <ul className="reviewCounter">
+                <li className="reviewCountInfo">
+                  <b className="infoName">리뷰등록</b> 18 건
+                </li>
+                <li className="reviewCountInfo">
+                  <b className="infoName">포토리뷰</b> 26 건
+                </li>
+              </ul>
+            </div>
           </div>
         </article>
       </section>
