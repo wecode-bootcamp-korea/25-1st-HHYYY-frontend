@@ -1,0 +1,123 @@
+@import '../../styles/variable.scss';
+@mixin fontStyle {
+  color: #333;
+  font-size: 17px;
+  line-height: 1.4;
+  letter-spacing: -0.5px;
+}
+
+.productDetail {
+  @include flex-center;
+  flex-direction: column;
+
+  .productInfo {
+    display: flex;
+    width: 90%;
+    height: 600px;
+    margin-top: 100px;
+    padding-top: 50px;
+
+    .productThumbnail {
+      @include flex-center;
+      width: 45%;
+    }
+
+    .itemInfomation {
+      width: 55%;
+      padding: 10px 10px 10px 40px;
+
+      .itemTitle {
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+        border-bottom: 1px solid #e7e7e7;
+
+        .itemName {
+          padding-right: 60px;
+          line-height: 34px;
+          font-weight: normal;
+          font-size: 40px;
+          font-weight: bold;
+          font-family: 'notokrM';
+        }
+
+        .itemTag {
+          padding-top: 18px;
+          font-size: 18px;
+          color: #808080;
+        }
+      }
+
+      .itemInfo {
+        @include fontStyle();
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #e7e7e7;
+
+        .goodToKnow {
+          .questionMark {
+            width: 15px;
+            margin-left: 5px;
+          }
+        }
+
+        .itemInfoList {
+          margin-top: 50px;
+
+          .itemInfoRow {
+            margin: 15px 0;
+
+            .itemInfoDetail {
+              color: #808080;
+              margin-right: 30px;
+            }
+          }
+        }
+      }
+
+      .itemPrice {
+        margin: 30px 0;
+        text-align: right;
+
+        .howMuch {
+          margin-right: 20px;
+          color: #333;
+        }
+
+        .allPrice {
+          font-size: 23pt;
+          font-weight: bold;
+        }
+      }
+
+      .btnList {
+        display: flex;
+        justify-content: space-between;
+
+        .cartBtn {
+          width: 60%;
+          height: 50px;
+          margin-right: 10px;
+          outline: 0;
+          border: 1px solid black;
+          font-size: 12pt;
+          background-color: #fff;
+        }
+
+        .buyBtn {
+          width: 60%;
+          height: 50px;
+          outline: 0;
+          border: 0;
+          font-size: 12pt;
+          color: #fff;
+          background-color: black;
+        }
+      }
+    }
+  }
+
+  .photoReviewWrap {
+    width: 90%;
+    background-color: bisque;
+  }
+}
