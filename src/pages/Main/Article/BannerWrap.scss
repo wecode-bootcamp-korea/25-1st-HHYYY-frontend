@@ -18,7 +18,7 @@
   height: 600px;
   z-index: -9999;
 
-  .banner1 {
+  .leftBanner {
     @include flex();
     grid-column-start: 1;
     grid-column-end: 3;
@@ -26,7 +26,7 @@
     grid-row-end: 3;
     overflow: hidden;
 
-    h2 {
+    .leftBanner_text {
       position: absolute;
       top: 50px;
       font-weight: bold;
@@ -42,35 +42,35 @@
       }
     }
 
-    img {
+    .leftBanner_img {
       width: 100%;
     }
   }
 
-  .banner2 {
+  .rightBannerTop {
     @include flex();
     grid-column-start: 3;
     grid-column-end: 5;
     grid-row-start: 1;
     grid-row-end: 2;
 
-    h2 {
+    .rightBannerTop_text {
       position: absolute;
       top: 40px;
       font-weight: bold;
       font-size: 30pt;
     }
 
-    img {
+    .rightBannerTop_img {
       @include imgs();
     }
   }
 
-  .banner3 {
+  .rightBannerBottom_left {
     @include flex();
     background-color: black;
 
-    h2 {
+    .rightBannerBottom_left_text {
       position: absolute;
       top: 70px;
       text-align: center;
@@ -79,25 +79,25 @@
       color: white;
     }
 
-    .banner3_img {
+    .rightBannerBottom_left_img {
       @include imgs();
       opacity: 0.4;
     }
   }
 
-  .banner4 {
+  .rightBannerBottom_right {
     @include flex();
     width: 100%;
     position: relative;
 
-    h2 {
+    .rightBannerBottom_right_text {
       position: absolute;
       top: 140px;
       font-size: 25pt;
       color: #d8d8d8;
     }
 
-    img {
+    .rightBannerBottom_right_img {
       @include imgs();
     }
   }
