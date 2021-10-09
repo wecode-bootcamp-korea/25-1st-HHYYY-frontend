@@ -8,10 +8,10 @@ class ProductCategory extends Component {
   render() {
     return (
       <>
-        {/* 상위 컴포넌트 */}
+        {/* 헤더 타이틀 컴포넌트 */}
         <ProductTitle />
         <section className="productSection">
-          {/* 상품 하위 카테고리 */}
+          {/* 상품 카테고리 Nav */}
           <ProductNav />
           {/*상품 분류*/}
           <ProductList />
