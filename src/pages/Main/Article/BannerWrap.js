@@ -12,7 +12,7 @@ class bannerWrap extends Component {
           </h2>
           <img
             className="leftBanner_img"
-            src="./images/main/banner/middle/banner01.jpg"
+            src="/images/main/banner/middle/banner01.jpg"
             alt="leftBanner_img"
           />
         </section>
@@ -22,7 +22,7 @@ class bannerWrap extends Component {
           </h2>
           <img
             className="rightBannerTop_img"
-            src="./images/main/banner/middle/banner02.jpg"
+            src="/images/main/banner/middle/banner02.jpg"
             alt="rightBannerTop_img"
           />
         </section>
@@ -33,7 +33,7 @@ class bannerWrap extends Component {
             아시나요?
           </h2>
           <img
-            src="./images/main/banner/middle/banner05.jpg"
+            src="/images/main/banner/middle/banner05.jpg"
             alt="rightBannerBottom_left_img"
             className="rightBannerBottom_left_img"
           />
@@ -46,7 +46,7 @@ class bannerWrap extends Component {
           </h2>
           <img
             className="rightBannerBottom_right_img"
-            src="./images/main/banner/middle/banner03.jpg"
+            src="/images/main/banner/middle/banner03.jpg"
             alt="rightBannerBottom_right_img"
           />
         </section>

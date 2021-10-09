@@ -1,9 +1,4 @@
-@mixin flex {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-}
+@import '../../../styles/variable.scss';
 
 @mixin imgs {
   width: 100%;
@@ -19,7 +14,8 @@
   z-index: -9999;
 
   .leftBanner {
-    @include flex();
+    @include flex-center();
+    position: relative;
     grid-column-start: 1;
     grid-column-end: 3;
     grid-row-start: 1;
@@ -48,7 +44,8 @@
   }
 
   .rightBannerTop {
-    @include flex();
+    @include flex-center();
+    position: relative;
     grid-column-start: 3;
     grid-column-end: 5;
     grid-row-start: 1;
@@ -67,7 +64,8 @@
   }
 
   .rightBannerBottom_left {
-    @include flex();
+    @include flex-center();
+    position: relative;
     background-color: black;
 
     .rightBannerBottom_left_text {
@@ -86,9 +84,9 @@
   }
 
   .rightBannerBottom_right {
-    @include flex();
-    width: 100%;
+    @include flex-center();
     position: relative;
+    width: 100%;
 
     .rightBannerBottom_right_text {
       position: absolute;
