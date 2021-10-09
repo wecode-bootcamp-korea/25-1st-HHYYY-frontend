@@ -1,0 +1,135 @@
+.Cart {
+  height: 100%;
+
+  header {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 50px;
+    padding: 50px;
+
+    h1 {
+      color: #000;
+      font-size: 42px;
+      font-weight: bold;
+    }
+
+    .orderProgress {
+      display: flex;
+      justify-content: center;
+      padding: 30px 0 0 35px;
+      color: #333;
+      font-size: 16px;
+      font-weight: bold;
+
+      span {
+        padding: 0 20px 0 0;
+      }
+    }
+  }
+
+  .orderPage {
+    margin: 0 50px;
+    padding: 0 50px;
+  }
+  .emptyCart {
+    padding-bottom: 15px;
+    color: #000;
+    font-size: 28px;
+    font-family: 'notokrB';
+    font-weight: normal;
+  }
+  table {
+    height: 180%;
+    width: 100%;
+    border-bottom: 1px solid #e7e7e7;
+    border-top: 1px solid #000;
+
+    td {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 22px;
+      color: #333;
+      height: 200px;
+    }
+  }
+
+  .priceBox {
+    margin: 0 50px;
+    padding: 0 50px;
+    text-align: center;
+
+    p {
+      padding: 20px;
+      background: #f2f2f2;
+      font-size: 18px;
+
+      strong {
+        font-weight: bold;
+      }
+
+      em {
+        padding-right: 20px;
+        font-weight: bold;
+      }
+
+      span {
+        font-size: 30px;
+      }
+    }
+  }
+
+  .payment {
+    margin: 0 50px 50px;
+    padding: 0 50px;
+
+    .deleteProduct {
+      margin: 20px 0 0;
+      display: inline-block;
+      width: 100%;
+
+      .deleteBtn {
+        margin: 0 5px;
+        background: none;
+        border: none;
+        border-bottom: 1px solid #8f8f8f;
+        font-size: 13px;
+      }
+    }
+
+    .decide {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .deco {
+      margin-right: 20px;
+      border: 1px solid #000;
+      padding: 20px;
+      font-size: 16px;
+      height: 50px;
+      width: 250px;
+      line-height: 0;
+    }
+
+    .goOnShop {
+      background-color: white;
+
+      a {
+        text-decoration: none;
+        color: black;
+      }
+    }
+
+    .orderBtn {
+      color: white;
+      background-color: black;
+
+      a {
+        text-decoration: none;
+        color: white;
+      }
+    }
+  }
+}

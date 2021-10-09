@@ -5,6 +5,18 @@ import { Link } from 'react-router-dom';
 import './cart.scss';
 
 class Cart extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isEmptyCart: false,
+    };
+  }
+
+  handleCart = () => {
+    const { isEmptyCart } = this.state;
+    this.setState({ isEmptyCart: !isEmptyCart });
+  };
+
   render() {
     return (
       <>
@@ -12,11 +24,17 @@ class Cart extends Component {
         <article className="Cart">
           <header>
             <h1>SHOPPING CART</h1>
-            <p>Cart</p>
+            <div className="orderProgress">
+              <span>Cart</span>
+              <i className="fas fa-angle-right" />
+              <span>Order Confirmed</span>
+            </div>
           </header>
-          <section>
-            <form>
-              <h3>제품</h3>
+          <section className="orderPage">
+            <form className="cartForm">
+              <div className="emptyCart">
+                <h2>제품</h2>
+              </div>
               <table>
                 <thead>
                   <tr>
@@ -27,9 +45,13 @@ class Cart extends Component {
               </table>
             </form>
           </section>
-          <section>
-            <div className="priceBox">
-              <p>총</p>
+          <section className="priceBox">
+            <div className="totalPrice">
+              <p>
+                총 0 개의 금액 ₩ <strong>0</strong> + 배송비 ₩&nbsp;
+                <strong>0</strong> = <em>총 주문금액 </em>
+                <span>₩ 0</span>
+              </p>
             </div>
           </section>
         </article>
