@@ -51,13 +51,12 @@ class SignIn extends Component {
             <h1>로그인</h1>
           </div>
           <div className="signInBox">
-            <form>
+            <form onClick={this.goToMain}>
               <SignInBox onChange={this.handleInput} />
               <div>
                 <button
                   type="submit"
                   className={isBtnOn ? 'changeBtnColor' : 'siginBtn'}
-                  onClick={this.goToMain}
                 >
                   로그인
                 </button>
