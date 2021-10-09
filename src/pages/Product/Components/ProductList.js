@@ -11,9 +11,9 @@ class ProductList extends Component {
           <ProductFilter />
           <div className="prdList">
             {/* 플렉스에서 줄바꿈하는 방법 찾기 - width값을 주고 프로덕트카드에 위드값이 딱 4등분한 정도 넓이면 된다. */}
-            {COMMENT_LIST.map(product => {
-              return <ProductCard products={product} />;
-            })}
+            {COMMENT_LIST.map(product => (
+              <ProductCard products={product} />
+            ))}
           </div>
         </div>
       </>
