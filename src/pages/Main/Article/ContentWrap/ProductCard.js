@@ -11,7 +11,7 @@ class ProductCard extends Component {
         </div>
         <p className="productName">{products.name}</p>
         <p className="productTag">
-          #{products.tags[0]}&nbsp;#{products.tags[1]}
+          #{products.tags[0]} #{products.tags[1]}
         </p>
         <p className="productPrice">₩ {products.price}</p>
       </div>

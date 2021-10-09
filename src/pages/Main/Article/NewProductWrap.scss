@@ -10,23 +10,23 @@
     height: 300px;
     padding-top: 90px;
 
-    h2 {
+    .productText_big_text {
       font-weight: bold;
       font-size: 30pt;
     }
 
-    p {
+    .productText_small_text {
       margin-top: 30px;
       float: right;
       font-size: 15pt;
     }
   }
 
-  .productImg {
+  .productImg_longHair {
     width: 380px;
-    height: 300px;
+    height: 500px;
 
-    img {
+    .productImg_longHair_img {
       width: 93%;
       margin-left: 10px;
     }

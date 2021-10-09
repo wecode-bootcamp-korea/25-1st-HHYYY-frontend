@@ -6,14 +6,14 @@ class ContentWrap extends Component {
   render() {
     return (
       <article className="contentWrap">
-        <div className="productWrap">
-          <h2>나만 알고 싶은 향기</h2>
+        <header className="productWrap">
+          <h2 className="productWrap_text">나만 알고 싶은 향기</h2>
           <div className="productsList">
-            {COMMENT_LIST.map(product => {
-              return <ProductCard key={product.id} products={product} />;
-            })}
+            {COMMENT_LIST.map(product => (
+              <ProductCard key={product.id} products={product} />
+            ))}
           </div>
-        </div>
+        </header>
         <div className="bannerRolling">
           <img
             src="./images/main/banner/middle/pinkbeach.jpg"
