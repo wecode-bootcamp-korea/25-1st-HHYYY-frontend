@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import Header from '../../../components/Header/Header';
 import SignInBox from './SignInBox';
 
@@ -63,7 +63,9 @@ class SignIn extends Component {
                 </button>
               </div>
               <div className="signup">
-                <button className="signup">회원가입</button>
+                <button className="signup">
+                  <Link to="/SignUp">회원가입</Link>
+                </button>
               </div>
             </form>
           </div>
