@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ProductFilter from '../../components/Product/ProductFilter';
 import ProductCard from '../../components/Product/ProductCard';
 import './ResultPage.scss';
 
@@ -11,7 +10,6 @@ class ResultPage extends Component {
           <div className="result">
             <div className="listHeadingBox">
               <h2>[핑크] 검색결과 6개</h2>
-              {/* <ProductFilter /> */}
             </div>
             <div className="itemList">
               <div className="list">
