@@ -1,29 +1,13 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import Header from '../../components/Header/Header';
-import OrderTable from './OrderTable';
 
 import './cart.scss';
 
-class Cart extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isEmptyCart: false,
-    };
-  }
-
-  handleCart = () => {
-    const { isEmptyCart } = this.state;
-    this.setState({ isEmptyCart: !isEmptyCart });
-  };
-
+class EmptyCart extends Component {
   render() {
-    const { isEmptyCart } = this.state;
     return (
       <>
         <Header />
-        {!isEmptyCart && <OrderTable />}
         <article className="Cart">
           <header>
             <h1>SHOPPING CART</h1>
@@ -63,4 +47,4 @@ class Cart extends Component {
   }
 }
 
-export default Cart;
+export default EmptyCart;
