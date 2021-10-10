@@ -21,6 +21,13 @@ class SignIn extends Component {
     });
   };
 
+  // handleLoginBtn = () => {
+  //   const { inputIdValue, inputPwValue } = this.state;
+  //   this.setState({
+  //     isBtnOn: inputIdValue.indexOf('@') !== -1 && inputPwValue.length >= 5,
+  //   });
+  // };
+
   goToMain = e => {
     e.preventDefault();
     fetch('http://10.58.7.20:8000/users/signin', {
@@ -57,6 +64,7 @@ class SignIn extends Component {
                 <button
                   type="submit"
                   className={isBtnOn ? 'changeBtnColor' : 'siginBtn'}
+                  // disabled={!isBtnOn}
                 >
                   로그인
                 </button>
