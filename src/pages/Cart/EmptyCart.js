@@ -12,9 +12,11 @@ class EmptyCart extends Component {
           <header>
             <h1>SHOPPING CART</h1>
             <div className="orderProgress">
-              <span>Cart</span>
-              <i className="fas fa-angle-right" />
-              <span>Order Confirmed</span>
+              <span className="inCart process">Cart</span>
+              <span>
+                <i className="fas fa-angle-right" />
+              </span>
+              <span className="inOrder process">Order Confirmed</span>
             </div>
           </header>
           <section className="orderPage">
