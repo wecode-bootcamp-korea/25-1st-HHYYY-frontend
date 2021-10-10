@@ -6,6 +6,14 @@
   letter-spacing: -0.5px;
 }
 
+@mixin tapStyle {
+  width: 34%;
+  padding: 20px;
+  font-size: 15pt;
+  text-align: center;
+  border-bottom: 0;
+}
+
 .productDetail {
   @include flex-center;
   flex-direction: column;
@@ -198,6 +206,61 @@
           }
         }
       }
+    }
+  }
+
+  .tabWrap {
+    display: flex;
+    width: 90%;
+    margin-top: 50px;
+    .tabON {
+      @include tapStyle();
+      color: white;
+      background-color: black;
+    }
+
+    .tabOFF {
+      @include tapStyle();
+      border: 1px solid #808080;
+
+      &:last-child {
+        border-left: 0;
+      }
+    }
+  }
+
+  .itemIntroduce {
+    @include flex-center();
+    flex-direction: column;
+    width: 90%;
+    margin-top: 50px;
+
+    .itemInfoImg {
+      width: 100%;
+    }
+
+    .textArea {
+      padding: 40px;
+      font-family: 'notokr', sans-serif;
+      font-size: 20px;
+      font-weight: 400;
+
+      .how {
+        display: inline-block;
+        margin-bottom: 10px;
+        color: white;
+        background-color: black;
+        font-size: 40pt;
+      }
+    }
+  }
+
+  .etcTab {
+    width: 90%;
+
+    .etcInfo {
+      font-size: 14px;
+      color: #808080;
     }
   }
 }
