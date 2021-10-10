@@ -108,7 +108,7 @@ class Cart extends Component {
               </p>
             </div>
           </section>
-          <section className="payment">
+          <section className="ConfirmBox">
             <div className="deleteProduct">
               <button className="deleteBtn">삭제하기</button>
             </div>
