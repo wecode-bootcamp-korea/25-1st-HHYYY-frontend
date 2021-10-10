@@ -41,64 +41,60 @@ class Cart extends Component {
               <table className="addCart">
                 <thead>
                   <tr>
-                    <th>
+                    <th width="10%">
                       <span>
                         <input type="checkbox"></input>
                       </span>
                     </th>
-                    <th width="400px">제품정보</th>
-                    <th>수량</th>
-                    <th>금액</th>
-                    <th>복지혜택</th>
-                    <th>합계금액</th>
-                    <th>배송비</th>
+                    <th width="40%">제품정보</th>
+                    <th width="15%">수량</th>
+                    <th width="10%">금액</th>
+                    <th width="7%">복지혜택</th>
+                    <th width="10%">합계금액</th>
+                    <th width="10%">배송비</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td class="checkBox">
-                      <span>
-                        <input type="checkbox" name="cartNo" value="cartNo" />
-                        <label for="cartNo"></label>
-                      </span>
-                    </td>
-                    <td class="productImg" rowSpan="2">
-                      <span>
-                        <Link to="#" />
-                        img
-                      </span>
-                      <div>
-                        <Link to="#">제품명</Link>
-                      </div>
-                    </td>
-                    <td rowSpan="2">
-                      <div className="count">
-                        <button>
-                          <i className="fas fa-minus"></i>
-                        </button>
-                        <input
-                          type="text"
-                          name="count"
-                          className="productCount"
-                        ></input>
-                        <button>
-                          <i class="fas fa-plus"></i>
-                        </button>
-                      </div>
-                    </td>
-                    <td>
-                      <strong>₩ 172,000</strong>
-                    </td>
-                    <td>
-                      <div style={{ width: '40px', height: '100px' }}></div>
-                    </td>
-                    <td>
-                      <strong>₩ 172,000</strong>
-                    </td>
-                    <td>
-                      <span>배송비</span>
-                    </td>
-                  </tr>
+                  <td>
+                    <span>
+                      <input type="checkbox"></input>
+                    </span>
+                  </td>
+                  <td className="productSpec">
+                    <img alt="productImg" src="/images/productImg/main2.png" />
+                    <div>
+                      <Link to="#">스노우페어리</Link>
+                      <p>샤워</p>
+                    </div>
+                  </td>
+                  <td>
+                    <span className="countBox">
+                      <button>
+                        <i className="fas fa-minus fa-xs" />
+                      </button>
+                      <input
+                        type="text"
+                        name="count"
+                        className="productCount"
+                      />
+                      <button>
+                        <i className="fas fa-plus fa-xs" />
+                      </button>
+                    </span>
+                  </td>
+                  <td>
+                    <strong>₩ 172,000</strong>
+                  </td>
+                  <td>
+                    <div style={{ width: '40px', height: '100px' }}></div>
+                  </td>
+                  <td>
+                    <strong>₩ 172,000</strong>
+                  </td>
+                  <td>
+                    <span className="deliveryFee">₩ 2,500</span>
+                    <span className="deliveryFee">(택배)</span>
+                  </td>
                 </tbody>
               </table>
             </form>

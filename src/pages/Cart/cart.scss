@@ -32,6 +32,7 @@
     margin: 0 50px;
     padding: 0 50px;
   }
+
   .emptyCart {
     padding-bottom: 15px;
     color: #000;
@@ -39,6 +40,7 @@
     font-family: 'notokrB';
     font-weight: normal;
   }
+
   table {
     height: 180%;
     width: 100%;
@@ -46,12 +48,58 @@
     border-top: 1px solid #000;
 
     td {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      text-align: center;
       font-size: 22px;
       color: #333;
       height: 200px;
+      vertical-align: middle;
+
+      strong {
+        font-size: 17px;
+      }
+
+      .deliveryFee {
+        display: block;
+        font-size: 14px;
+        color: #acacac;
+      }
+    }
+
+    .productSpec {
+      display: inline-flex;
+      align-items: center;
+      width: 100%;
+
+      a {
+        text-decoration: none;
+        font-size: 18px;
+        color: #333;
+      }
+
+      p {
+        padding-top: 10px;
+        text-align: left;
+        font-size: 16px;
+        color: #8f8f8f;
+      }
+    }
+
+    .countBox {
+      display: inline-block;
+      border: 1px solid #e7e7e7;
+      width: 70%;
+
+      button {
+        border: none;
+        background: white;
+        height: 40px;
+      }
+
+      input {
+        border: none;
+        height: 40px;
+        width: 40%;
+      }
     }
   }
 
