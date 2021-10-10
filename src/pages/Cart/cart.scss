@@ -18,16 +18,19 @@
       display: flex;
       justify-content: center;
       padding: 30px 0 0 35px;
-      color: #333;
       font-size: 16px;
-      font-weight: bold;
     }
+
     span {
       padding: 0 20px 0 0;
     }
 
-    .inOrder {
-      padding: 0 20px 0 0;
+    .inProgress {
+      color: #333;
+      font-weight: bold;
+    }
+
+    .outProgress {
       font-weight: normal;
       color: #acacac;
     }

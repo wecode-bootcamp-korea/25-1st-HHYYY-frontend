@@ -29,11 +29,11 @@ class Cart extends Component {
           <header>
             <h1>SHOPPING CART</h1>
             <div className="orderProgress">
-              <span className="inCart">Cart</span>
+              <span className="inProgress">Cart</span>
               <span>
                 <i className="fas fa-angle-right" />
               </span>
-              <span className="inOrder">Order Confirmed</span>
+              <span className="outProgress">Order Confirmed</span>
             </div>
           </header>
           {/* <EmptyCart /> */}
