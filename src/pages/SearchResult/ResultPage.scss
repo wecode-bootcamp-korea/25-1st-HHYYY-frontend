@@ -4,12 +4,6 @@
   align-items: center;
 }
 
-@mixin flex-space-between {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
 @mixin flex-space-evenly {
   display: flex;
   justify-content: space-evenly;
