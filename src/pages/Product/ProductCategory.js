@@ -5,6 +5,22 @@ import ProductNav from './Components/ProductNav';
 import './ProductCategory.scss';
 
 class ProductCategory extends Component {
+  constructor() {
+    super();
+    this.state = {
+      categoryInfo: [],
+    };
+  }
+  componentDidMount() {
+    fetch('http://localhost:3000/data/ProductCategory.json')
+      .then(res => res.json())
+      .then(data =>
+        this.setState({
+          categoryInfo: data,
+        })
+      );
+  }
+
   render() {
     return (
       <>

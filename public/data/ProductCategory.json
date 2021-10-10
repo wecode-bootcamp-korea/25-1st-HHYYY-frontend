@@ -1,0 +1,66 @@
+[
+  {
+    "PRODUCTS_LIST": {
+      "id": 1,
+      "name": "오이비누",
+      "thumnbail_url": "https://images.unsplash.com/photo-1584305574647-0cc949a2bb9f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80",
+      "price": 5000,
+      "tags": ["거품풍성", "악취제거"]
+    },
+    "category_info": {
+      "id": 1,
+      "name": "샤워",
+      "category_image": "/images/main/banner/banner01.png",
+      "description": "하루에 한번 샤워는 꼭 합시다"
+    },
+    "category_list": {
+      "category_id": 1,
+      "category_name": "샤워",
+      "category_products_count": 10,
+      "sub_categories": [
+        {
+          "sub_category_id": 5,
+          "sub_category_name": "솝",
+          "sub_category_products_count": 5
+        },
+        {
+          "sub_category_id": 6,
+          "sub_category_name": "오일",
+          "sub_category_products_count": 5
+        }
+      ]
+    }
+  },
+  {
+    "PRODUCTS_LIST": {
+      "id": 2,
+      "name": "딸기비누",
+      "thumnbail_url": "https://images.unsplash.com/photo-1584305574647-0cc949a2bb9f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80",
+      "price": 5000,
+      "tags": ["딸기나라", "딸기공주"]
+    },
+    "category_info": {
+      "id": 5,
+      "name": "솝",
+      "category_image": "/images/main/title/title001.png",
+      "description": "뽀송뽀송 친환경 비누"
+    },
+    "category_list": {
+      "category_id": 1,
+      "category_name": "샤워",
+      "category_products_count": 10,
+      "sub_categories": [
+        {
+          "sub_category_id": 5,
+          "sub_category_name": "솝",
+          "sub_category_products_count": 5
+        },
+        {
+          "sub_category_id": 6,
+          "sub_category_name": "오일",
+          "sub_category_products_count": 5
+        }
+      ]
+    }
+  }
+]
