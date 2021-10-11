@@ -11,6 +11,7 @@ class SignIn extends Component {
     this.state = {
       inputIdValue: '',
       inputPwValue: '',
+      isBtnOn: false,
     };
   }
 
@@ -19,19 +20,28 @@ class SignIn extends Component {
     this.setState({
       [name]: value,
     });
+
+    this.handleLoginBtn();
   };
 
-  handleLoginBtn = e => {
-    e.preventDefault();
+  handleLoginBtn = () => {
     const { inputIdValue, inputPwValue } = this.state;
+    const checkEng = /[a-z | A-Z]/;
+    const checkSpecial = /[~!@#$%^&*()_+|<>?:{}]/;
+    const checkNumber = /[0-9]/;
+
+    const isBtnActive =
+      inputIdValue.indexOf('@') !== -1 && inputPwValue.length >= 8;
+
     this.setState({
-      isBtnOn: inputIdValue.indexOf('@') !== -1 && inputPwValue.length >= 5,
+      isBtnOn: isBtnActive,
     });
   };
 
   goToMain = e => {
     e.preventDefault();
-    fetch('http://localhost:3001', {
+    this.props.history.push('/main');
+    fetch('http://localhost:3000', {
       method: 'POST',
       body: JSON.stringify({
         email: this.state.inputIdValue,
@@ -50,7 +60,9 @@ class SignIn extends Component {
   };
 
   render() {
-    const { isBtnOn } = this.state;
+    const checkEng = /[a-z | A-Z]/;
+    const checkSpecial = /[~!@#$%^&*()_+|<>?:{}]/;
+    const checkNumber = /[0-9]/;
     return (
       <>
         <Header />
@@ -60,16 +72,18 @@ class SignIn extends Component {
           </div>
           <div className="signInBox">
             <form>
-              <SignInBox
-                onChange={this.handleInput}
-                handleLoginBtn={this.handleLoginBtn}
-              />
+              <SignInBox onChange={this.handleInput} />
               <div>
                 <button
                   type="submit"
-                  className={isBtnOn ? 'changeBtnColor' : 'siginBtn'}
+                  className="siginBtn"
+                  disabled={
+                    this.state.inputIdValue.length > 0 &&
+                    this.state.inputPwValue.length > 8
+                      ? ''
+                      : 'disabled'
+                  }
                   onClick={this.goToMain}
-                  disabled={!isBtnOn}
                 >
                   로그인
                 </button>

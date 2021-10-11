@@ -3,7 +3,7 @@ import './signinBox.scss';
 
 class SignInBox extends Component {
   render() {
-    const { onChange, inputIdValue, inputPwValue } = this.props;
+    const { onChange, inputIdValue, inputPwValue, onKeyUp } = this.props;
     return (
       <>
         <div className="InputSignIn">
@@ -16,6 +16,7 @@ class SignInBox extends Component {
             type="text"
             placeholder="아이디"
             onChange={onChange}
+            onKeyUp={onKeyUp}
             value={inputIdValue}
           />
         </div>
