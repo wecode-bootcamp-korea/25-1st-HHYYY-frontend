@@ -21,16 +21,17 @@ class SignIn extends Component {
     });
   };
 
-  // handleLoginBtn = () => {
-  //   const { inputIdValue, inputPwValue } = this.state;
-  //   this.setState({
-  //     isBtnOn: inputIdValue.indexOf('@') !== -1 && inputPwValue.length >= 5,
-  //   });
-  // };
+  handleLoginBtn = e => {
+    e.preventDefault();
+    const { inputIdValue, inputPwValue } = this.state;
+    this.setState({
+      isBtnOn: inputIdValue.indexOf('@') !== -1 && inputPwValue.length >= 5,
+    });
+  };
 
   goToMain = e => {
     e.preventDefault();
-    fetch('http://10.58.7.20:8000/users/signin', {
+    fetch('http://localhost:3001', {
       method: 'POST',
       body: JSON.stringify({
         email: this.state.inputIdValue,
@@ -58,13 +59,17 @@ class SignIn extends Component {
             <h1>로그인</h1>
           </div>
           <div className="signInBox">
-            <form onClick={this.goToMain}>
-              <SignInBox onChange={this.handleInput} />
+            <form>
+              <SignInBox
+                onChange={this.handleInput}
+                handleLoginBtn={this.handleLoginBtn}
+              />
               <div>
                 <button
                   type="submit"
                   className={isBtnOn ? 'changeBtnColor' : 'siginBtn'}
-                  // disabled={!isBtnOn}
+                  onClick={this.goToMain}
+                  disabled={!isBtnOn}
                 >
                   로그인
                 </button>
