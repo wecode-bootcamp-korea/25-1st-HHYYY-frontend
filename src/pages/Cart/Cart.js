@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import Header from '../../components/Header/Header';
-import EmptyCart from './EmptyCart';
-import OrderTable from './OrderTable';
+import EmptyCart from './component/EmptyCart';
+import OrderTable from './component/OrderTable';
 
 import './cart.scss';
-import './orderTable.scss';
+import './component/orderTable.scss';
 import './orderComplete.scss';
+import './component/tableBody.scss';
 
 class Cart extends Component {
   constructor(props) {
@@ -22,7 +23,7 @@ class Cart extends Component {
     } else {
       <isEmptyCart />;
     }
-    // this.setState({ isEmptyCart: !isEmptyCart });
+    this.setState({ isEmptyCart: !isEmptyCart });
   }
 
   render() {
@@ -30,7 +31,7 @@ class Cart extends Component {
     return (
       <>
         <Header />
-        <article className="Cart">
+        <article className="cart">
           <header>
             <h1>SHOPPING CART</h1>
             <div className="orderProgress">

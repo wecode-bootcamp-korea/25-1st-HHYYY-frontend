@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import DecideBtns from './component/DecideBtns';
-import TableBody from './component/TableBody';
+import DecideBtns from './DecideBtns';
+import TableBody from './TableBody';
 
-class Cart extends Component {
+class OrderTable extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -21,7 +21,6 @@ class Cart extends Component {
   render() {
     const { cartList } = this.state;
     const { total_price, shipping } = cartList;
-    console.log('궁금쓰', cartList);
     return (
       <>
         <section className="orderPage">
@@ -48,9 +47,9 @@ class Cart extends Component {
               <tbody>
                 {cartList.map(productData => {
                   return (
-                    <div className="tableBody">
+                    <td className="tableBody" key={productData.id}>
                       <TableBody itemData={productData} />
-                    </div>
+                    </td>
                   );
                 })}
                 <td>
@@ -81,4 +80,4 @@ class Cart extends Component {
   }
 }
 
-export default Cart;
+export default OrderTable;

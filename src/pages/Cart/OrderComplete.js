@@ -1,21 +1,22 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import Header from '../../components/Header/Header';
-import DecideBtns from './component/DecideBtns';
+// import DecideBtns from './component/DecideBtns';
 
 class OrderComplete extends Component {
   render() {
     return (
       <>
         <Header />
-        <article className="Cart">
+        <article className="cart">
           <header>
             <h1>SHOPPING CART</h1>
             <div className="orderProgress">
-              <span className="outPorgress">Cart</span>
+              <span className="outProgress">Cart</span>
               <span>
                 <i className="fas fa-angle-right" />
               </span>
-              <span className="inPorgress">Order Confirmed</span>
+              <span className="inProgress">Order Confirmed</span>
             </div>
           </header>
           <section className="orderComplete">
@@ -31,7 +32,16 @@ class OrderComplete extends Component {
               </p>
             </div>
           </section>
-          <DecideBtns />
+          <section className="CartBtnBox">
+            <div className="decideBtns">
+              <button className="goOnShop deco">
+                <Link to="/main">쇼핑 계속하기</Link>
+              </button>
+              <button className="orderBtn deco">
+                <Link to="/order-complete">주문확인하기</Link>
+              </button>
+            </div>
+          </section>
         </article>
       </>
     );

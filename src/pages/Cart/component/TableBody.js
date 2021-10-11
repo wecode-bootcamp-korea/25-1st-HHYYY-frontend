@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-import '../cart.scss';
-
 class TableBody extends Component {
   render() {
     const { itemData } = this.props;
