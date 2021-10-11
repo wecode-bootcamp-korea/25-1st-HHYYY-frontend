@@ -26,9 +26,9 @@ class SignIn extends Component {
 
   handleLoginBtn = () => {
     const { inputIdValue, inputPwValue } = this.state;
-    const checkEng = /[a-z | A-Z]/;
-    const checkSpecial = /[~!@#$%^&*()_+|<>?:{}]/;
-    const checkNumber = /[0-9]/;
+    // const checkEng = /[a-z | A-Z]/;
+    // const checkSpecial = /[~!@#$%^&*()_+|<>?:{}]/;
+    // const checkNumber = /[0-9]/;
 
     const isBtnActive =
       inputIdValue.indexOf('@') !== -1 && inputPwValue.length >= 8;
@@ -60,9 +60,9 @@ class SignIn extends Component {
   };
 
   render() {
-    const checkEng = /[a-z | A-Z]/;
-    const checkSpecial = /[~!@#$%^&*()_+|<>?:{}]/;
-    const checkNumber = /[0-9]/;
+    // const checkEng = /[a-z | A-Z]/;
+    // const checkSpecial = /[~!@#$%^&*()_+|<>?:{}]/;
+    // const checkNumber = /[0-9]/;
     return (
       <>
         <Header />
