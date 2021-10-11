@@ -3,6 +3,19 @@ import { Link } from 'react-router-dom';
 import DecideBtns from './component/DecideBtns';
 
 class Cart extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      cartList: [],
+    };
+  }
+
+  componentDidMount() {
+    fetch('http://localhost:3000/data/cartListData.json')
+      .then(res => res.json())
+      .then(data => this.setState({ cartList: data }));
+  }
+
   render() {
     return (
       <>
