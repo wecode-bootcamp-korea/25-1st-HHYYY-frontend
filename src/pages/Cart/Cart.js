@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Header from '../../components/Header/Header';
-import EmptyCart from './component/EmptyCart';
+// import EmptyCart from './component/EmptyCart';
 import OrderTable from './component/OrderTable';
 
 import './cart.scss';
@@ -42,7 +42,7 @@ class Cart extends Component {
               <span className="outProgress">Order Confirmed</span>
             </div>
           </header>
-          {<EmptyCart />}
+          {/* {<EmptyCart />} */}
           {!isEmptyCart && <OrderTable />}
         </article>
       </>

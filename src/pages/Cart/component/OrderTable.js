@@ -18,6 +18,18 @@ class OrderTable extends Component {
       });
   }
 
+  // 상품삭제
+  // deleteAllHandler = () => {
+  //   fetch('#', {
+  //     method: 'DELETE',
+  //     headers: {
+  //       Authorization: localStorage.getItem('token'),
+  //     },
+  //   }).then(res => {
+  //     this.setState({ cartList: [] });
+  //   });
+  // };
+
   render() {
     const { cartList } = this.state;
     const { total_price, shipping } = cartList;
