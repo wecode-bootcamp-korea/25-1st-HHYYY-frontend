@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import DecideBtns from './component/DecideBtns';
+import TableBody from './component/TableBody';
 
 class Cart extends Component {
   constructor(props) {
@@ -13,10 +13,15 @@ class Cart extends Component {
   componentDidMount() {
     fetch('http://localhost:3000/data/cartListData.json')
       .then(res => res.json())
-      .then(data => this.setState({ cartList: data }));
+      .then(data => {
+        this.setState({ cartList: data.cart_list });
+      });
   }
 
   render() {
+    const { cartList } = this.state;
+    const { total_price, shipping } = cartList;
+    console.log('궁금쓰', cartList);
     return (
       <>
         <section className="orderPage">
@@ -41,38 +46,13 @@ class Cart extends Component {
                 </tr>
               </thead>
               <tbody>
-                <td>
-                  <span>
-                    <input type="checkbox"></input>
-                  </span>
-                </td>
-                <td className="productSpec">
-                  <img alt="productImg" src="/images/productImg/main2.png" />
-                  <div>
-                    <Link to="#">스노우페어리</Link>
-                    <p>샤워</p>
-                  </div>
-                </td>
-                <td>
-                  <span className="countBox">
-                    <button>
-                      <i className="fas fa-minus fa-xs" />
-                    </button>
-                    <input type="text" name="count" className="productCount" />
-                    <button>
-                      <i className="fas fa-plus fa-xs" />
-                    </button>
-                  </span>
-                </td>
-                <td>
-                  <strong>₩ 172,000</strong>
-                </td>
-                <td>
-                  <div style={{ width: '40px', height: '100px' }}></div>
-                </td>
-                <td>
-                  <strong>₩ 172,000</strong>
-                </td>
+                {cartList.map(productData => {
+                  return (
+                    <div className="tableBody">
+                      <TableBody itemData={productData} />
+                    </div>
+                  );
+                })}
                 <td>
                   <span className="deliveryFee">₩ 2,500</span>
                   <span className="deliveryFee">(택배)</span>
@@ -84,8 +64,8 @@ class Cart extends Component {
         <section className="priceBox">
           <div className="totalPrice">
             <p>
-              총 0 개의 금액 ₩ <strong>0</strong> + 배송비 ₩&nbsp;
-              <strong>0</strong> = <em>총 주문금액 </em>
+              총 0 개의 금액 ₩ <strong>{total_price}</strong> + 배송비 ₩&nbsp;
+              <strong>{shipping}</strong> = <em>총 주문금액 </em>
               <span>₩ 0</span>
             </p>
           </div>

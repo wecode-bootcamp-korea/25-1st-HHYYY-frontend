@@ -10,7 +10,7 @@ class DecideBtns extends Component {
             <Link to="/main">쇼핑 계속하기</Link>
           </button>
           <button className="orderBtn deco">
-            <Link to="/main">주문하기</Link>
+            <Link to="/order-complete">주문하기</Link>
           </button>
         </div>
       </>

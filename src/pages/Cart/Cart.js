@@ -1,23 +1,29 @@
 import React, { Component } from 'react';
 import Header from '../../components/Header/Header';
-// import EmptyCart from './EmptyCart';
+import EmptyCart from './EmptyCart';
 import OrderTable from './OrderTable';
 
 import './cart.scss';
 import './orderTable.scss';
+import './orderComplete.scss';
 
 class Cart extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isEmptyCart: false,
+      isEmptyCart: [], //  백엔드에서 상품값을 가져오면.
     };
   }
 
-  handleCart = () => {
+  componentDidMount() {
     const { isEmptyCart } = this.state;
-    this.setState({ isEmptyCart: !isEmptyCart });
-  };
+    if (isEmptyCart.length > 0) {
+      <OrderTable />;
+    } else {
+      <isEmptyCart />;
+    }
+    // this.setState({ isEmptyCart: !isEmptyCart });
+  }
 
   render() {
     const { isEmptyCart } = this.state;
@@ -35,7 +41,7 @@ class Cart extends Component {
               <span className="outProgress">Order Confirmed</span>
             </div>
           </header>
-          {/* <EmptyCart /> */}
+          {<EmptyCart />}
           {!isEmptyCart && <OrderTable />}
         </article>
       </>

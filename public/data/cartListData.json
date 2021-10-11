@@ -1,13 +1,13 @@
 {
   "cart_list": [
     {
-      "id": "cart_id_1'",
+      "id": 1,
       "product_name": "슬리피",
       "category_name": "로션",
       "quantity": 1,
       "size": 95,
       "product_price": "22,000",
-      "image": "슬리피 이미지",
+      "image": "/images/productImg/main2.png",
       "price": "22,000"
     },
     {
@@ -30,5 +30,7 @@
       "image": "허브티 이미지",
       "price": "29,000"
     }
-  ]
+  ],
+  "total_price": "장바구니 총 가격",
+  "shipping": "배송비"
 }
