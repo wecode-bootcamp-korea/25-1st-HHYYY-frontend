@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Header from '../../components/Header/Header';
-import EmptyCart from './EmptyCart';
+// import EmptyCart from './EmptyCart';
 import OrderTable from './OrderTable';
 
 import './cart.scss';
