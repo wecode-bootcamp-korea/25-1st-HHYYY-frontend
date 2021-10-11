@@ -13,7 +13,7 @@ class ProductDetail extends Component {
   }
 
   componentDidMount() {
-    fetch('http://172.30.1.13:8000/products/1')
+    fetch('/data/ProductDetail.json')
       .then(res => res.json())
       .then(productInfo =>
         this.setState({
@@ -29,9 +29,28 @@ class ProductDetail extends Component {
     });
   };
 
+  reviewAverageToStars = average => {
+    switch (average) {
+      case 1:
+        return '⭐';
+        break;
+      case 2:
+        return '⭐⭐';
+        break;
+      case 3:
+        return '⭐⭐⭐';
+        break;
+      case 4:
+        return '⭐⭐⭐⭐';
+        break;
+      case 5:
+        return '⭐⭐⭐⭐⭐';
+        break;
+    }
+  };
+
   render() {
     const { productData, classON } = this.state;
-    console.log(productData.tags);
     return (
       <section className="productDetail">
         <article className="productInfo">
@@ -52,8 +71,8 @@ class ProductDetail extends Component {
               <h2 className="itemName">{productData.name}</h2>
               <p className="itemTag">
                 {productData.tags &&
-                  productData.tags.map(el => {
-                    return `#${el} `;
+                  productData.tags.map(tag => {
+                    return `#${tag} `;
                   })}
               </p>
             </header>
@@ -84,7 +103,10 @@ class ProductDetail extends Component {
                 <li className="itemInfoRow">
                   <span className="itemInfoDetail">구매수량</span>
                   <span className="itemCountBox">
-                    <button className="countMinus" onClick={this.handle}>
+                    <button
+                      className="countMinus"
+                      onClick={this.handleQuantity}
+                    >
                       -
                     </button>
                     <input className="productCount" name="count" value="1" />
@@ -113,32 +135,26 @@ class ProductDetail extends Component {
               <h2 className="photoListText">포토리뷰 모아보기</h2>
               <div className="photoImgList">
                 <span className="photoWrap">
-                  {productData.review_images && (
-                    <img
-                      src={productData.review_images[0]}
-                      className="reviewImg"
-                      alt="reviewImg"
-                    />
-                    // <img
-                    //   src={productData.review_images[1]}
-                    //   className="reviewImg"
-                    //   alt="reviewImg"
-                    // />
-                    // <img
-                    //   src={productData.review_images[2]}
-                    //   className="reviewImg"
-                    //   alt="reviewImg"
-                    // />
-                  )}
+                  {productData.review_images &&
+                    productData.review_images.map((img, idx) => (
+                      <img
+                        src={img}
+                        key={idx}
+                        className="reviewImg"
+                        alt="reviewImg"
+                      />
+                    ))}
                 </span>
               </div>
             </div>
 
             <div className="reviewCountWrap">
               <ul className="productScore">
-                <li className="scoreText">평가</li>
+                <li className="scoreText">리뷰 평점</li>
                 <li className="score">{productData.rating_average}</li>
-                <li className="scoreStars">*****</li>
+                <li className="scoreStars">
+                  {this.reviewAverageToStars(productData.rating_average)}
+                </li>
               </ul>
               <ul className="reviewCounter">
                 <li className="reviewCountInfo">

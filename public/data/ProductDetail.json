@@ -12,13 +12,13 @@
     ],
     "tags": ["딸기향가득", "사람들이좋아하는향"],
     "detail_images": [],
-    "rating_average": 3.8,
+    "rating_average": 3,
     "review_count": 5,
     "photo_review_count": 5,
     "review_images": [
-      "/images/banner/middle/banner01",
-      "/images/banner/middle/banner02",
-      "/images/banner/middle/banner03"
+      "https://www.lush.co.kr/data/plus_review/1000001455/t/square_79d47080c8b7d89d",
+      "https://www.lush.co.kr/data/plus_review/1000001455/t/square_d7f8ca15d1bfd65a",
+      "https://www.lush.co.kr/data/plus_review/1000001455/t/square_8095da6f27a0aa22"
     ]
   }
 }
