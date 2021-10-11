@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-// import Header from '../../../components/Header/Header';
 import SignUpForm from './SignUpForm/SignUpForm';
 import './SignUp.scss';
+import { withRouter } from 'react-router-dom';
 
 class SignUp extends Component {
   render() {
@@ -13,4 +13,4 @@ class SignUp extends Component {
   }
 }
 
-export default SignUp;
+export default withRouter(SignUp);

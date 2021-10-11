@@ -2,7 +2,82 @@ import React, { Component } from 'react';
 import './SignUpForm.scss';
 
 class SignUpForm extends Component {
+  constructor() {
+    super();
+    this.state = {
+      isBtnEnabled: false,
+      emailVal: '',
+      memNmVal: '',
+      memPwVal: '',
+      memPwCheckVal: '',
+      cellphoneVal: '',
+      addressVal: '',
+    };
+  }
+
+  handleInput = e => {
+    const { name, value } = e.target;
+    this.setState({
+      [name]: value,
+    });
+
+    this.handleFunction();
+  };
+
+  handleFunction = () => {
+    const {
+      emailVal,
+      memNmVal,
+      memPwVal,
+      memPwCheckVal,
+      cellphoneVal,
+      addressVal,
+    } = this.state;
+
+    const checkEng = /[a-z|A-Z]/;
+    const checkSpecial = /[~!@#$%^&*()_+|<>?:{}]/;
+    const checkNumber = /[0-9]/;
+
+    const gumsa = emailVal.includes('@') && memNmVal.length > 0;
+
+    this.setState({ isBtnEnabled: gumsa });
+  };
+
+  handleSignUp = () => {
+    fetch('http://172.30.1.58:8000/users/signup', {
+      method: 'POST',
+      body: JSON.stringify({
+        email: this.state.emailVal,
+        password: this.state.memPwVal,
+        phone_number: this.state.cellphoneVal,
+        name: this.state.memNmVal,
+        address: this.state.addressVal,
+      }),
+    })
+      .then(response => response.json())
+      .then(response => {
+        if (response.token) {
+          localStorage.setItem('token', response.token);
+          alert('회원 가입을 축하드립니다.');
+          this.props.history.push('/signin');
+        } else {
+          alert('정보를 확인해주세요');
+        }
+      });
+  };
+
   render() {
+    //회원가입 유효성 검사
+    const {
+      isBtnEnabled,
+      emailVal,
+      memNmVal,
+      memPwVal,
+      memPwCheckVal,
+      cellphoneVal,
+      addressVal,
+    } = this.state;
+
     return (
       <div className="content">
         <div className="join">
@@ -21,7 +96,7 @@ class SignUpForm extends Component {
               name="formJoin"
               action="#"
               method="post"
-              onSubmit="this.handleSubmit"
+              onSubmit={this.handleSubmit}
             >
               <div className="title">
                 <h3>기본정보</h3>
@@ -42,8 +117,10 @@ class SignUpForm extends Component {
                         <input
                           type="text"
                           className="text"
-                          name="email"
-                          id="email"
+                          name="emailVal"
+                          autoComplete="off"
+                          value={emailVal}
+                          onChange={this.handleInput}
                         ></input>
                         <div id="email-error" class="error">
                           이메일을 정확하게 입력해주세요.
@@ -59,8 +136,10 @@ class SignUpForm extends Component {
                         <input
                           type="password"
                           className="text"
-                          name="memPw"
-                          id="memPw"
+                          name="memPwVal"
+                          // autoComplete="off"
+                          value={memPwVal}
+                          onChange={this.handleInput}
                         ></input>
                         <div id="memPw-error" class="error">
                           최소 8 이상, 영문, 숫자, 특수문자만 입력하실 수
@@ -77,9 +156,10 @@ class SignUpForm extends Component {
                         <input
                           type="password"
                           className="text check-id"
-                          name="memPwCheck"
-                          id="memPwCheck"
-                          autocomplete="off"
+                          name="memPwCheckVal"
+                          // autoComplete="off"
+                          value={memPwCheckVal}
+                          onChange={this.handleInput}
                         ></input>
                         <div id="memPwCheck-error" class="error">
                           비밀번호가 서로 다릅니다.
@@ -95,8 +175,9 @@ class SignUpForm extends Component {
                         <input
                           type="text"
                           className="text"
-                          name="memNm"
-                          id="memNm"
+                          name="memNmVal"
+                          value={memNmVal}
+                          onChange={this.handleInput}
                         ></input>
                       </td>
                     </tr>
@@ -109,10 +190,11 @@ class SignUpForm extends Component {
                         <input
                           type="text"
                           className="text"
-                          name="cellphone"
-                          id="cellphone"
+                          name="cellphoneVal"
                           maxLength="11"
                           placeholder="- 없이 입력하세요."
+                          value={cellphoneVal}
+                          onChange={this.handleInput}
                         ></input>
                       </td>
                     </tr>
@@ -123,8 +205,9 @@ class SignUpForm extends Component {
                         <input
                           type="text"
                           className="text"
-                          name="address"
-                          id="address"
+                          name="addressVal"
+                          value={addressVal}
+                          onChange={this.handleInput}
                         ></input>
                       </td>
                     </tr>
@@ -132,7 +215,11 @@ class SignUpForm extends Component {
                 </table>
               </div>
               <div className="btn">
-                <button type="submit" className="submit" value="회원가입">
+                <button
+                  type="button"
+                  className={isBtnEnabled ? 'activeBtn' : 'disableBtn'}
+                  onClick={this.handleSignUp}
+                >
                   <em>회원가입</em>
                 </button>
               </div>
@@ -145,16 +232,3 @@ class SignUpForm extends Component {
 }
 
 export default SignUpForm;
-
-// render() {
-//   return (
-//     <form onSubmit={this.handleSubmit}>
-//       <label>
-//         Essay:
-//         <textarea value={this.state.value} onChange={this.handleChange} />
-//       </label>
-//       <input type="submit" value="Submit" />
-//     </form>
-//   );
-// }
-// }
