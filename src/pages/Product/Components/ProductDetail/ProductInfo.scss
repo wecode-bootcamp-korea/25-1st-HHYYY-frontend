@@ -22,6 +22,14 @@
     width: 55%;
     padding: 10px 10px 10px 40px;
 
+    .navigatorWrap {
+      text-align: right;
+      .whereIsIt {
+        font-size: 17px;
+        color: #333;
+      }
+    }
+
     .itemTitle {
       padding-bottom: 20px;
       margin-bottom: 20px;
@@ -81,6 +89,30 @@
           .itemInfoDetail {
             color: #808080;
             margin-right: 30px;
+          }
+
+          .itemCountBox {
+            display: inline-block;
+            height: 100px;
+
+            .countMinus,
+            .countPlus {
+              width: 40px;
+              height: 40px;
+              border: 1px solid #808080;
+              font-weight: bold;
+              background-color: white;
+            }
+
+            .productCount {
+              width: 80px;
+              height: 40px;
+              font-weight: bold;
+              text-align: center;
+              border: 1px solid #808080;
+              border-right: 0;
+              border-left: 0;
+            }
           }
         }
       }

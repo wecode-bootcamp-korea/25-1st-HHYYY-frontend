@@ -5,10 +5,24 @@ import ProductIntroduce from './Components/ProductDetail/ProductIntroduce';
 import './ProductDetail.scss';
 
 class ProductDetail extends Component {
+  constructor() {
+    super();
+    this.state = {
+      productData: [],
+    };
+  }
+
+  componentDidMount() {
+    fetch('/data/productDetail.json')
+      .then(res => res.json())
+      .then(productInfo => this.setState({ productData: productInfo }));
+  }
+
   render() {
+    const { productData } = this.state;
     return (
       <section className="productDetail">
-        <ProductInfo />
+        <ProductInfo productInfo={productData} />
         <MiddleHeader name="상품 상세 정보" />
         <ProductIntroduce />
         <MiddleHeader name="배송교환 및 반품 안내" />

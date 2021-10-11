@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "딸기비누",
+    "thumbnail_url": "https://images.unsplash.com/photo-1610935591451-8a456e1b1d41?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80",
+    "how_to": "손바닥에 비누를 올려놓고 다른 한 손으로 문질러 거품을 만들어 주세요. 올바른 방법으로 손을 씻은 뒤, 깨끗한 물로 헹궈주세요.",
+    "ingredients": "딸기농축액, 비타민C, 무루무루버터",
+    "options": [
+      {
+        "option_id": 2,
+        "price": 7000,
+        "size": 50
+      }
+    ],
+    "tags": ["딸기향가득", "사람들이좋아하는향"],
+    "detail_images": "/images/middle/banner02",
+    "rating_average": 3.8,
+    "review_count": 12,
+    "photo_review_count": 19,
+    "review_images": [
+      "/images/main/banner/middle/banner05",
+      "/images/main/banner/middle/longhair",
+      "/images/main/banner/middle/pinkbeach"
+    ]
+  }
+]
