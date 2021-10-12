@@ -43,7 +43,6 @@ class Signin extends Component {
 
   goToMain = e => {
     e.preventDefault();
-    this.props.history.push('/main');
     fetch('http://localhost:3000', {
       method: 'POST',
       body: JSON.stringify({
