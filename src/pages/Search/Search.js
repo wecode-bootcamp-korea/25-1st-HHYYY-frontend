@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+// import React, { Component } from 'react';
 
-import './search.scss';
+// import './search.scss';
 
-class Search extends Component {
-  render() {
-    return null;
-  }
-}
+// class Search extends Component {
+//   render() {
+//     return null;
+//   }
+// }
 
-export default Search;
+// export default Search;
