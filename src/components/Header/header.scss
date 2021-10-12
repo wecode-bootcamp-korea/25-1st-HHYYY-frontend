@@ -1,0 +1,25 @@
+.header {
+  background-color: black;
+  color: white;
+
+  nav {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+    padding: 20px;
+    width: 90%;
+  }
+
+  .logo {
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+  }
+  .menuIconsList {
+    display: inline-block;
+    padding: 20px;
+  }
+}

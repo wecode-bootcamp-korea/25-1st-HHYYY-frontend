@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
+import Section from './Section';
 
 class Main extends Component {
   render() {
     return (
-      <div>
-        <i class="fas fa-camera"></i>
-      </div>
+      <>
+        <Section />
+      </>
     );
   }
 }
-
 export default Main;

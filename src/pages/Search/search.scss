@@ -1,0 +1,26 @@
+.search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+
+  .searchInput {
+    border: 0;
+    border-bottom: 1px solid #fff;
+    width: 60%;
+    height: 77px;
+    background: none;
+    font-size: 22px;
+    text-align: center;
+    color: #fff;
+
+    i {
+      border: none;
+    }
+  }
+
+  .searchBtn {
+    border: none;
+    background-color: white;
+  }
+}
