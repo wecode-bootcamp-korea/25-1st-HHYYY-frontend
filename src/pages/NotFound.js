@@ -4,7 +4,7 @@ class NotFound extends Component {
   render() {
     return (
       <div className="wrap">
-        <div></div>
+        <div className="notFound"></div>
       </div>
     );
   }
