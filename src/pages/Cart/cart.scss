@@ -68,6 +68,7 @@
       .deliveryFee {
         display: block;
         font-size: 14px;
+        font-family: 'notokrR';
         color: #acacac;
       }
     }
@@ -81,6 +82,7 @@
         text-decoration: none;
         font-size: 18px;
         text-align: left;
+        font-family: 'notokrR';
         color: #333;
       }
 
@@ -88,8 +90,18 @@
         padding-top: 10px;
         text-align: left;
         font-size: 16px;
+        font-family: 'notokrR';
         color: #8f8f8f;
       }
+    }
+
+    .productPrice,
+    .totalPrice {
+      padding: 20px;
+      font-size: 16px;
+      font-weight: normal;
+      font-family: 'notokrR';
+      color: #333;
     }
 
     .countBox {
@@ -127,6 +139,8 @@
       }
 
       em {
+        font-style: normal;
+        padding: 20px;
         padding-right: 20px;
         font-weight: bold;
       }

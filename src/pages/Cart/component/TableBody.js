@@ -36,14 +36,14 @@ class TableBody extends Component {
           </span>
         </td>
         <td>
-          <strong>{itemData.product_price}</strong>
+          <strong className="productPrice">{itemData.product_price}</strong>
         </td>
         <td>
           &nbsp;
           {/* <div style={{ width: '40px', height: '100px' }}></div> */}
         </td>
         <td>
-          <strong>{itemData.price}</strong>
+          <strong className="totalPrice">{itemData.price}</strong>
         </td>
         <td>
           <span className="deliveryFee">₩ 2,500</span>

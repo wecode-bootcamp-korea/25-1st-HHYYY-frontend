@@ -85,7 +85,7 @@ class OrderTable extends Component {
           <div className="totalPrice">
             <p>
               총 0 개의 금액 ₩ <strong>500,000</strong> + 배송비 ₩&nbsp;
-              <strong>2,500</strong> = <em>총 주문금액 </em>
+              <strong>2,500</strong> =<em>총 주문금액 </em>
               <span>₩ </span>
               <span>525,000</span>
             </p>
