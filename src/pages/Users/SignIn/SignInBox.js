@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import './signinBox.scss';
 
-class SignInBox extends Component {
+class SigninBox extends Component {
   render() {
     const { onChange, inputIdValue, inputPwValue, onKeyUp } = this.props;
     return (
       <>
-        <div className="InputSignIn">
+        <div className="InputSignin">
           <span>
             <i className="fas fa-user-circle fa-lg" />
           </span>
@@ -20,7 +20,7 @@ class SignInBox extends Component {
             value={inputIdValue}
           />
         </div>
-        <div className="InputSignIn">
+        <div className="InputSignin">
           <span>
             <i className="fas fa-lock fa-lg" />
           </span>
@@ -38,4 +38,4 @@ class SignInBox extends Component {
   }
 }
 
-export default SignInBox;
+export default SigninBox;

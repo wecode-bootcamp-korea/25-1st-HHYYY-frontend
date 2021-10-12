@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import Header from '../../../components/Header/Header';
-import SignInBox from './SignInBox';
+import SigninBox from './SigninBox';
 
 import './signin.scss';
 
-class SignIn extends Component {
+class Signin extends Component {
   constructor() {
     super();
     this.state = {
@@ -70,14 +69,13 @@ class SignIn extends Component {
     const { inputIdValue, inputPwValue } = this.state;
     return (
       <>
-        <Header />
-        <article className="SignIn">
+        <article className="Signin">
           <div className="subject">
             <h1>로그인</h1>
           </div>
-          <div className="signInBox">
+          <div className="signinBox">
             <form>
-              <SignInBox onChange={this.handleInput} />
+              <SigninBox onChange={this.handleInput} />
               <div>
                 <button
                   type="submit"
@@ -98,7 +96,7 @@ class SignIn extends Component {
               </div>
               <div className="signup">
                 <button className="signup">
-                  <Link to="/SignUp">회원가입</Link>
+                  <Link to="/Signup">회원가입</Link>
                 </button>
               </div>
             </form>
@@ -109,4 +107,4 @@ class SignIn extends Component {
   }
 }
 
-export default withRouter(SignIn);
+export default withRouter(Signin);
