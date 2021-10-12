@@ -10,6 +10,7 @@ import SearchResult from './pages/SearchResult/SearchResult';
 import Signup from './pages/Users/Signup/Signup';
 import Signin from './pages/Users/Signin/Signin';
 import Cart from './pages/Cart/Cart';
+import OrderComplete from './pages/Cart/OrderComplete';
 import Footer from './components/Footer/Footer';
 
 class Routes extends Component {
@@ -26,6 +27,7 @@ class Routes extends Component {
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/signin" component={Signin} />
           <Route exact path="/cart" component={Cart} />
+          <Route exact path="/order-complete" component={OrderComplete} />
         </Switch>
         <Footer />
       </Router>
