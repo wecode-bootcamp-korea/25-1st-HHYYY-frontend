@@ -26,12 +26,16 @@ class SignIn extends Component {
 
   handleLoginBtn = () => {
     const { inputIdValue, inputPwValue } = this.state;
-    // const checkEng = /[a-z | A-Z]/;
-    // const checkSpecial = /[~!@#$%^&*()_+|<>?:{}]/;
-    // const checkNumber = /[0-9]/;
+    const checkEng = /[a-z | A-Z]/;
+    const checkSpecial = /[~!@#$%^&*()_+|<>?:{}]/;
+    const checkNumber = /[0-9]/;
 
     const isBtnActive =
-      inputIdValue.indexOf('@') !== -1 && inputPwValue.length >= 8;
+      inputIdValue.indexOf('@') !== -1 &&
+      inputPwValue.length >= 8 &&
+      checkEng.test(inputPwValue) &&
+      checkSpecial.test(inputPwValue) &&
+      checkNumber.test(inputPwValue);
 
     this.setState({
       isBtnOn: isBtnActive,
@@ -60,9 +64,10 @@ class SignIn extends Component {
   };
 
   render() {
-    // const checkEng = /[a-z | A-Z]/;
-    // const checkSpecial = /[~!@#$%^&*()_+|<>?:{}]/;
-    // const checkNumber = /[0-9]/;
+    const checkEng = /[a-z | A-Z]/;
+    const checkSpecial = /[~!@#$%^&*()_+|<>?:{}]/;
+    const checkNumber = /[0-9]/;
+    const { inputIdValue, inputPwValue } = this.state;
     return (
       <>
         <Header />
@@ -78,8 +83,11 @@ class SignIn extends Component {
                   type="submit"
                   className="siginBtn"
                   disabled={
-                    this.state.inputIdValue.length > 0 &&
-                    this.state.inputPwValue.length > 8
+                    inputIdValue.indexOf('@') !== -1 &&
+                    inputPwValue.length > 8 &&
+                    checkEng.test(inputPwValue) &&
+                    checkSpecial.test(inputPwValue) &&
+                    checkNumber.test(inputPwValue)
                       ? ''
                       : 'disabled'
                   }
