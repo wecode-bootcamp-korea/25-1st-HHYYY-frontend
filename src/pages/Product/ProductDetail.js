@@ -338,5 +338,4 @@ const VEGAN_LIST = [
     imgSrc: '/images/product/vegan4.png',
   },
 ];
-
 export default ProductDetail;
