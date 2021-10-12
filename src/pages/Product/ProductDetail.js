@@ -26,7 +26,7 @@ class ProductDetail extends Component {
 
   reviewAverageToStars = average => {
     switch (average) {
-      // Number.parseInt(average);
+      // average.parseInt();
       case 1:
         return '★';
         break;
@@ -59,6 +59,7 @@ class ProductDetail extends Component {
     e.preventDefault();
     const { className } = e.target;
     const { quantity } = this.state;
+    console.log(e.target);
     if (className === 'countPlus') {
       //10개 이상은 구매 못하게
       this.setState(state => {
@@ -66,7 +67,7 @@ class ProductDetail extends Component {
       });
     } else if (className === 'countMinus') {
       if (quantity === 1) {
-        alert('1개 이하는 주문할 수 없습니다');
+        alert('1개부터 주문할 수 있습니다');
         return;
       }
       this.setState(state => {
@@ -80,8 +81,6 @@ class ProductDetail extends Component {
     this.setState({
       imgClick: !imgClick,
     });
-
-    console.log(img);
   };
 
   // goToCart = () => {
@@ -182,7 +181,8 @@ class ProductDetail extends Component {
             <div className="itemPrice">
               <span className="howMuch">총 합계 금액</span>
               <span className="allPrice">
-                ₩ {productData.options && productData.options[0].price}
+                ₩{' '}
+                {productData.options && productData.options[0].price * quantity}
               </span>
             </div>
             <div className="btnList">
@@ -205,7 +205,7 @@ class ProductDetail extends Component {
                     <h2 className="imgHeader">
                       훈훈한 회원님들의 훈훈한 포토리뷰
                     </h2>
-                    <img src={this.reviewImgClick} />
+                    <img src="https://www.lush.co.kr/data/plus_review/1000001455/t/square_79d47080c8b7d89d" />
                     <p
                       className={imgClick ? 'imgPopUpON' : 'imgPopUpOFF'}
                       onClick={this.reviewImgClick}
