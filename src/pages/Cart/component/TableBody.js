@@ -8,7 +8,7 @@ class TableBody extends Component {
       <>
         <td>
           <span>
-            <input type="checkbox"></input>
+            <input type="checkbox" className="checkedInput"></input>
           </span>
         </td>
         <td className="productSpec">

@@ -7,7 +7,7 @@ class OrderTable extends Component {
     super(props);
     this.state = {
       cartList: [],
-      isCheckBox: false,
+      // isCheckBox: false,
     };
   }
 
@@ -31,6 +31,14 @@ class OrderTable extends Component {
   //   });
   // };
 
+  // inputClick = e => {
+  //   console.log(e.target.checked);
+  //   if (e.target.checked) {
+  //     const checkedEL = document.getElementsByClassName('checkedInput');
+  //     checkedEL.checked = true;
+  //   }
+  // };
+
   render() {
     const { cartList } = this.state;
     // const { total_price, shipping } = cartList;
@@ -46,7 +54,11 @@ class OrderTable extends Component {
                 <tr>
                   <th width="10%">
                     <span>
-                      <input type="checkbox"></input>
+                      <input
+                        className="checkInput"
+                        type="checkbox"
+                        onClick={e => this.inputClick(e)}
+                      ></input>
                     </span>
                   </th>
                   <th width="40%">제품정보</th>

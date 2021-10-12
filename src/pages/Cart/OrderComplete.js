@@ -38,7 +38,7 @@ class OrderComplete extends Component {
                 <Link to="/main">쇼핑 계속하기</Link>
               </button>
               <button className="orderBtn deco">
-                <Link to="/order-complete">주문확인하기</Link>
+                <Link to="/order-complete">메인으로 이동</Link>
               </button>
             </div>
           </section>
