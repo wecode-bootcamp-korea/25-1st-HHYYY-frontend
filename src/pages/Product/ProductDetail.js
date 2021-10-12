@@ -205,7 +205,10 @@ class ProductDetail extends Component {
                     <h2 className="imgHeader">
                       훈훈한 회원님들의 훈훈한 포토리뷰
                     </h2>
-                    <img src="https://www.lush.co.kr/data/plus_review/1000001455/t/square_79d47080c8b7d89d" />
+                    <img
+                      alt="photoReview_IMG"
+                      src="https://www.lush.co.kr/data/plus_review/1000001455/t/square_79d47080c8b7d89d"
+                    />
                     <p
                       className={imgClick ? 'imgPopUpON' : 'imgPopUpOFF'}
                       onClick={this.reviewImgClick}
