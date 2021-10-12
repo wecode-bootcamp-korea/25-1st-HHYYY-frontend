@@ -25,14 +25,8 @@ class SignUpForm extends Component {
   };
 
   handleFunction = () => {
-    const {
-      emailVal,
-      memNmVal,
-      memPwVal,
-      memPwCheckVal,
-      cellphoneVal,
-      addressVal,
-    } = this.state;
+    const { emailVal, memNmVal, memPwVal, memPwCheckVal, cellphoneVal } =
+      this.state;
 
     const checkEng = /[a-z|A-Z]/;
     const checkSpecial = /[~!@#$%^&*()_+|<>?:{}]/;
@@ -42,11 +36,10 @@ class SignUpForm extends Component {
       emailVal.includes('@') &&
       memPwVal.length >= 8 &&
       memPwVal === memPwCheckVal &&
-      memPwVal.test(checkEng) &&
-      memPwVal.test(checkSpecial) &&
-      memPwVal.test(checkNumber) &&
-      memNmVal &&
-      addressVal &&
+      checkEng.test(memPwVal) &&
+      checkSpecial.test(memPwVal) &&
+      checkNumber.test(memPwVal) &&
+      memNmVal.length >= 1 &&
       cellphoneVal.length === 11;
 
     this.setState({ isBtnEnabled: check });
