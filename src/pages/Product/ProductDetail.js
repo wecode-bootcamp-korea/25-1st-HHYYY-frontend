@@ -32,19 +32,22 @@ class ProductDetail extends Component {
   reviewAverageToStars = average => {
     switch (average) {
       case 1:
-        return '⭐';
+        return '★';
         break;
       case 2:
-        return '⭐⭐';
+        return '★★';
         break;
       case 3:
-        return '⭐⭐⭐';
+        return '★★★';
         break;
       case 4:
-        return '⭐⭐⭐⭐';
+        return '★★★★';
         break;
       case 5:
-        return '⭐⭐⭐⭐⭐';
+        return '★★★★★';
+        break;
+      default:
+        return '★★★★★';
         break;
     }
   };
