@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Header from '../../components/Header/Header';
 // import EmptyCart from './component/EmptyCart';
 import OrderTable from './component/OrderTable';
 
@@ -30,7 +29,6 @@ class Cart extends Component {
     const { isEmptyCart } = this.state;
     return (
       <>
-        <Header />
         <article className="cart">
           <header>
             <h1>SHOPPING CART</h1>
