@@ -5,8 +5,8 @@ import Main from './pages/Main/Main';
 import ProductCategory from './components/Product/ProductCategory';
 import ProductDetail from './components/Product/ProductDetail';
 import Search from './pages/Search/Search';
-import Signup from './pages/Users/SignUp/SignUp';
-import Signin from './pages/Users/SignIn/SignIn';
+import Signup from './pages/Users/Signup/Signup';
+import Signin from './pages/Users/Signin/Signin';
 import Cart from './pages/Cart/Cart';
 
 class Routes extends Component {

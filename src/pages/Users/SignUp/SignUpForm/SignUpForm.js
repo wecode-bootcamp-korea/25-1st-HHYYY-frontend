@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import './SignUpForm.scss';
+import './SignupForm.scss';
 
-class SignUpForm extends Component {
+class SignupForm extends Component {
   constructor() {
     super();
     this.state = {
@@ -233,4 +233,4 @@ class SignUpForm extends Component {
   }
 }
 
-export default SignUpForm;
+export default SignupForm;
