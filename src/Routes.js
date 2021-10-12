@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-
 import Header from './components/Header/Header';
 import Main from './pages/Main/Main';
 import ProductCategory from './pages/Product/ProductCategory';
@@ -10,6 +9,7 @@ import Signup from './pages/Users/Signup/Signup';
 import Signin from './pages/Users/Signin/Signin';
 import Cart from './pages/Cart/Cart';
 import OrderComplete from './pages/Cart/OrderComplete';
+import NotFound from './pages/Error/NotFound';
 import Footer from './components/Footer/Footer';
 
 class Routes extends Component {
@@ -26,6 +26,7 @@ class Routes extends Component {
           <Route exact path="/signin" component={Signin} />
           <Route exact path="/cart" component={Cart} />
           <Route exact path="/order-complete" component={OrderComplete} />
+          <Route path="*" component={NotFound} />
         </Switch>
         <Footer />
       </Router>
