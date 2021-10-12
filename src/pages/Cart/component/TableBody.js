@@ -45,6 +45,10 @@ class TableBody extends Component {
         <td>
           <strong>{itemData.price}</strong>
         </td>
+        <td>
+          <span className="deliveryFee">₩ 2,500</span>
+          <span className="deliveryFee">(택배)</span>
+        </td>
       </>
     );
   }

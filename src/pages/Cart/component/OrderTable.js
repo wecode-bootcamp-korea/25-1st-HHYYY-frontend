@@ -72,15 +72,11 @@ class OrderTable extends Component {
               <tbody>
                 {cartList.map(productData => {
                   return (
-                    <td className="tableBody" key={productData.id}>
+                    <tr className="tableBody" key={productData.id}>
                       <TableBody itemData={productData} />
-                    </td>
+                    </tr>
                   );
                 })}
-                <td>
-                  <span className="deliveryFee">₩ 2,500</span>
-                  <span className="deliveryFee">(택배)</span>
-                </td>
               </tbody>
             </table>
           </form>
