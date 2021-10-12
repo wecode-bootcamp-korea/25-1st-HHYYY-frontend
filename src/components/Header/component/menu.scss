@@ -1,0 +1,19 @@
+.menu {
+  display: flex;
+
+  li {
+    list-style: none;
+  }
+
+  a {
+    padding: 40px;
+    text-decoration: none;
+    font-size: 17px;
+    color: white;
+  }
+  .dropMenu:hover,
+  .dropMenu li:hover {
+    color: #9b9b9b;
+    background-color: #333;
+  }
+}
