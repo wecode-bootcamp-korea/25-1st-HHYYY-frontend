@@ -6,8 +6,8 @@ import Main from './pages/Main/Main';
 import ProductCategory from './pages/Product/ProductCategory';
 import ProductDetail from './pages/Product/ProductDetail';
 import Search from './pages/Search/Search';
-import Signup from './pages/Users/Signup';
-import Signin from './pages/Users/Signin';
+import Signup from './pages/Users/Signup/Signup';
+import Signin from './pages/Users/Signin/Signin';
 import Cart from './pages/Cart/Cart';
 import Footer from './components/Footer/Footer';
 
