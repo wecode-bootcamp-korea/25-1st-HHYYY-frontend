@@ -25,7 +25,7 @@ class Signin extends Component {
 
   handleLoginBtn = () => {
     const { inputIdValue, inputPwValue } = this.state;
-    const checkEng = /[a-z | A-Z]/;
+    const checkEng = /[a-z|A-Z]/;
     const checkSpecial = /[~!@#$%^&*()_+|<>?:{}]/;
     const checkNumber = /[0-9]/;
 
