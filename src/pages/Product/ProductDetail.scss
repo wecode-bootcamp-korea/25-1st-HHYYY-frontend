@@ -197,6 +197,51 @@
 
         .photoImgList {
           .photoWrap {
+            position: relative;
+
+            .imgPopUpON {
+              position: absolute;
+              width: 700px;
+              top: 1px;
+              border: 1px solid #808080;
+              z-index: 1;
+              background-color: white;
+
+              .imgHeader {
+                padding: 30px;
+                font-size: 15pt;
+                text-align: center;
+                color: white;
+                background-color: black;
+              }
+
+              p {
+                width: 98%;
+                border: 0;
+                padding-top: 10px;
+                text-align: right;
+                color: white;
+                background-color: black;
+              }
+
+              img {
+                width: 100%;
+                height: 100%;
+              }
+
+              .close {
+                padding: 10px;
+                font-size: 15pt;
+                text-align: right;
+                color: white;
+                background-color: black;
+              }
+            }
+
+            .imgPopUpOFF {
+              display: none;
+            }
+
             .reviewImg {
               width: 100px;
               height: 100px;

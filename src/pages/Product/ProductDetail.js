@@ -9,6 +9,7 @@ class ProductDetail extends Component {
     this.state = {
       productData: [],
       classON: false,
+      imgClick: false,
       quantity: 1,
     };
   }
@@ -23,15 +24,9 @@ class ProductDetail extends Component {
       );
   }
 
-  GoodToKnowBtnToggle = () => {
-    const { classON } = this.state;
-    this.setState({
-      classON: !classON,
-    });
-  };
-
   reviewAverageToStars = average => {
     switch (average) {
+      // Number.parseInt(average);
       case 1:
         return '★';
         break;
@@ -53,11 +48,19 @@ class ProductDetail extends Component {
     }
   };
 
+  GoodToKnowBtnToggle = () => {
+    const { classON } = this.state;
+    this.setState({
+      classON: !classON,
+    });
+  };
+
   handleQuantity = e => {
     e.preventDefault();
     const { className } = e.target;
     const { quantity } = this.state;
     if (className === 'countPlus') {
+      //10개 이상은 구매 못하게
       this.setState(state => {
         return { quantity: state.quantity + 1 };
       });
@@ -72,14 +75,37 @@ class ProductDetail extends Component {
     }
   };
 
-  // handleMinusQuantity = () => {
-  //   this.setState(state => {
-  //     return { quantity: state.quantity - 1 };
-  //   });
+  reviewImgClick = img => {
+    const { imgClick } = this.state;
+    this.setState({
+      imgClick: !imgClick,
+    });
+
+    console.log(img);
+  };
+
+  // goToCart = () => {
+  //   fetch('http://10.58.4.36:8000/users/cart', {
+  //     method: 'POST',
+  //     body: JSON.stringify({
+  //       BACK_itemOptionID: this.state.productData.options.option_id,
+  //       BACK_quantity: this.state.quantity,
+  //     }),
+  //   })
+  //     .then(response => response.json())
+  //     .then(response => {
+  //       if (response.token) {
+  //         localStorage.setItem('token', response.token);
+  //         alert('장바구니에 담겼습니다');
+  //         this.props.history.push('/Cart.js');
+  //       } else {
+  //         alert('다시 시도해 주세요');
+  //       }
+  //     });
   // };
 
   render() {
-    const { productData, classON, quantity } = this.state;
+    const { productData, classON, imgClick, quantity } = this.state;
     return (
       <section className="productDetail">
         <article className="productInfo">
@@ -160,7 +186,9 @@ class ProductDetail extends Component {
               </span>
             </div>
             <div className="btnList">
-              <button className="cartBtn">장바구니</button>
+              <button className="cartBtn" onClick={this.goToCart}>
+                장바구니
+              </button>
               <button className="buyBtn">구매하기</button>
             </div>
           </div>
@@ -173,6 +201,18 @@ class ProductDetail extends Component {
               <h2 className="photoListText">포토리뷰 모아보기</h2>
               <div className="photoImgList">
                 <span className="photoWrap">
+                  <div className={imgClick ? 'imgPopUpON' : 'imgPopUpOFF'}>
+                    <h2 className="imgHeader">
+                      훈훈한 회원님들의 훈훈한 포토리뷰
+                    </h2>
+                    <img src={this.reviewImgClick} />
+                    <p
+                      className={imgClick ? 'imgPopUpON' : 'imgPopUpOFF'}
+                      onClick={this.reviewImgClick}
+                    >
+                      닫기
+                    </p>
+                  </div>
                   {productData.review_images &&
                     productData.review_images.map((img, idx) => (
                       <img
@@ -180,6 +220,7 @@ class ProductDetail extends Component {
                         key={idx}
                         className="reviewImg"
                         alt="reviewImg"
+                        onClick={() => this.reviewImgClick(img)}
                       />
                     ))}
                 </span>
