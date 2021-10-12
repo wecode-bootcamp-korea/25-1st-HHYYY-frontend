@@ -1,0 +1,37 @@
+.addCart {
+  th {
+    padding: 15px 0;
+    border-bottom: 1px solid #e7e7e7;
+    font-weight: normal;
+    font-size: 14px;
+    color: #8f8f8f;
+  }
+
+  img {
+    padding: 15px;
+    width: 230px;
+    height: 200px;
+  }
+
+  tbody {
+    tr {
+      td {
+        align-items: center;
+        padding: 15px 0;
+        border-bottom: 1px solid #e7e7e7;
+        font-weight: normal;
+        color: #8f8f8f;
+      }
+      .checkBox {
+        padding: 20%;
+        padding-top: 33px;
+        vertical-align: top;
+        text-align: center;
+      }
+      .productCount {
+        width: 44px;
+        height: 33px;
+      }
+    }
+  }
+}

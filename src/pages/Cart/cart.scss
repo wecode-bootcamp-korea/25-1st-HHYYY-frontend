@@ -1,0 +1,206 @@
+.cart {
+  height: 100%;
+
+  header {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 50px;
+    padding: 50px;
+
+    h1 {
+      color: #000;
+      font-size: 42px;
+      font-weight: bold;
+    }
+
+    .orderProgress {
+      display: flex;
+      justify-content: center;
+      padding: 30px 0 0 35px;
+      font-size: 16px;
+    }
+
+    span {
+      padding: 0 20px 0 0;
+    }
+
+    .inProgress {
+      color: #333;
+      font-weight: bold;
+    }
+
+    .outProgress {
+      font-weight: normal;
+      color: #acacac;
+    }
+  }
+
+  .orderPage {
+    margin: 0 50px;
+    padding: 0 50px;
+  }
+
+  .emptyCart {
+    padding-bottom: 15px;
+    color: #000;
+    font-size: 28px;
+    font-weight: normal;
+  }
+
+  table {
+    height: 180%;
+    width: 100%;
+    border-bottom: 1px solid #e7e7e7;
+    border-top: 1px solid #000;
+
+    td {
+      text-align: center;
+      font-size: 22px;
+      color: #333;
+      height: 200px;
+      vertical-align: middle;
+
+      strong {
+        font-size: 17px;
+      }
+
+      .deliveryFee {
+        display: block;
+        font-size: 14px;
+        font-family: 'notokrR';
+        color: #acacac;
+      }
+    }
+
+    .productSpec {
+      display: inline-flex;
+      align-items: center;
+      width: 100%;
+
+      a {
+        text-decoration: none;
+        font-size: 18px;
+        text-align: left;
+        font-family: 'notokrR';
+        color: #333;
+      }
+
+      p {
+        padding-top: 10px;
+        text-align: left;
+        font-size: 16px;
+        font-family: 'notokrR';
+        color: #8f8f8f;
+      }
+    }
+
+    .productPrice,
+    .totalPrice {
+      padding: 20px;
+      font-size: 16px;
+      font-weight: normal;
+      font-family: 'notokrR';
+      color: #333;
+    }
+
+    .countBox {
+      display: inline-block;
+      border: 1px solid #e7e7e7;
+      width: 110px;
+
+      button {
+        border: none;
+        background: white;
+        height: 40px;
+      }
+
+      input {
+        border: none;
+        height: 40px;
+        text-align: center;
+        width: 40%;
+      }
+    }
+  }
+
+  .priceBox {
+    margin: 0 50px;
+    padding: 0 50px;
+    text-align: center;
+
+    p {
+      padding: 20px;
+      background: #f2f2f2;
+      font-size: 18px;
+
+      strong {
+        font-weight: bold;
+      }
+
+      em {
+        font-style: normal;
+        padding: 20px;
+        padding-right: 20px;
+        font-weight: bold;
+      }
+
+      span {
+        font-size: 30px;
+      }
+    }
+  }
+
+  .CartBtnBox {
+    margin: 0 50px 50px;
+    padding: 0 50px;
+
+    .deleteProduct {
+      margin: 20px 0 0;
+      display: inline-block;
+      width: 100%;
+
+      .deleteBtn {
+        margin: 0 5px;
+        background: none;
+        border: none;
+        border-bottom: 1px solid #8f8f8f;
+        font-size: 13px;
+      }
+    }
+
+    .decideBtns {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .deco {
+      margin-right: 20px;
+      border: 1px solid #000;
+      padding: 20px;
+      font-size: 16px;
+      height: 50px;
+      width: 250px;
+      line-height: 0;
+    }
+
+    .goOnShop {
+      background-color: white;
+
+      a {
+        text-decoration: none;
+        color: black;
+      }
+    }
+
+    .orderBtn {
+      color: white;
+      background-color: black;
+
+      a {
+        text-decoration: none;
+        color: white;
+      }
+    }
+  }
+}
