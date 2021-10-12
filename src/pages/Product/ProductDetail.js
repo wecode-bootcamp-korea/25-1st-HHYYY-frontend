@@ -9,6 +9,7 @@ class ProductDetail extends Component {
     this.state = {
       productData: [],
       classON: false,
+      quantity: 1,
     };
   }
 
@@ -52,8 +53,33 @@ class ProductDetail extends Component {
     }
   };
 
+  handleQuantity = e => {
+    e.preventDefault();
+    const { className } = e.target;
+    const { quantity } = this.state;
+    if (className === 'countPlus') {
+      this.setState(state => {
+        return { quantity: state.quantity + 1 };
+      });
+    } else if (className === 'countMinus') {
+      if (quantity === 1) {
+        alert('1개 이하는 주문할 수 없습니다');
+        return;
+      }
+      this.setState(state => {
+        return { quantity: state.quantity - 1 };
+      });
+    }
+  };
+
+  // handleMinusQuantity = () => {
+  //   this.setState(state => {
+  //     return { quantity: state.quantity - 1 };
+  //   });
+  // };
+
   render() {
-    const { productData, classON } = this.state;
+    const { productData, classON, quantity } = this.state;
     return (
       <section className="productDetail">
         <article className="productInfo">
@@ -108,12 +134,21 @@ class ProductDetail extends Component {
                   <span className="itemCountBox">
                     <button
                       className="countMinus"
-                      onClick={this.handleQuantity}
+                      onClick={e => this.handleQuantity(e)}
                     >
                       -
                     </button>
-                    <input className="productCount" name="count" value="1" />
-                    <button className="countPlus">+</button>
+                    <input
+                      className="productCount"
+                      name="count"
+                      value={quantity}
+                    />
+                    <button
+                      className="countPlus"
+                      onClick={e => this.handleQuantity(e)}
+                    >
+                      +
+                    </button>
                   </span>
                 </li>
               </ul>
