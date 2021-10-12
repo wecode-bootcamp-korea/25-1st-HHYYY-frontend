@@ -38,9 +38,18 @@ class SignUpForm extends Component {
     const checkSpecial = /[~!@#$%^&*()_+|<>?:{}]/;
     const checkNumber = /[0-9]/;
 
-    const gumsa = emailVal.includes('@') && memNmVal.length > 0;
+    const check =
+      emailVal.includes('@') &&
+      memPwVal.length >= 8 &&
+      memPwVal === memPwCheckVal &&
+      memPwVal.test(checkEng) &&
+      memPwVal.test(checkSpecial) &&
+      memPwVal.test(checkNumber) &&
+      memNmVal &&
+      addressVal &&
+      cellphoneVal.length === 11;
 
-    this.setState({ isBtnEnabled: gumsa });
+    this.setState({ isBtnEnabled: check });
   };
 
   handleSignUp = () => {
@@ -137,7 +146,7 @@ class SignUpForm extends Component {
                           type="password"
                           className="text"
                           name="memPwVal"
-                          // autoComplete="off"
+                          autoComplete="off"
                           value={memPwVal}
                           onChange={this.handleInput}
                         ></input>
@@ -157,7 +166,7 @@ class SignUpForm extends Component {
                           type="password"
                           className="text check-id"
                           name="memPwCheckVal"
-                          // autoComplete="off"
+                          autoComplete="off"
                           value={memPwCheckVal}
                           onChange={this.handleInput}
                         ></input>
