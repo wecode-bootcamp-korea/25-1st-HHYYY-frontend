@@ -7,6 +7,7 @@ class OrderTable extends Component {
     super(props);
     this.state = {
       cartList: [],
+      isCheckBox: false,
     };
   }
 
@@ -32,7 +33,7 @@ class OrderTable extends Component {
 
   render() {
     const { cartList } = this.state;
-    const { total_price, shipping } = cartList;
+    // const { total_price, shipping } = cartList;
     return (
       <>
         <section className="orderPage">
@@ -75,9 +76,10 @@ class OrderTable extends Component {
         <section className="priceBox">
           <div className="totalPrice">
             <p>
-              총 0 개의 금액 ₩ <strong>{total_price}</strong> + 배송비 ₩&nbsp;
-              <strong>{shipping}</strong> = <em>총 주문금액 </em>
-              <span>₩ 0</span>
+              총 0 개의 금액 ₩ <strong>500,000</strong> + 배송비 ₩&nbsp;
+              <strong>2,500</strong> = <em>총 주문금액 </em>
+              <span>₩ </span>
+              <span>525,000</span>
             </p>
           </div>
         </section>

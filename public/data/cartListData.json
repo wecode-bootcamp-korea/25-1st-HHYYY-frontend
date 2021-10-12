@@ -17,7 +17,7 @@
       "quantity": 3,
       "size": 190,
       "product_price": "62,000",
-      "image": "라떼 이미지",
+      "image": "/images/productImg/secondimg.png",
       "price": "25,000"
     },
     {
@@ -27,7 +27,7 @@
       "quantity": 1,
       "size": 50,
       "product_price": "18,000",
-      "image": "허브티 이미지",
+      "image": "/images/productImg/third.jpeg",
       "price": "29,000"
     }
   ],

@@ -15,7 +15,6 @@ class EmptyCart extends Component {
                   <td>장바구니에 담겨있는 상품이 없습니다.</td>
                 </tr>
               </thead>
-              <tbody></tbody>
             </table>
           </form>
         </section>

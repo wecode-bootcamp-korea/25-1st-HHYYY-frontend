@@ -39,7 +39,8 @@ class TableBody extends Component {
           <strong>{itemData.product_price}</strong>
         </td>
         <td>
-          <div style={{ width: '40px', height: '100px' }}></div>
+          &nbsp;
+          {/* <div style={{ width: '40px', height: '100px' }}></div> */}
         </td>
         <td>
           <strong>{itemData.price}</strong>
