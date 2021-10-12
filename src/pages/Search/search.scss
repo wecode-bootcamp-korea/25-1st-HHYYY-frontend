@@ -13,10 +13,14 @@
     font-size: 22px;
     text-align: center;
     color: #fff;
+
+    i {
+      border: none;
+    }
   }
 
-  .saerchBtn {
-    width: 60%;
-    height: 77px;
+  .searchBtn {
+    border: none;
+    background-color: white;
   }
 }
