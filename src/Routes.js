@@ -10,7 +10,7 @@ import Signup from './pages/Users/Signup/Signup';
 import Signin from './pages/Users/Signin/Signin';
 import Cart from './pages/Cart/Cart';
 import OrderComplete from './pages/Cart/OrderComplete';
-import NotFound from './pages/NotFound';
+import NotFound from './pages/Error/NotFound';
 import Footer from './components/Footer/Footer';
 
 class Routes extends Component {

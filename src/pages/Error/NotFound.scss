@@ -1,0 +1,28 @@
+@import '../../styles/variable.scss';
+
+.wrap {
+  padding: 50px;
+
+  .notFound {
+    @include flex-center;
+    flex-direction: column;
+    height: 900px;
+    text-align: center;
+    color: white;
+    background-color: black;
+
+    .numberWrap {
+      @include flex-center;
+      width: 90%;
+      height: 300px;
+      font-size: 150pt;
+      font-weight: bold;
+    }
+
+    .numberText {
+      margin-top: 50px;
+      font-size: 30pt;
+      line-height: 50px;
+    }
+  }
+}
