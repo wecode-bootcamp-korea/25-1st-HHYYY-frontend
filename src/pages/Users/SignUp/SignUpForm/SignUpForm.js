@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router';
 import './SignupForm.scss';
 
 class SignupForm extends Component {
@@ -20,33 +21,10 @@ class SignupForm extends Component {
     this.setState({
       [name]: value,
     });
-
-    this.handleFunction();
-  };
-
-  handleFunction = () => {
-    const { emailVal, memNmVal, memPwVal, memPwCheckVal, cellphoneVal } =
-      this.state;
-
-    const checkEng = /[a-z|A-Z]/;
-    const checkSpecial = /[~!@#$%^&*()_+|<>?:{}]/;
-    const checkNumber = /[0-9]/;
-
-    const check =
-      emailVal.includes('@') &&
-      memPwVal.length >= 8 &&
-      memPwVal === memPwCheckVal &&
-      checkEng.test(memPwVal) &&
-      checkSpecial.test(memPwVal) &&
-      checkNumber.test(memPwVal) &&
-      memNmVal.length >= 1 &&
-      cellphoneVal.length === 11;
-
-    this.setState({ isBtnEnabled: check });
   };
 
   handleSignUp = () => {
-    fetch('http://172.30.1.58:8000/users/signup', {
+    fetch('http://10.58.5.82:8000/users/signup', {
       method: 'POST',
       body: JSON.stringify({
         email: this.state.emailVal,
@@ -58,8 +36,7 @@ class SignupForm extends Component {
     })
       .then(response => response.json())
       .then(response => {
-        if (response.token) {
-          localStorage.setItem('token', response.token);
+        if (response) {
           alert('회원 가입을 축하드립니다.');
           this.props.history.push('/signin');
         } else {
@@ -71,7 +48,6 @@ class SignupForm extends Component {
   render() {
     //회원가입 유효성 검사
     const {
-      isBtnEnabled,
       emailVal,
       memNmVal,
       memPwVal,
@@ -79,6 +55,17 @@ class SignupForm extends Component {
       cellphoneVal,
       addressVal,
     } = this.state;
+
+    const checkEng = /[a-z|A-Z]/;
+    const checkSpecial = /[~!@#$%^&*()_+|<>?:{}]/;
+    const checkNumber = /[0-9]/;
+
+    const isBtnEnabled =
+      emailVal.includes('@') &&
+      memPwVal.length >= 8 &&
+      checkEng.test(memPwVal) &&
+      checkSpecial.test(memPwVal) &&
+      checkNumber.test(memPwVal);
 
     return (
       <div className="content">
@@ -124,7 +111,7 @@ class SignupForm extends Component {
                           value={emailVal}
                           onChange={this.handleInput}
                         ></input>
-                        <div id="email-error" class="error">
+                        <div id="email-error" className="error">
                           이메일을 정확하게 입력해주세요.
                         </div>
                       </td>
@@ -143,7 +130,7 @@ class SignupForm extends Component {
                           value={memPwVal}
                           onChange={this.handleInput}
                         ></input>
-                        <div id="memPw-error" class="error">
+                        <div id="memPw-error" className="error">
                           최소 8 이상, 영문, 숫자, 특수문자만 입력하실 수
                           있습니다.
                         </div>
@@ -163,7 +150,7 @@ class SignupForm extends Component {
                           value={memPwCheckVal}
                           onChange={this.handleInput}
                         ></input>
-                        <div id="memPwCheck-error" class="error">
+                        <div id="memPwCheck-error" className="error">
                           비밀번호가 서로 다릅니다.
                         </div>
                       </td>
@@ -221,6 +208,7 @@ class SignupForm extends Component {
                   type="button"
                   className={isBtnEnabled ? 'activeBtn' : 'disableBtn'}
                   onClick={this.handleSignUp}
+                  disabled={!isBtnEnabled}
                 >
                   <em>회원가입</em>
                 </button>
@@ -233,4 +221,4 @@ class SignupForm extends Component {
   }
 }
 
-export default SignupForm;
+export default withRouter(SignupForm);
