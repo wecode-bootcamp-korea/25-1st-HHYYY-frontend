@@ -231,7 +231,9 @@ class ProductDetail extends Component {
             <div className="reviewCountWrap">
               <ul className="productScore">
                 <li className="scoreText">리뷰 평점</li>
-                <li className="score">{productData.rating_average}</li>
+                <li className="score">
+                  {Math.floor(productData.rating_average)}
+                </li>
                 <li className="scoreStars">
                   {this.reviewAverageToStars(productData.rating_average)}
                 </li>
