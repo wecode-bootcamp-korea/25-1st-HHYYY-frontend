@@ -67,6 +67,16 @@ class SignupForm extends Component {
       checkSpecial.test(memPwVal) &&
       checkNumber.test(memPwVal);
 
+    const isEmailOkay = emailVal.includes('@');
+
+    const isPwOkay =
+      memPwVal.length >= 8 &&
+      checkEng.test(memPwVal) &&
+      checkSpecial.test(memPwVal) &&
+      checkNumber.test(memPwVal);
+
+    const isPwSame = memPwVal === memPwCheckVal;
+
     return (
       <div className="content">
         <div className="join">
@@ -111,9 +121,11 @@ class SignupForm extends Component {
                           value={emailVal}
                           onChange={this.handleInput}
                         ></input>
-                        <div id="email-error" className="error">
-                          이메일을 정확하게 입력해주세요.
-                        </div>
+                        {emailVal && !isEmailOkay && (
+                          <div id="email-error" className="error">
+                            이메일을 정확하게 입력해주세요.
+                          </div>
+                        )}
                       </td>
                     </tr>
 
@@ -130,10 +142,12 @@ class SignupForm extends Component {
                           value={memPwVal}
                           onChange={this.handleInput}
                         ></input>
-                        <div id="memPw-error" className="error">
-                          최소 8 이상, 영문, 숫자, 특수문자만 입력하실 수
-                          있습니다.
-                        </div>
+                        {memPwVal && !isPwOkay && (
+                          <div id="memPw-error" className="error">
+                            최소 8 이상, 영문, 숫자, 특수문자만 입력하실 수
+                            있습니다.
+                          </div>
+                        )}
                       </td>
                     </tr>
 
@@ -150,9 +164,11 @@ class SignupForm extends Component {
                           value={memPwCheckVal}
                           onChange={this.handleInput}
                         ></input>
-                        <div id="memPwCheck-error" className="error">
-                          비밀번호가 서로 다릅니다.
-                        </div>
+                        {memPwCheckVal && !isPwSame && (
+                          <div id="memPwCheck-error" className="error">
+                            비밀번호가 서로 다릅니다.
+                          </div>
+                        )}
                       </td>
                     </tr>
 
