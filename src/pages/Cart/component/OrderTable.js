@@ -72,11 +72,7 @@ class OrderTable extends Component {
                 <tr>
                   <th width="10%">
                     <span>
-                      <input
-                        className="checkInput"
-                        type="checkbox"
-                        onClick={e => this.inputClick(e)}
-                      ></input>
+                      <input className="checkInput" type="checkbox" />
                     </span>
                   </th>
                   <th width="40%">제품정보</th>
