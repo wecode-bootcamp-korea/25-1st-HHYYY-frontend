@@ -1,0 +1,24 @@
+.listCategoryWrap {
+  width: 90%;
+  margin-top: 50px;
+
+  .categoryName {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  .listCategory {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    border: 1px solid #bdbdbd;
+    text-decoration: none !important;
+
+    .list {
+      margin: 0 auto;
+      text-decoration: none;
+    }
+  }
+}

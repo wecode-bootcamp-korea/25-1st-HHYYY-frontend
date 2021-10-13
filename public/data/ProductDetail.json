@@ -1,0 +1,24 @@
+{
+  "product_info": {
+    "id": 2,
+    "name": "딸기비누",
+    "thumbnail_url": " https://images.unsplash.com/photo-1610935591451-8a456e1b1d41?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80",
+    "options": [
+      {
+        "option_id": 2,
+        "price": 7000,
+        "size": 50
+      }
+    ],
+    "tags": ["딸기향가득", "사람들이좋아하는향"],
+    "detail_images": [],
+    "rating_average": 3.5,
+    "review_count": 5,
+    "photo_review_count": 5,
+    "review_images": [
+      "https://www.lush.co.kr/data/plus_review/1000001455/t/square_79d47080c8b7d89d",
+      "https://www.lush.co.kr/data/plus_review/1000001455/t/square_d7f8ca15d1bfd65a",
+      "https://www.lush.co.kr/data/plus_review/1000001455/t/square_8095da6f27a0aa22"
+    ]
+  }
+}

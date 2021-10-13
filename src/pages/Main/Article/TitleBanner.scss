@@ -1,0 +1,32 @@
+.titleBanner {
+  position: relative;
+  height: 580px;
+  text-align: center;
+  background-color: #e6eef2;
+
+  .titleText01 {
+    position: absolute;
+    top: 200px;
+    left: 500px;
+
+    h2 {
+      font-size: 50pt;
+      font-weight: bold;
+
+      .strawberry {
+        color: #f15f5f;
+      }
+    }
+
+    .smallText {
+      margin-top: 20px;
+      text-align: left;
+      font-size: 30pt;
+    }
+  }
+
+  .titleBannerImg {
+    width: 1920px;
+    min-height: 580px;
+  }
+}

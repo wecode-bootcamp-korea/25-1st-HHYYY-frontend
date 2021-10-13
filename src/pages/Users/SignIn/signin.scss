@@ -1,0 +1,67 @@
+.Signin {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 50px;
+  padding: 20px;
+  width: 90%;
+  height: 100%;
+
+  .subject {
+    padding: 50px;
+
+    h1 {
+      font-size: 28px;
+      font-weight: bold;
+    }
+  }
+
+  .signinBox {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    width: 100%;
+
+    form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100%;
+
+      .siginBtn {
+        background-color: black;
+        color: white;
+        font-size: 16px;
+        font-weight: normal;
+        line-height: 4%;
+        height: 50px;
+        width: 320px;
+      }
+
+      .signup {
+        padding: 20px;
+        border: none;
+        background-color: white;
+
+        a {
+          text-decoration: none;
+          font-size: 14px;
+          color: #8f8f8f;
+        }
+      }
+    }
+
+    .idInput,
+    .pwInput {
+      display: flex;
+      margin: 20px;
+      height: 50px;
+      width: 320px;
+      text-align: center;
+      color: #8c8c8c;
+      font-size: 16px;
+    }
+  }
+}
