@@ -1,7 +1,7 @@
-/* eslint-disable no-lone-blocks */
 import React, { Component } from 'react';
 import MiddleHeader from './Components/ProductDetail/MiddleHeader';
 import GoodToKnow from './Components/ProductDetail/GoodToKnow';
+import PhotoReviewWrap from './Components/ProductDetail/PhotoReviewWrap';
 import './ProductDetail.scss';
 
 class ProductDetail extends Component {
@@ -12,6 +12,7 @@ class ProductDetail extends Component {
       classON: false,
       imgClick: false,
       quantity: 1,
+      photoReviewData: [],
     };
   }
 
@@ -79,6 +80,14 @@ class ProductDetail extends Component {
     this.setState({
       imgClick: !imgClick,
     });
+
+    fetch('/data/ReviewData.json')
+      .then(res => res.json())
+      .then(reviewInfo =>
+        this.setState({
+          photoReviewData: reviewInfo.review_info,
+        })
+      );
   };
 
   // goToCart = () => {
@@ -102,7 +111,9 @@ class ProductDetail extends Component {
   // };
 
   render() {
-    const { productData, classON, imgClick, quantity } = this.state;
+    const { productData, classON, imgClick, quantity, photoReviewData } =
+      this.state;
+    console.log(photoReviewData);
     return (
       <section className="productDetail">
         <article className="productInfo">
@@ -179,7 +190,7 @@ class ProductDetail extends Component {
             <div className="itemPrice">
               <span className="howMuch">총 합계 금액</span>
               <span className="allPrice">
-                ₩{' '}
+                ₩&nbsp;
                 {productData.options && productData.options[0].price * quantity}
               </span>
             </div>
@@ -199,28 +210,20 @@ class ProductDetail extends Component {
               <h2 className="photoListText">포토리뷰 모아보기</h2>
               <div className="photoImgList">
                 <span className="photoWrap">
-                  <div className={imgClick ? 'imgPopUpON' : 'imgPopUpOFF'}>
-                    <h2 className="imgHeader">
-                      훈훈한 회원님들의 훈훈한 포토리뷰
-                    </h2>
-                    <img
-                      alt="photoReview_IMG"
-                      src="https://www.lush.co.kr/data/plus_review/1000001455/t/square_79d47080c8b7d89d"
-                    />
-                    <p
+                  <PhotoReviewWrap imgClick={imgClick} data={photoReviewData} />
+                  {/* <p
                       className={imgClick ? 'imgPopUpON' : 'imgPopUpOFF'}
                       onClick={this.reviewImgClick}
                     >
                       닫기
-                    </p>
-                  </div>
+                    </p> */}
                   {productData.review_images &&
                     productData.review_images.map((img, idx) => (
                       <img
+                        alt="reviewImg"
+                        className="reviewImg"
                         src={img}
                         key={idx}
-                        className="reviewImg"
-                        alt="reviewImg"
                         onClick={() => this.reviewImgClick(img)}
                       />
                     ))}
@@ -231,9 +234,7 @@ class ProductDetail extends Component {
             <div className="reviewCountWrap">
               <ul className="productScore">
                 <li className="scoreText">리뷰 평점</li>
-                <li className="score">
-                  {Math.floor(productData.rating_average)}
-                </li>
+                <li className="score">{productData.rating_average}</li>
                 <li className="scoreStars">
                   {this.reviewAverageToStars(productData.rating_average)}
                 </li>
@@ -341,4 +342,5 @@ const VEGAN_LIST = [
     imgSrc: '/images/product/vegan4.png',
   },
 ];
+
 export default ProductDetail;

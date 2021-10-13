@@ -30,8 +30,8 @@ class ProductCategory extends Component {
           </p>
           <img
             className="subImg"
-            src="./images/main/banner/middle/banner05.jpg"
             alt="product List img"
+            src="./images/main/banner/middle/banner05.jpg"
           />
         </div>
         <section className="productSection">

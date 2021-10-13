@@ -195,45 +195,88 @@
         }
 
         .photoImgList {
-          .photoWrap {
-            position: relative;
+          position: relative;
 
+          .photoWrap {
             .imgPopUpON {
               position: absolute;
-              width: 700px;
-              top: 1px;
+              width: 800px;
+              top: 100px;
               border: 1px solid #808080;
               z-index: 1;
               background-color: white;
 
-              .imgHeader {
-                padding: 30px;
-                font-size: 15pt;
+              .closeBtn {
+                padding: 5px 20px;
+                text-align: right;
+                font-size: 22pt;
+              }
+
+              .imgSection {
                 text-align: center;
-                color: white;
-                background-color: black;
+                background-color: #dddddd;
+
+                .photoReviewIMG {
+                  width: 70%;
+                }
               }
 
-              p {
-                width: 98%;
-                border: 0;
-                padding-top: 10px;
-                text-align: right;
-                color: white;
-                background-color: black;
-              }
+              .bottomWrap {
+                @include flex-center();
 
-              img {
-                width: 100%;
-                height: 100%;
-              }
+                .reviewUserInfo {
+                  display: inline-block;
+                  width: 18%;
 
-              .close {
-                padding: 10px;
-                font-size: 15pt;
-                text-align: right;
-                color: white;
-                background-color: black;
+                  .userName {
+                    padding-top: 35px;
+                    padding-right: 50px;
+                    text-align: center;
+                    font-size: 18pt;
+                  }
+
+                  .userStar {
+                    margin-bottom: 50px;
+                    padding-top: 20px;
+                    padding-right: 50px;
+                    font-size: 15pt;
+                  }
+                }
+
+                .reviewContentWrap {
+                  display: inline-block;
+                  width: 70%;
+                  padding: 10px;
+
+                  .reviewProductName {
+                    padding: 10px;
+                    border-bottom: 2px solid #dddddd;
+                    font-size: 15pt;
+                  }
+
+                  .reviewProductContent {
+                    padding: 20px 10px;
+                    font-weight: 20;
+                    border-bottom: 2px solid #dddddd;
+                  }
+
+                  .likeCount {
+                    padding: 10px;
+
+                    .countNumber {
+                      margin-right: 20px;
+                      font-size: 10pt;
+                    }
+
+                    .recommentBtn {
+                      width: 64px;
+                      height: 24px;
+                      border: 1px solid #e0e0e0;
+                      font-size: 13px;
+                      color: #333333;
+                    }
+                  }
+                }
               }
             }
 
