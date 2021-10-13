@@ -17,7 +17,7 @@ class ProductDetail extends Component {
   }
 
   componentDidMount() {
-    fetch('/data/ProductDetail.json')
+    fetch(`http://10.58.6.213:8000/products/${this.props.match.params.id}`)
       .then(res => res.json())
       .then(productInfo =>
         this.setState({
@@ -210,14 +210,33 @@ class ProductDetail extends Component {
               <h2 className="photoListText">포토리뷰 모아보기</h2>
               <div className="photoImgList">
                 <span className="photoWrap">
+                  <img
+                    alt="photoReview_IMG"
+                    className="photoReviewIMG"
+                    src={
+                      productData.review_images && productData.review_images[0]
+                    }
+                    onClick={this.reviewImgClick}
+                  />
+                  <img
+                    alt="photoReview_IMG"
+                    className="photoReviewIMG"
+                    src={
+                      productData.review_images && productData.review_images[1]
+                    }
+                    onClick={this.reviewImgClick}
+                  />
+                  <img
+                    alt="photoReview_IMG"
+                    className="photoReviewIMG"
+                    src={
+                      productData.review_images && productData.review_images[2]
+                    }
+                    onClick={this.reviewImgClick}
+                  />
+
                   <PhotoReviewWrap imgClick={imgClick} data={photoReviewData} />
-                  {/* <p
-                      className={imgClick ? 'imgPopUpON' : 'imgPopUpOFF'}
-                      onClick={this.reviewImgClick}
-                    >
-                      닫기
-                    </p> */}
-                  {productData.review_images &&
+                  {/* {productData.review_images &&
                     productData.review_images.map((img, idx) => (
                       <img
                         alt="reviewImg"
@@ -226,7 +245,7 @@ class ProductDetail extends Component {
                         key={idx}
                         onClick={() => this.reviewImgClick(img)}
                       />
-                    ))}
+                    ))} */}
                 </span>
               </div>
             </div>
@@ -272,7 +291,7 @@ class ProductDetail extends Component {
           </p>
           <img
             className="itemInfoImg"
-            src="http://img.lush.co.kr/product/bath/sakura_review.jpg"
+            src={productData.detail_images && productData.detail_images[0]}
             alt="itemIntroduce1"
           />
           <p className="textArea">
@@ -287,7 +306,7 @@ class ProductDetail extends Component {
 
           <img
             className="itemInfoImg"
-            src="http://img.lush.co.kr/product/bath/sakura_use.jpg"
+            src={productData.detail_images && productData.detail_images[1]}
             alt="itemIntroduce2"
           />
         </article>

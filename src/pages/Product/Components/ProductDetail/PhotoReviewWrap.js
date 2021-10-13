@@ -7,21 +7,16 @@ class PhotoReviewWrap extends Component {
       closeBtnOFF: false,
     };
   }
-
-  // clickCloseBtn = () => {
-  //   this.setState({});
-  // };
-
   render() {
     const { imgClick, data } = this.props;
     return (
       <article className={imgClick ? 'imgPopUpON' : 'imgPopUpOFF'}>
         <div className="imgSection">
-          <img
+          {/* <img
             className="photoReviewIMG"
             alt="photoReview_IMG"
             src={data.image}
-          />
+          /> */}
         </div>
         <div className="bottomWrap">
           <div className="reviewUserInfo">

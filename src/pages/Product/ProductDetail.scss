@@ -198,6 +198,12 @@
           position: relative;
 
           .photoWrap {
+            .photoReviewIMG {
+              width: 120px;
+              height: 120px;
+              margin-right: 10px;
+            }
+
             .imgPopUpON {
               position: absolute;
               width: 800px;
@@ -215,10 +221,6 @@
               .imgSection {
                 text-align: center;
                 background-color: #dddddd;
-
-                .photoReviewIMG {
-                  width: 70%;
-                }
               }
 
               .bottomWrap {
