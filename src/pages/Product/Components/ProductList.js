@@ -23,7 +23,7 @@ class ProductList extends Component {
 
 const COMMENT_LIST = [
   {
-    id: 1,
+    id: 27,
     name: '지훈님바보',
     thumbnail_image:
       'https://cdn.pixabay.com/photo/2016/11/26/12/52/bottle-1860617_1280.png',

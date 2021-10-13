@@ -11,7 +11,9 @@ class ProductCategory extends Component {
     };
   }
   componentDidMount() {
-    fetch('http://localhost:3000/data/ProductCategory.json')
+    fetch(
+      `http://localhost:3000/data/ProductCategory.json/${this.props.match.params.id}`
+    )
       .then(res => res.json())
       .then(data =>
         this.setState({

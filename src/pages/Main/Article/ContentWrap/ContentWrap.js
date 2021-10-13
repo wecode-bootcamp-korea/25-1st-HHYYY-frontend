@@ -15,10 +15,7 @@ class ContentWrap extends Component {
           </div>
         </header>
         <div className="bannerRolling">
-          <img
-            src="./images/main/banner/middle/pinkbeach.jpg"
-            alt="pink beach"
-          />
+          <img alt="pinkBeach" src="/images/main/banner/middle/pinkbeach.jpg" />
         </div>
       </article>
     );
@@ -27,7 +24,7 @@ class ContentWrap extends Component {
 
 const COMMENT_LIST = [
   {
-    id: 1,
+    id: 27,
     name: '지훈님바보',
     thumbnail_image:
       'https://cdn.pixabay.com/photo/2016/11/26/12/52/bottle-1860617_1280.png',
