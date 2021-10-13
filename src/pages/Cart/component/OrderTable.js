@@ -38,11 +38,6 @@ class OrderTable extends Component {
   //     });
   // }
 
-  // totalquantity = cartData => {
-  //   let quantity = cartData.cart_list[0].quantity;
-  //   console.log(quantity);
-  // };
-
   // 상품삭제
   // deleteAllHandler = () => {
   //   fetch('http://10.58.6.213:8080/carts', {
@@ -56,7 +51,9 @@ class OrderTable extends Component {
   // };
 
   render() {
-    const { cartList, productSpac } = this.state;
+    const { cartList } = this.state;
+    const { total_quantity, total_price, shipping, order_price } =
+      this.state.productSpac;
     // let totalquantity = cartList.quantity.map(function (num) {
     //   return cartList.quantity + cartList.quantity;
     // });
@@ -68,29 +65,36 @@ class OrderTable extends Component {
               <h2>제품</h2>
             </div>
             <table className="addCart">
+              <colgroup>
+                <col style={{ width: '10%' }}></col>
+                <col style={{ widows: '40%' }}></col>
+                <col style={{ widows: '15%' }}></col>
+                <col style={{ widows: '10%' }}></col>
+                <col style={{ widows: '7%' }}></col>
+                <col style={{ widows: '10%' }}></col>
+                <col style={{ widows: '10%' }}></col>
+              </colgroup>
               <thead>
                 <tr>
-                  <th width="10%">
+                  <th>
                     <span>
                       <input className="checkInput" type="checkbox" />
                     </span>
                   </th>
-                  <th width="40%">제품정보</th>
-                  <th width="15%">수량</th>
-                  <th width="10%">금액</th>
-                  <th width="7%">복지혜택</th>
-                  <th width="10%">합계금액</th>
-                  {/* <th width="10%">배송비</th> */}
+                  <th>제품정보</th>
+                  <th>수량</th>
+                  <th>금액</th>
+                  <th>복지혜택</th>
+                  <th>합계금액</th>
+                  <th>배송비</th>
                 </tr>
               </thead>
               <tbody>
-                {cartList.map(productData => {
-                  return (
-                    <tr className="tableBody" key={productData.cart_id}>
-                      <TableBody itemData={productData} />
-                    </tr>
-                  );
-                })}
+                {cartList.map(productData => (
+                  <tr className="tableBody" key={productData.cart_id}>
+                    <TableBody itemData={productData} />
+                  </tr>
+                ))}
               </tbody>
             </table>
           </form>
@@ -98,12 +102,11 @@ class OrderTable extends Component {
         <section className="priceBox">
           <div className="totalPrice">
             <p>
-              총{productSpac.total_quantity}
-              개의 금액 ₩<strong>{productSpac.total_price}</strong> + 배송비
-              ₩&nbsp;
-              <strong>{productSpac.shipping}</strong> =<em>총 주문금액 </em>
+              총 {total_quantity}
+              개의 금액 ₩<strong>{total_price}</strong> + 배송비 ₩&nbsp;
+              <strong>{shipping}</strong> =<em>총 주문금액 </em>
               <span>₩ </span>
-              <span>{productSpac.order_price}</span>
+              <span>{order_price}</span>
             </p>
           </div>
         </section>

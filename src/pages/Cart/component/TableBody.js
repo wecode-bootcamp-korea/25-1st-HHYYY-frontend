@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 
 class TableBody extends Component {
   render() {
@@ -14,7 +13,7 @@ class TableBody extends Component {
         <td className="productSpec">
           <img alt="productImg" src={itemData.product_image} />
           <div>
-            <Link to="#">{itemData.product_name}</Link>
+            {itemData.product_name}
             <p>{itemData.category_name}</p>
             <p>용량: {itemData.size}g</p>
           </div>
