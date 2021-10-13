@@ -60,7 +60,6 @@ class OrderTable extends Component {
     // let totalquantity = cartList.quantity.map(function (num) {
     //   return cartList.quantity + cartList.quantity;
     // });
-    console.log();
     return (
       <>
         <section className="orderPage">
