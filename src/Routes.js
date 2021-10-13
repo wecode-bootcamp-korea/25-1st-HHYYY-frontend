@@ -5,6 +5,7 @@ import Header from './components/Header/Header';
 import Main from './pages/Main/Main';
 import ProductCategory from './pages/Product/ProductCategory';
 import ProductDetail from './pages/Product/ProductDetail';
+import Reviews from './pages/Reviews/Reviews';
 import Search from './pages/Search/Search';
 import Signup from './pages/Users/Signup/Signup';
 import Signin from './pages/Users/Signin/Signin';
@@ -21,6 +22,7 @@ class Routes extends Component {
           <Route exact path="/main" component={Main} />
           <Route exact path="/product-category" component={ProductCategory} />
           <Route exact path="/product-detail" component={ProductDetail} />
+          <Route exact path="/reviews" component={Reviews} />
           <Route exact path="/search" component={Search} />
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/signin" component={Signin} />
