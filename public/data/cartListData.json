@@ -1,0 +1,36 @@
+{
+  "cart_list": [
+    {
+      "id": 1,
+      "product_name": "슬리피",
+      "category_name": "로션",
+      "quantity": 1,
+      "size": 95,
+      "product_price": "22,000",
+      "image": "/images/productImg/main2.png",
+      "price": "22,000"
+    },
+    {
+      "id": "cart_id_2",
+      "product_name": "아이스라떼",
+      "category_name": "커피",
+      "quantity": 3,
+      "size": 190,
+      "product_price": "62,000",
+      "image": "/images/productImg/secondimg.png",
+      "price": "25,000"
+    },
+    {
+      "id": "cart_id_3",
+      "product_name": "허브티",
+      "category_name": "티",
+      "quantity": 1,
+      "size": 50,
+      "product_price": "18,000",
+      "image": "/images/productImg/third.jpeg",
+      "price": "29,000"
+    }
+  ],
+  "total_price": "장바구니 총 가격",
+  "shipping": "배송비"
+}

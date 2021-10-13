@@ -1,0 +1,36 @@
+.myPageList {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid #f5f5f5;
+  width: 15%;
+  z-index: 2;
+  text-align: center;
+  background-color: white;
+
+  ul {
+    display: block;
+    width: 100%;
+  }
+
+  li {
+    padding: 15px;
+    border-bottom: 1px solid #f5f5f5;
+    width: 100%;
+
+    a {
+      text-decoration: none;
+      font-size: 13px;
+      color: black;
+    }
+
+    &:hover {
+      background-color: black;
+
+      a {
+        color: white;
+      }
+    }
+  }
+}

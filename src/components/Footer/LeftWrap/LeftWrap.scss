@@ -1,0 +1,58 @@
+.leftWrap {
+  font-weight: 300px;
+  padding-right: 25px;
+}
+
+.logo a {
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+}
+
+.serviceWrap {
+  padding-top: 55px;
+  color: white;
+
+  a {
+    color: white;
+    padding: 4px 0 2px 0;
+  }
+}
+
+.phoneLine {
+  padding: 4px 0;
+  line-height: 16px;
+}
+
+.corporation {
+  padding-top: 33px;
+  a {
+    color: white;
+    padding: 4px 0;
+  }
+}
+
+.serviceWrap,
+.corporation {
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.email {
+  padding: 4px 0;
+}
+
+.snsWrap {
+  margin-top: 36px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  i {
+    width: 60px;
+    height: 60px;
+    color: white;
+    font-size: 30px;
+  }
+}
