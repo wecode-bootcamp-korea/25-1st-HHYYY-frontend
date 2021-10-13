@@ -18,14 +18,13 @@ class Cart extends Component {
   componentDidMount() {
     fetch('http://localhost:3000/data/cartListData.json')
       .then(res => res.json())
-      .then(cartList => {
-        this.setState({ isEmptyCart: cartList.cart_list });
+      .then(inCart => {
+        this.setState({ isEmptyCart: inCart.cart_list });
       });
   }
 
   render() {
     const { isEmptyCart } = this.state;
-    console.log(isEmptyCart.length);
     return (
       <>
         <article className="cart">

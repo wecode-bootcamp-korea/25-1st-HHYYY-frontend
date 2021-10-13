@@ -12,7 +12,7 @@ class TableBody extends Component {
           </span>
         </td>
         <td className="productSpec">
-          <img alt="productImg" src={itemData.image} />
+          <img alt="productImg" src={itemData.product_image} />
           <div>
             <Link to="#">{itemData.product_name}</Link>
             <p>{itemData.category_name}</p>
@@ -29,6 +29,7 @@ class TableBody extends Component {
               name="count"
               className="productCount"
               value={itemData.quantity}
+              readOnly
             />
             <button>
               <i className="fas fa-plus fa-xs" />
@@ -38,17 +39,14 @@ class TableBody extends Component {
         <td>
           <strong className="productPrice">{itemData.product_price}</strong>
         </td>
-        <td>
-          &nbsp;
-          {/* <div style={{ width: '40px', height: '100px' }}></div> */}
-        </td>
+        <td>&nbsp;</td>
         <td>
           <strong className="totalPrice">{itemData.price}</strong>
         </td>
-        <td>
+        {/* <td>
           <span className="deliveryFee">₩ 2,500</span>
           <span className="deliveryFee">(택배)</span>
-        </td>
+        </td> */}
       </>
     );
   }
