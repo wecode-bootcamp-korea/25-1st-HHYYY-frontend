@@ -1,3 +1,4 @@
+/* eslint-disable no-lone-blocks */
 import React, { Component } from 'react';
 import MiddleHeader from './Components/ProductDetail/MiddleHeader';
 import GoodToKnow from './Components/ProductDetail/GoodToKnow';
@@ -53,14 +54,14 @@ class ProductDetail extends Component {
     e.preventDefault();
     const { className } = e.target;
     const { quantity } = this.state;
-    console.log(e.target);
+    console.log(quantity);
     if (className === 'countPlus') {
-      this.setState(state => {
-        return { quantity: state.quantity + 1 };
-      });
       {
-        quantity > 10 && alert('10개까지만 주문 가능합니다');
-        console.log(quantity);
+        quantity < 10
+          ? this.setState(state => {
+              return { quantity: state.quantity + 1 };
+            })
+          : alert('10개까지만 주문할 수 있습니다');
       }
     } else if (className === 'countMinus') {
       if (quantity === 1) {
