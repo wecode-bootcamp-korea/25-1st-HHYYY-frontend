@@ -12,9 +12,10 @@ class ProductCategory extends Component {
   }
 
   componentDidMount() {
-    fetch(
-      `http://10.58.6.213:8000/products?category=${this.props.match.params.id}&offset=0&limit=10`
-    )
+    fetch('/data/ProductCategory.json')
+      // fetch(
+      //   `http://10.58.6.213:8000/products?category=${this.props.match.params.id}&offset=0&limit=10`
+      // )
       .then(res => res.json())
       .then(listData =>
         this.setState({
