@@ -9,7 +9,7 @@ class FooterIcons extends Component {
           <li>
             <img
               className="fIconsV"
-              src="./images/footer/vegetarian.png"
+              src="/images/footer/vegetarian.png"
               title="Vegetarian"
               alt="Vegetarian"
             />
@@ -17,7 +17,7 @@ class FooterIcons extends Component {
           <li>
             <img
               className="fIconsEB"
-              src="./images/footer/ethical.png"
+              src="/images/footer/ethical.png"
               title="Ethical Buying"
               alt="Ethical Buying"
             />
@@ -25,7 +25,7 @@ class FooterIcons extends Component {
           <li>
             <img
               className="fIconsCF"
-              src="./images/footer/crueltyfree.png"
+              src="/images/footer/crueltyfree.png"
               title="Cruelty Free"
               alt="Cruelty Free"
             />
@@ -33,7 +33,7 @@ class FooterIcons extends Component {
           <li>
             <img
               className="fIconsFC"
-              src="./images/footer/fresh.png"
+              src="/images/footer/fresh.png"
               title="Freshest Cosmetics"
               alt="Freshest Cosmetics"
             />
@@ -41,7 +41,7 @@ class FooterIcons extends Component {
           <li>
             <img
               className="fIconsHM"
-              src="./images/footer/handmade.png"
+              src="/images/footer/handmade.png"
               title="Handmade"
               alt="Handmade"
             />
@@ -49,7 +49,7 @@ class FooterIcons extends Component {
           <li>
             <img
               className="fIconsNP"
-              src="./images/footer/nakedpackaging.png"
+              src="/images/footer/nakedpackaging.png"
               title="Naked Packaging"
               alt="Naked Packaging"
             />
