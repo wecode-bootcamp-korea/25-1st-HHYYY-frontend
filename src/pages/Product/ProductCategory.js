@@ -10,28 +10,30 @@ class ProductCategory extends Component {
       categoryInfo: [],
     };
   }
+
   componentDidMount() {
-    fetch('http://localhost:3000/data/ProductCategory.json')
+    fetch(
+      `http://10.58.6.213:8000/products?category=${this.props.match.params.id}&offset=0&limit=10`
+    )
       .then(res => res.json())
-      .then(data =>
+      .then(listData =>
         this.setState({
-          categoryInfo: data,
+          categoryInfo: listData,
         })
       );
   }
 
   render() {
+    const { categoryInfo } = this.state;
     return (
       <>
         <div className="categoryTitle">
-          <p className="subBigText">베스트</p>
-          <p className="subSmallText">
-            누구나 좋아하는 인기 제품을 만나 보세요!
-          </p>
+          <p className="subBigText">{categoryInfo.name}</p>
+          <p className="subSmallText">{categoryInfo.description}</p>
           <img
-            className="subImg"
             alt="product List img"
-            src="./images/main/banner/middle/banner05.jpg"
+            src={categoryInfo.category_image}
+            className="subImg"
           />
         </div>
         <section className="productSection">

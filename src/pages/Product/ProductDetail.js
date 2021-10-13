@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import MiddleHeader from './Components/ProductDetail/MiddleHeader';
 import GoodToKnow from './Components/ProductDetail/GoodToKnow';
+import PhotoReviewImg from './Components/ProductDetail/PhotoReviewImg';
 import PhotoReviewWrap from './Components/ProductDetail/PhotoReviewWrap';
 import './ProductDetail.scss';
 
@@ -9,15 +10,16 @@ class ProductDetail extends Component {
     super();
     this.state = {
       productData: [],
+      photoReviewData: [],
       classON: false,
       imgClick: false,
       quantity: 1,
-      photoReviewData: [],
     };
   }
 
   componentDidMount() {
-    fetch(`http://10.58.6.213:8000/products/${this.props.match.params.id}`)
+    fetch('/data/ProductDetail.json')
+      // fetch(`http://10.58.6.213:8000/products/${this.props.match.params.id}`)
       .then(res => res.json())
       .then(productInfo =>
         this.setState({
@@ -55,7 +57,6 @@ class ProductDetail extends Component {
     e.preventDefault();
     const { className } = e.target;
     const { quantity } = this.state;
-    console.log(quantity);
     if (className === 'countPlus') {
       {
         quantity < 10
@@ -75,19 +76,21 @@ class ProductDetail extends Component {
     }
   };
 
-  reviewImgClick = img => {
+  reviewImgClick = () => {
     const { imgClick } = this.state;
     this.setState({
       imgClick: !imgClick,
     });
 
     fetch('/data/ReviewData.json')
+      // fetch(`http://10.58.6.213:8000/review/${this.props.match.params.id}`)
       .then(res => res.json())
-      .then(reviewInfo =>
+      .then(info =>
         this.setState({
-          photoReviewData: reviewInfo.review_info,
+          photoReviewData: info.review_info[0],
         })
       );
+    // 사진 IMG 파일 클릭시, 사진 파일을 받아오는 API
   };
 
   // goToCart = () => {
@@ -113,7 +116,6 @@ class ProductDetail extends Component {
   render() {
     const { productData, classON, imgClick, quantity, photoReviewData } =
       this.state;
-    console.log(photoReviewData);
     return (
       <section className="productDetail">
         <article className="productInfo">
@@ -125,18 +127,12 @@ class ProductDetail extends Component {
             />
           </div>
           <div className="itemInfomation">
-            <article className="navigatorWrap">
-              <span className="whereIsIt">홈 {'>'} </span>
-              <span className="whereIsIt">샤워 {'>'} </span>
-              <span className="whereIsIt">솝</span>
-            </article>
             <header className="itemTitle">
               <h2 className="itemName">{productData.name}</h2>
               <p className="itemTag">
-                {productData.tags &&
-                  productData.tags.map(tag => {
-                    return `#${tag} `;
-                  })}
+                {productData.tags?.map(tag => {
+                  return `#${tag} `;
+                })}
               </p>
             </header>
             <div className="itemInfo">
@@ -210,42 +206,16 @@ class ProductDetail extends Component {
               <h2 className="photoListText">포토리뷰 모아보기</h2>
               <div className="photoImgList">
                 <span className="photoWrap">
-                  <img
-                    alt="photoReview_IMG"
-                    className="photoReviewIMG"
-                    src={
-                      productData.review_images && productData.review_images[0]
-                    }
-                    onClick={this.reviewImgClick}
+                  <PhotoReviewWrap
+                    imgClick={imgClick}
+                    reviewData={photoReviewData}
                   />
-                  <img
-                    alt="photoReview_IMG"
-                    className="photoReviewIMG"
-                    src={
-                      productData.review_images && productData.review_images[1]
-                    }
-                    onClick={this.reviewImgClick}
-                  />
-                  <img
-                    alt="photoReview_IMG"
-                    className="photoReviewIMG"
-                    src={
-                      productData.review_images && productData.review_images[2]
-                    }
-                    onClick={this.reviewImgClick}
-                  />
-
-                  <PhotoReviewWrap imgClick={imgClick} data={photoReviewData} />
-                  {/* {productData.review_images &&
-                    productData.review_images.map((img, idx) => (
-                      <img
-                        alt="reviewImg"
-                        className="reviewImg"
-                        src={img}
-                        key={idx}
-                        onClick={() => this.reviewImgClick(img)}
-                      />
-                    ))} */}
+                  {productData.review_images?.map(src => (
+                    <PhotoReviewImg
+                      imgSrc={src}
+                      popUpEvent={this.reviewImgClick}
+                    />
+                  ))}
                 </span>
               </div>
             </div>
@@ -332,7 +302,6 @@ class ProductDetail extends Component {
   }
 }
 
-// 상품정보가 아닌, 값이 바뀌지 않는 상수 데이터는 여기에다 호출하는게 맞는지? 아니면 Public/data에 json 파일로 따로 분리해주는게 맞는지?
 const VEGAN_LIST = [
   {
     id: 1,
