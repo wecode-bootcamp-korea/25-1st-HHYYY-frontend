@@ -25,8 +25,8 @@ class ProductDetail extends Component {
   }
 
   reviewAverageToStars = average => {
-    switch (average) {
-      // average.parseInt();
+    const num = Math.floor(average);
+    switch (num) {
       case 1:
         return '★';
       case 2:
@@ -55,10 +55,13 @@ class ProductDetail extends Component {
     const { quantity } = this.state;
     console.log(e.target);
     if (className === 'countPlus') {
-      //10개 이상은 구매 못하게
       this.setState(state => {
         return { quantity: state.quantity + 1 };
       });
+      {
+        quantity > 10 && alert('10개까지만 주문 가능합니다');
+        console.log(quantity);
+      }
     } else if (className === 'countMinus') {
       if (quantity === 1) {
         alert('1개부터 주문할 수 있습니다');
