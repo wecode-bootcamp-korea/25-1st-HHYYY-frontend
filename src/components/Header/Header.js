@@ -53,7 +53,9 @@ class Header extends Component {
                 <i className="fas fa-search" />
               </li>
               <li className="menuIconsList">
-                <i className="fas fa-shopping-bag" />
+                <Link to="/cart" className="cartLink">
+                  <i className="fas fa-shopping-bag" />
+                </Link>
               </li>
               <li
                 className="menuIconsList"
