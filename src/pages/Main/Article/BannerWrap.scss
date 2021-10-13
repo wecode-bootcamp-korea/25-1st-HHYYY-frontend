@@ -1,12 +1,21 @@
+@import '../../../styles/variable.scss';
+
+@mixin imgs {
+  width: 100%;
+  height: 100%;
+}
+
 .bannerWrap {
   display: inline-grid;
   grid-template-rows: repeat(2, 1fr);
   grid-template-columns: repeat(4, 1fr);
   width: 90%;
-  height: 560px;
-  background-color: red;
+  min-width: 1300px;
+  height: 600px;
+  z-index: -9999;
 
-  .banner1 {
+  .leftBanner {
+    @include flex-center();
     position: relative;
     grid-column-start: 1;
     grid-column-end: 3;
@@ -14,82 +23,116 @@
     grid-row-end: 3;
     overflow: hidden;
 
-    h2 {
+    .leftBanner_text {
       position: absolute;
       top: 50px;
-      right: 135px;
       font-weight: bold;
-      font-size: 40pt;
+      font-size: 30pt;
 
       .abocado {
         color: white;
         background-color: #8db72a;
       }
+
+      .piboo {
+        background-color: #e8bc3c;
+      }
     }
 
-    img {
+    .leftBanner_img {
       width: 100%;
     }
   }
 
-  .banner2 {
+  .rightBannerTop {
+    @include flex-center();
     position: relative;
     grid-column-start: 3;
     grid-column-end: 5;
     grid-row-start: 1;
     grid-row-end: 2;
 
-    h2 {
+    .rightBannerTop_text {
       position: absolute;
-      top: 50px;
-      right: 100px;
+      top: 40px;
       font-weight: bold;
-      font-size: 40pt;
+      font-size: 30pt;
     }
 
-    img {
-      width: 100%;
-      height: 100%;
+    .rightBannerTop_img {
+      @include imgs();
     }
   }
 
-  .banner3 {
+  .rightBannerBottom_left {
+    @include flex-center();
     position: relative;
     background-color: black;
 
-    h2 {
+    .rightBannerBottom_left_text {
       position: absolute;
       top: 70px;
-      right: 40px;
       text-align: center;
       font-weight: bold;
-      font-size: 60pt;
+      font-size: 40pt;
       color: white;
     }
 
-    .banner5 {
-      width: 100%;
-      height: 100%;
+    .rightBannerBottom_left_img {
+      @include imgs();
       opacity: 0.4;
     }
   }
 
-  .banner4 {
-    width: 100%;
+  .rightBannerBottom_right {
+    @include flex-center();
     position: relative;
+    width: 100%;
 
-    h2 {
+    .rightBannerBottom_right_text {
       position: absolute;
-      top: 200px;
-      right: 115px;
-      font-weight: bold;
-      font-size: 30pt;
+      top: 140px;
+      font-size: 25pt;
       color: #d8d8d8;
     }
 
-    img {
-      width: 100%;
-      height: 100%;
+    .rightBannerBottom_right_img {
+      @include imgs();
+    }
+  }
+}
+
+.newProductWrap {
+  display: flex;
+  justify-content: center;
+  width: 90%;
+  height: 600px;
+  margin: 300px 0;
+
+  .productText {
+    width: 380px;
+    height: 300px;
+    padding-top: 90px;
+
+    .productText_big_text {
+      font-weight: bold;
+      font-size: 30pt;
+    }
+
+    .productText_small_text {
+      margin-top: 30px;
+      float: right;
+      font-size: 15pt;
+    }
+  }
+
+  .productImg_longHair {
+    width: 380px;
+    height: 500px;
+
+    .productImg_longHair_img {
+      width: 93%;
+      margin-left: 10px;
     }
   }
 }
