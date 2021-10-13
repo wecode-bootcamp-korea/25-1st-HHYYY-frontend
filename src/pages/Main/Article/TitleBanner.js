@@ -2,12 +2,6 @@ import React, { Component } from 'react';
 import './TitleBanner.scss';
 
 class TitleBanner extends Component {
-  constructor() {
-    super();
-    this.state = {
-      imgCurrentNo: 0,
-    };
-  }
   render() {
     return (
       <div className="titleBanner">
