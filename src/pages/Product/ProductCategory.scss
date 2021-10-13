@@ -1,0 +1,45 @@
+.categoryTitle {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  font-family: 'Noto Sans KR', Malgun Gothic, '맑은 고딕', AppleGothic, Dotum,
+    '돋움', sans-serif;
+  background-color: black;
+
+  .subBigText {
+    position: absolute;
+    top: 150px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 68px;
+    letter-spacing: 0.5em;
+    text-indent: 0.5em;
+    color: #fff;
+    z-index: 999;
+  }
+
+  .subSmallText {
+    position: absolute;
+    top: 270px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 26px;
+    font-family: 'notokrL';
+    font-weight: 200;
+    letter-spacing: 0.2em;
+    text-indent: 0.2em;
+    color: #fff;
+  }
+
+  .subImg {
+    opacity: 0.4;
+  }
+}
+
+.productSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
