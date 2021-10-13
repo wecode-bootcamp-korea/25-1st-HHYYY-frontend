@@ -36,8 +36,8 @@ class ContentWrap extends Component {
         </header>
         <div className="bannerRolling">
           <img
-            src="./images/main/banner/middle/pinkbeach.jpg"
             alt="pink beach"
+            src="./images/main/banner/middle/pinkbeach.jpg"
           />
         </div>
       </article>
