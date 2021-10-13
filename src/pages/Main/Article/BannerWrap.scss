@@ -10,6 +10,7 @@
   grid-template-rows: repeat(2, 1fr);
   grid-template-columns: repeat(4, 1fr);
   width: 90%;
+  min-width: 1300px;
   height: 600px;
   z-index: -9999;
 
@@ -97,6 +98,41 @@
 
     .rightBannerBottom_right_img {
       @include imgs();
+    }
+  }
+}
+
+.newProductWrap {
+  display: flex;
+  justify-content: center;
+  width: 90%;
+  height: 600px;
+  margin: 300px 0;
+
+  .productText {
+    width: 380px;
+    height: 300px;
+    padding-top: 90px;
+
+    .productText_big_text {
+      font-weight: bold;
+      font-size: 30pt;
+    }
+
+    .productText_small_text {
+      margin-top: 30px;
+      float: right;
+      font-size: 15pt;
+    }
+  }
+
+  .productImg_longHair {
+    width: 380px;
+    height: 500px;
+
+    .productImg_longHair_img {
+      width: 93%;
+      margin-left: 10px;
     }
   }
 }
