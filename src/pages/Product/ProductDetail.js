@@ -210,8 +210,9 @@ class ProductDetail extends Component {
                     imgClick={imgClick}
                     reviewData={photoReviewData}
                   />
-                  {productData.review_images?.map(src => (
+                  {productData.review_images?.map((src, idx) => (
                     <PhotoReviewImg
+                      key={idx}
                       imgSrc={src}
                       popUpEvent={this.reviewImgClick}
                     />
