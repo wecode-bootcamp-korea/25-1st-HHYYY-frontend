@@ -81,41 +81,41 @@ class ProductDetail extends Component {
     this.setState({
       imgClick: !imgClick,
     });
-
-    fetch('/data/ReviewData.json')
-      // fetch(`http://10.58.6.213:8000/review/${this.props.match.params.id}`)
+    fetch(`${API.BASE_URL}/reviews/${2}`)
       .then(res => res.json())
       .then(info =>
         this.setState({
-          photoReviewData: info.review_info[0],
+          photoReviewData: info.review_info,
         })
       );
     // 사진 IMG 파일 클릭시, 사진 파일을 받아오는 API
   };
 
-  // goToCart = () => {
-  //   fetch(`${API.CART}`, {
-  //     method: 'POST',
-  //     body: JSON.stringify({
-  //       BACK_itemOptionID: this.state.productData.options.option_id,
-  //       BACK_quantity: this.state.quantity,
-  //     }),
-  //   })
-  //     .then(response => response.json())
-  //     .then(response => {
-  //       if (response.token) {
-  //         localStorage.setItem('token', response.token);
-  //         alert('장바구니에 담겼습니다');
-  //         this.props.history.push('/Cart.js');
-  //       } else {
-  //         alert('다시 시도해 주세요');
-  //       }
-  //     });
-  // };
+  goToCart = () => {
+    fetch(`${API.CART}`, {
+      method: 'POST',
+      headers: {
+        Authorization: localStorage.getItem('token'),
+      },
+      body: JSON.stringify({
+        option_id: this.state.productData.options.option_id,
+        quantity: this.state.quantity,
+      }),
+    })
+      .then(response => response.json())
+      .then(response => {
+        if (response.token) {
+          alert('장바구니에 담겼습니다');
+        } else {
+          alert('다시 시도해 주세요');
+        }
+      });
+  };
 
   render() {
     const { productData, classON, imgClick, quantity, photoReviewData } =
       this.state;
+    console.log(photoReviewData);
     return (
       <section className="productDetail">
         <article className="productInfo">
@@ -194,7 +194,9 @@ class ProductDetail extends Component {
               <button className="cartBtn" onClick={this.goToCart}>
                 장바구니
               </button>
-              <button className="buyBtn">구매하기</button>
+              <button className="buyBtn" onClick={this.buyIt}>
+                구매하기
+              </button>
             </div>
           </div>
         </article>
