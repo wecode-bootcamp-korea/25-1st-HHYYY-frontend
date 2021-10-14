@@ -19,7 +19,7 @@ class OrderComplete extends Component {
           </header>
           <section className="orderComplete">
             <div className="lushLogo">
-              <img alt="LogoImg" src="/images/productImg/test.png" />
+              <img alt="LogoImg" src="/images/productImg/hhyyy2.jpeg" />
             </div>
             <div className="orderComment">
               <strong>주문이 완료되었습니다.</strong>
