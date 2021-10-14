@@ -1,3 +1,4 @@
+/* eslint-disable no-lone-blocks */
 import React, { Component } from 'react';
 import MiddleHeader from './Components/ProductDetail/MiddleHeader';
 import GoodToKnow from './Components/ProductDetail/GoodToKnow';
@@ -15,7 +16,6 @@ class ProductDetail extends Component {
       classON: false,
       imgClick: false,
       quantity: 1,
-      review: [],
     };
   }
 
@@ -25,7 +25,6 @@ class ProductDetail extends Component {
       .then(productInfo =>
         this.setState({
           productData: productInfo.product_info,
-          review: productInfo.product_info.photo_reviews,
         })
       );
   }
@@ -117,7 +116,7 @@ class ProductDetail extends Component {
   render() {
     const { productData, classON, imgClick, quantity, photoReviewData } =
       this.state;
-    console.log(this.state.review);
+    console.log(photoReviewData);
     return (
       <section className="productDetail">
         <article className="productInfo">
@@ -129,6 +128,13 @@ class ProductDetail extends Component {
             />
           </div>
           <div className="itemInfomation">
+            <article className="navigatorWrap">
+              <span className="whereIsIt">홈 {'>'} </span>
+              <span className="whereIsIt">
+                {productData.main_category_name} {'>'}{' '}
+              </span>
+              <span className="whereIsIt">{productData.sub_category_name}</span>
+            </article>
             <header className="itemTitle">
               <h2 className="itemName">{productData.name}</h2>
               <p className="itemTag">
@@ -214,10 +220,10 @@ class ProductDetail extends Component {
                     imgClick={imgClick}
                     reviewData={photoReviewData}
                   />
-                  {this.state.review?.map((photoData, idx) => (
+                  {productData.review_images?.map((src, idx) => (
                     <PhotoReviewImg
                       key={idx}
-                      imgSrc={photoData}
+                      imgSrc={src}
                       popUpEvent={this.reviewImgClick}
                     />
                   ))}
