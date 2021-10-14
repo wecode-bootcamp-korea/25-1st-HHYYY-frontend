@@ -7,7 +7,7 @@ import ProductDetail from './pages/Product/ProductDetail';
 import Search from './pages/Search/Search';
 import SearchResult from './pages/SearchResult/SearchResult';
 import Signup from './pages/Users/Signup/Signup';
-import Signin from './pages/Users/Signin/Signin';
+import Signin from './pages/Users/SignIn/SignIn';
 import Cart from './pages/Cart/Cart';
 import OrderComplete from './pages/Cart/OrderComplete';
 import NotFound from './pages/Error/NotFound';

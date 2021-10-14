@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import SignupForm from './SignupForm/SignupForm';
+import SignupForm from './SignUpForm/SignUpForm';
 import './Signup.scss';
 import { withRouter } from 'react-router-dom';
 
