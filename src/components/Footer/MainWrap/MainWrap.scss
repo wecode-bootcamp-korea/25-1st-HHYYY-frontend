@@ -1,24 +1,26 @@
 @import '../../../styles/variable.scss';
 
-.footerWrap {
-  width: 90%;
-  font-size: 14px;
-}
+.mainwrap {
+  .footerWrap {
+    width: 90%;
+    font-size: 14px;
+  }
 
-.footerLinks {
-  @include flex-space-between;
-}
+  .footerLinks {
+    @include flex-space-between;
+  }
 
-.copyright,
-.copy {
-  color: #535353;
-  font-weight: 300;
-}
+  .copyright,
+  .copy {
+    color: #535353;
+    font-weight: 300;
+  }
 
-.copyright {
-  padding-top: 69px;
-}
+  .copyright {
+    padding-top: 69px;
+  }
 
-.copy {
-  padding-top: 60px;
+  .copy {
+    padding-top: 60px;
+  }
 }
