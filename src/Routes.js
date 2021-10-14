@@ -6,8 +6,8 @@ import ProductCategory from './pages/Product/ProductCategory';
 import ProductDetail from './pages/Product/ProductDetail';
 import Search from './pages/Search/Search';
 import SearchResult from './pages/SearchResult/SearchResult';
-import Signup from './pages/Users/Signup/Signup';
-import Signin from './pages/Users/Signin/Signin';
+import SignUp from './pages/Users/SignUp/SignUp';
+import SignIn from './pages/Users/SignIn/SignIn';
 import Cart from './pages/Cart/Cart';
 import OrderComplete from './pages/Cart/OrderComplete';
 import NotFound from './pages/Error/NotFound';
@@ -28,8 +28,8 @@ class Routes extends Component {
           <Route exact path="/product-detail/:id" component={ProductDetail} />
           <Route exact path="/search" component={Search} />
           <Route exact path="/search-result" component={SearchResult} />
-          <Route exact path="/signup" component={Signup} />
-          <Route exact path="/signin" component={Signin} />
+          <Route exact path="/signup" component={SignUp} />
+          <Route exact path="/signin" component={SignIn} />
           <Route exact path="/cart" component={Cart} />
           <Route exact path="/order-complete" component={OrderComplete} />
           <Route path="*" component={NotFound} />

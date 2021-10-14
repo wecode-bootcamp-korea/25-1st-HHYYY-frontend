@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
-import SignupForm from './SignupForm/SignupForm';
-import './Signup.scss';
+import SignUpForm from './SignUpForm/SignUpForm';
+import './SignUp.scss';
 import { withRouter } from 'react-router-dom';
 
-class Signup extends Component {
+class SignUp extends Component {
   render() {
     return (
-      <div className="signup">
-        <SignupForm />
+      <div className="SignUp">
+        <SignUpForm />
       </div>
     );
   }
 }
 
-export default withRouter(Signup);
+export default withRouter(SignUp);

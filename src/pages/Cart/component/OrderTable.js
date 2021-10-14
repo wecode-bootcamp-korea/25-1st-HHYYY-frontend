@@ -85,7 +85,6 @@ class OrderTable extends Component {
                   <th>금액</th>
                   <th>복지혜택</th>
                   <th>합계금액</th>
-                  <th>배송비</th>
                 </tr>
               </thead>
               <tbody>

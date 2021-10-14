@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { API } from '../../../config';
-import SigninBox from './SigninBox';
+import SignInBox from './SignInBox';
 
 import './signin.scss';
 
-class Signin extends Component {
+class SignIn extends Component {
   constructor() {
     super();
     this.state = {
@@ -71,13 +71,13 @@ class Signin extends Component {
 
     return (
       <>
-        <article className="Signin">
+        <article className="SignIn">
           <div className="subject">
             <h1>로그인</h1>
           </div>
           <div className="signinBox">
             <form>
-              <SigninBox onChange={this.handleInput} />
+              <SignInBox onChange={this.handleInput} />
               <div>
                 <button
                   type="submit"
@@ -98,7 +98,7 @@ class Signin extends Component {
               </div>
               <div className="signup">
                 <button className="signup">
-                  <Link to="/Signup">회원가입</Link>
+                  <Link to="/SignUp">회원가입</Link>
                 </button>
               </div>
             </form>
@@ -109,4 +109,4 @@ class Signin extends Component {
   }
 }
 
-export default withRouter(Signin);
+export default withRouter(SignIn);
