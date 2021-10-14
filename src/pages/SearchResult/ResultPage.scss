@@ -33,7 +33,7 @@
   .prodList {
     @include flex-space-evenly;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    // justify-content: flex-start;
     padding-top: 60px;
     padding-bottom: 10px;
   }
