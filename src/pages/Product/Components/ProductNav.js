@@ -4,20 +4,22 @@ import './ProductNav.scss';
 
 class ProductNav extends Component {
   render() {
-    const { navInfo } = this.props;
+    const { navMenuInfo } = this.props;
     return (
       <div className="listCategoryWrap">
-        <h2 className="categoryName">{navInfo.category_name}</h2>
+        <h2 className="categoryName">{navMenuInfo.category_name}</h2>
         <ul className="listCategory">
-          <li className="list">
-            <Link to="#">페이스</Link>
-          </li>
-          <li className="list">
-            <Link to="#">클렌저</Link>
-          </li>
-          <li className="list">
-            <Link to="#">토너</Link>
-          </li>
+          {navMenuInfo.sub_categories?.map(subInfo => {
+            return (
+              <li className="list">
+                <Link to="/product-category/${subInfo.sub_category_id}">
+                  {subInfo.sub_category_name} (
+                  {subInfo.sub_category_products_count})
+                </Link>
+              </li>
+            );
+          })}
+          ;
         </ul>
       </div>
     );

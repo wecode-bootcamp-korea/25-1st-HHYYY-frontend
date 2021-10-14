@@ -14,6 +14,13 @@ class ProductCategory extends Component {
   }
 
   componentDidMount() {
+    fetch(`http://10.58.7.141:8000/navigator/${this.props.match.params.id}`)
+      .then(res => res.json())
+      .then(navData =>
+        this.setState({
+          navInfo: navData.navigator_list,
+        })
+      );
     fetch(
       `http://10.58.7.141:8000/products?category=${this.props.match.params.id}&offset=0&limit=10`
     )
@@ -24,19 +31,11 @@ class ProductCategory extends Component {
           productsData: listData.products_list,
         })
       );
-
-    fetch(`http://10.58.7.141:8000/navigator=${this.props.match.params.id}`)
-      .then(res => res.json())
-      .then(navData =>
-        this.setState({
-          navInfo: navData.navigator_list,
-        })
-      );
   }
 
   render() {
     const { headerTitle, productsData, navInfo } = this.state;
-    console.log(navInfo);
+    console.log(navInfo.category_name);
     return (
       <>
         <div className="categoryTitle">
@@ -50,7 +49,7 @@ class ProductCategory extends Component {
         </div>
         <section className="productSection">
           {/* 상품 카테고리 Nav */}
-          <ProductNav navInfo={navInfo} />
+          <ProductNav navMenuInfo={navInfo} />
           {/*상품 분류*/}
           <ProductList productData={productsData} />
         </section>
