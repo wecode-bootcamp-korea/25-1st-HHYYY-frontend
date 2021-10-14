@@ -7,38 +7,51 @@ class ProductCategory extends Component {
   constructor() {
     super();
     this.state = {
-      categoryInfo: [],
+      headerTitle: [],
+      productsData: [],
+      navInfo: [],
     };
   }
+
   componentDidMount() {
-    fetch('http://localhost:3000/data/ProductCategory.json')
+    fetch(`http://10.58.7.141:8000/navigator/${this.props.match.params.id}`)
       .then(res => res.json())
-      .then(data =>
+      .then(navData =>
         this.setState({
-          categoryInfo: data,
+          navInfo: navData.navigator_list,
+        })
+      );
+    fetch(
+      `http://10.58.7.141:8000/products?category=${this.props.match.params.id}&offset=0&limit=10`
+    )
+      .then(res => res.json())
+      .then(listData =>
+        this.setState({
+          headerTitle: listData.category_info,
+          productsData: listData.products_list,
         })
       );
   }
 
   render() {
+    const { headerTitle, productsData, navInfo } = this.state;
+    console.log(navInfo.category_name);
     return (
       <>
         <div className="categoryTitle">
-          <p className="subBigText">베스트</p>
-          <p className="subSmallText">
-            누구나 좋아하는 인기 제품을 만나 보세요!
-          </p>
+          <p className="subBigText">{headerTitle.name}</p>
+          <p className="subSmallText">{headerTitle.description}</p>
           <img
-            className="subImg"
-            src="./images/main/banner/middle/banner05.jpg"
             alt="product List img"
+            src={headerTitle.category_image}
+            className="subImg"
           />
         </div>
         <section className="productSection">
           {/* 상품 카테고리 Nav */}
-          <ProductNav />
+          <ProductNav navMenuInfo={navInfo} />
           {/*상품 분류*/}
-          <ProductList />
+          <ProductList productData={productsData} />
         </section>
       </>
     );

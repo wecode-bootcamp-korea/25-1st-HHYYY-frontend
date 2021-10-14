@@ -1,7 +1,8 @@
-/* eslint-disable no-lone-blocks */
 import React, { Component } from 'react';
 import MiddleHeader from './Components/ProductDetail/MiddleHeader';
 import GoodToKnow from './Components/ProductDetail/GoodToKnow';
+import PhotoReviewImg from './Components/ProductDetail/PhotoReviewImg';
+import PhotoReviewWrap from './Components/ProductDetail/PhotoReviewWrap';
 import './ProductDetail.scss';
 
 class ProductDetail extends Component {
@@ -9,6 +10,7 @@ class ProductDetail extends Component {
     super();
     this.state = {
       productData: [],
+      photoReviewData: [],
       classON: false,
       imgClick: false,
       quantity: 1,
@@ -16,7 +18,7 @@ class ProductDetail extends Component {
   }
 
   componentDidMount() {
-    fetch('/data/ProductDetail.json')
+    fetch(`http://10.58.7.141:8000/products/${this.props.match.params.id}`)
       .then(res => res.json())
       .then(productInfo =>
         this.setState({
@@ -54,7 +56,6 @@ class ProductDetail extends Component {
     e.preventDefault();
     const { className } = e.target;
     const { quantity } = this.state;
-    console.log(quantity);
     if (className === 'countPlus') {
       {
         quantity < 10
@@ -74,15 +75,25 @@ class ProductDetail extends Component {
     }
   };
 
-  reviewImgClick = img => {
+  reviewImgClick = () => {
     const { imgClick } = this.state;
     this.setState({
       imgClick: !imgClick,
     });
+
+    fetch('/data/ReviewData.json')
+      // fetch(`http://10.58.6.213:8000/review/${this.props.match.params.id}`)
+      .then(res => res.json())
+      .then(info =>
+        this.setState({
+          photoReviewData: info.review_info[0],
+        })
+      );
+    // 사진 IMG 파일 클릭시, 사진 파일을 받아오는 API
   };
 
   // goToCart = () => {
-  //   fetch('http://10.58.4.36:8000/users/cart', {
+  //   fetch('http://10.58.7.141:8000/users/cart', {
   //     method: 'POST',
   //     body: JSON.stringify({
   //       BACK_itemOptionID: this.state.productData.options.option_id,
@@ -102,7 +113,8 @@ class ProductDetail extends Component {
   // };
 
   render() {
-    const { productData, classON, imgClick, quantity } = this.state;
+    const { productData, classON, imgClick, quantity, photoReviewData } =
+      this.state;
     return (
       <section className="productDetail">
         <article className="productInfo">
@@ -114,18 +126,12 @@ class ProductDetail extends Component {
             />
           </div>
           <div className="itemInfomation">
-            <article className="navigatorWrap">
-              <span className="whereIsIt">홈 {'>'} </span>
-              <span className="whereIsIt">샤워 {'>'} </span>
-              <span className="whereIsIt">솝</span>
-            </article>
             <header className="itemTitle">
               <h2 className="itemName">{productData.name}</h2>
               <p className="itemTag">
-                {productData.tags &&
-                  productData.tags.map(tag => {
-                    return `#${tag} `;
-                  })}
+                {productData.tags?.map(tag => {
+                  return `#${tag} `;
+                })}
               </p>
             </header>
             <div className="itemInfo">
@@ -179,7 +185,7 @@ class ProductDetail extends Component {
             <div className="itemPrice">
               <span className="howMuch">총 합계 금액</span>
               <span className="allPrice">
-                ₩{' '}
+                ₩&nbsp;
                 {productData.options && productData.options[0].price * quantity}
               </span>
             </div>
@@ -199,31 +205,17 @@ class ProductDetail extends Component {
               <h2 className="photoListText">포토리뷰 모아보기</h2>
               <div className="photoImgList">
                 <span className="photoWrap">
-                  <div className={imgClick ? 'imgPopUpON' : 'imgPopUpOFF'}>
-                    <h2 className="imgHeader">
-                      훈훈한 회원님들의 훈훈한 포토리뷰
-                    </h2>
-                    <img
-                      alt="photoReview_IMG"
-                      src="https://www.lush.co.kr/data/plus_review/1000001455/t/square_79d47080c8b7d89d"
+                  <PhotoReviewWrap
+                    imgClick={imgClick}
+                    reviewData={photoReviewData}
+                  />
+                  {productData.review_images?.map((src, idx) => (
+                    <PhotoReviewImg
+                      key={idx}
+                      imgSrc={src}
+                      popUpEvent={this.reviewImgClick}
                     />
-                    <p
-                      className={imgClick ? 'imgPopUpON' : 'imgPopUpOFF'}
-                      onClick={this.reviewImgClick}
-                    >
-                      닫기
-                    </p>
-                  </div>
-                  {productData.review_images &&
-                    productData.review_images.map((img, idx) => (
-                      <img
-                        src={img}
-                        key={idx}
-                        className="reviewImg"
-                        alt="reviewImg"
-                        onClick={() => this.reviewImgClick(img)}
-                      />
-                    ))}
+                  ))}
                 </span>
               </div>
             </div>
@@ -231,9 +223,7 @@ class ProductDetail extends Component {
             <div className="reviewCountWrap">
               <ul className="productScore">
                 <li className="scoreText">리뷰 평점</li>
-                <li className="score">
-                  {Math.floor(productData.rating_average)}
-                </li>
+                <li className="score">{productData.rating_average}</li>
                 <li className="scoreStars">
                   {this.reviewAverageToStars(productData.rating_average)}
                 </li>
@@ -252,7 +242,16 @@ class ProductDetail extends Component {
           </div>
         </article>
         <MiddleHeader name="상품 상세 정보" />
-        <article className="itemIntroduce" id="introduceTab">
+
+        <article className="itemIntroduce">
+          <h2 className="ingredients">
+            <b>Ingredients?</b>&nbsp;
+            {productData.ingredients ? (
+              productData.ingredients
+            ) : (
+              <b>재료 준비 중입니다. 잠시 기다려 주세요. :)</b>
+            )}
+          </h2>
           <p className="textArea">
             <h1 className="how">HHYYY</h1>
             <br />
@@ -271,11 +270,14 @@ class ProductDetail extends Component {
           </p>
           <img
             className="itemInfoImg"
-            src="http://img.lush.co.kr/product/bath/sakura_review.jpg"
+            src={productData.detail_images && productData.detail_images[0]}
             alt="itemIntroduce1"
           />
           <p className="textArea">
             <h1 className="how">사용 방법</h1>
+            <br />
+            {productData.how_to}
+            <br />
             <br />
             물을 받은 욕조에 배쓰 밤을 넣으면 기포를 내며 녹습니다. 배쓰 밤이
             녹으며 시작되는 황홀한 변화를 즐겨보세요. 다 녹은 배쓰 밤은 온몸에
@@ -286,7 +288,7 @@ class ProductDetail extends Component {
 
           <img
             className="itemInfoImg"
-            src="http://img.lush.co.kr/product/bath/sakura_use.jpg"
+            src={productData.detail_images && productData.detail_images[1]}
             alt="itemIntroduce2"
           />
         </article>
@@ -312,7 +314,6 @@ class ProductDetail extends Component {
   }
 }
 
-// 상품정보가 아닌, 값이 바뀌지 않는 상수 데이터는 여기에다 호출하는게 맞는지? 아니면 Public/data에 json 파일로 따로 분리해주는게 맞는지?
 const VEGAN_LIST = [
   {
     id: 1,
@@ -341,4 +342,5 @@ const VEGAN_LIST = [
     imgSrc: '/images/product/vegan4.png',
   },
 ];
+
 export default ProductDetail;
