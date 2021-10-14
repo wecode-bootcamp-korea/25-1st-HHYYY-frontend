@@ -66,12 +66,12 @@ class OrderTable extends Component {
             <table className="addCart">
               <colgroup>
                 <col style={{ width: '10%' }}></col>
-                <col style={{ widows: '40%' }}></col>
-                <col style={{ widows: '15%' }}></col>
-                <col style={{ widows: '10%' }}></col>
-                <col style={{ widows: '7%' }}></col>
-                <col style={{ widows: '10%' }}></col>
-                <col style={{ widows: '10%' }}></col>
+                <col style={{ width: '40%' }}></col>
+                <col style={{ width: '15%' }}></col>
+                <col style={{ width: '10%' }}></col>
+                <col style={{ width: '7%' }}></col>
+                <col style={{ width: '10%' }}></col>
+                <col style={{ width: '10%' }}></col>
               </colgroup>
               <thead>
                 <tr>
