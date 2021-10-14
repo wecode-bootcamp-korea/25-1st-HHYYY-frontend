@@ -1,18 +1,28 @@
 .ProductCard {
-  overflow: hidden;
-  flex-wrap: nowrap;
-  margin-right: 20px;
+  display: flex;
+  flex-direction: column;
+  padding: 0 13px 30px 5px;
+
+  .productImg {
+    overflow: hidden;
+    margin: 0 auto;
+    img {
+      width: 280px;
+      height: 280px;
+      object-fit: cover;
+    }
+  }
 
   .productName {
-    margin-top: 1px;
-    font-size: 18pt;
+    margin-top: 15px;
+    font-size: 13pt;
     font-weight: bold;
   }
 
   .productTag {
-    margin-top: 10px;
+    padding-top: 10px;
     font-size: 12pt;
-    font-weight: 350;
+    font-weight: 200;
     color: #747474;
   }
 
