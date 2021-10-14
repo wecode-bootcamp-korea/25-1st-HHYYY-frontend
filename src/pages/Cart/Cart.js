@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import EmptyCart from './component/EmptyCart';
 import OrderTable from './component/OrderTable';
+import { API } from '../../config';
 
 import './cart.scss';
 import './component/orderTable.scss';
@@ -16,7 +17,11 @@ class Cart extends Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:3000/data/cartListData.json')
+    fetch(`${API.CART}`, {
+      headers: {
+        Authorization: localStorage.getItem('token'),
+      },
+    })
       .then(res => res.json())
       .then(inCart => {
         this.setState({ isEmptyCart: inCart.cart_list });

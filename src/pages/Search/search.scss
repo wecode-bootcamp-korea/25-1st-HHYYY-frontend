@@ -3,10 +3,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 500px;
-  z-index: 30;
+  height: 150px;
+  z-index: 40;
   width: 100%;
-  background: black;
+  background-color: black;
 
   .searchInput {
     border: 0;
@@ -24,6 +24,7 @@
   }
 
   .searchBtn {
+    padding: 20px;
     border: none;
     background-color: black;
     color: white;

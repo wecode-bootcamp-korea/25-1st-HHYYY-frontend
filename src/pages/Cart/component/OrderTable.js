@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import DecideBtns from './DecideBtns';
 import TableBody from './TableBody';
+import { API } from '../../../config';
 
 class OrderTable extends Component {
   constructor(props) {
@@ -12,13 +13,11 @@ class OrderTable extends Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:3000/data/cartListData.json')
-      // , {
-      //   headers: {
-      //     Authorization:
-      //       'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.mRBUS6A4MEpCs4jn1V6RCoyV3EVwCIK3RLO4DjajbC8',
-      //   },
-      // })
+    fetch(`${API.CART}`, {
+      headers: {
+        Authorization: localStorage.getItem('token'),
+      },
+    })
       .then(res => res.json())
       .then(cartData => {
         this.setState({ cartList: cartData.cart_list, productSpac: cartData });

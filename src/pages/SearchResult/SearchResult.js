@@ -5,7 +5,7 @@ import './SearchResult.scss';
 class SearchResult extends Component {
   render() {
     return (
-      <div className="container">
+      <div className="searchResult">
         <ResultPage />;
       </div>
     );
