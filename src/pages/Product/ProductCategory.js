@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ProductList from './Components/ProductList';
 import ProductNav from './Components/ProductNav';
 import './ProductCategory.scss';
+import { API } from '../../config.js';
 
 class ProductCategory extends Component {
   constructor() {
@@ -14,7 +15,7 @@ class ProductCategory extends Component {
   }
 
   componentDidMount() {
-    fetch(`http://10.58.7.141:8000/navigator/${this.props.match.params.id}`)
+    fetch(`${API.BASE_URL}/navigator/${this.props.match.params.id}`)
       .then(res => res.json())
       .then(navData =>
         this.setState({
@@ -22,7 +23,7 @@ class ProductCategory extends Component {
         })
       );
     fetch(
-      `http://10.58.7.141:8000/products?category=${this.props.match.params.id}&offset=0&limit=10`
+      `${API.PRODUCT_DETAIL}?category=${this.props.match.params.id}&offset=0&limit=4`
     )
       .then(res => res.json())
       .then(listData =>
@@ -33,9 +34,23 @@ class ProductCategory extends Component {
       );
   }
 
+  componentDidUpdate(prevProps) {
+    if (prevProps.match.params.id !== this.props.match.params.id) {
+      fetch(
+        `${API.PRODUCT_DETAIL}?category=${this.props.match.params.id}&offset=0&limit=10`
+      )
+        .then(res => res.json())
+        .then(listData =>
+          this.setState({
+            headerTitle: listData.category_info,
+            productsData: listData.products_list,
+          })
+        );
+    }
+  }
+
   render() {
     const { headerTitle, productsData, navInfo } = this.state;
-    console.log(navInfo.category_name);
     return (
       <>
         <div className="categoryTitle">
@@ -51,7 +66,7 @@ class ProductCategory extends Component {
           {/* 상품 카테고리 Nav */}
           <ProductNav navMenuInfo={navInfo} />
           {/*상품 분류*/}
-          <ProductList productData={productsData} />
+          <ProductList navMenuInfo={navInfo} productData={productsData} />
         </section>
       </>
     );

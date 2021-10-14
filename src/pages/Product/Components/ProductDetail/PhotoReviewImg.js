@@ -8,14 +8,12 @@ class PhotoReviewImg extends Component {
   render() {
     const { imgSrc } = this.props;
     return (
-      <>
-        <img
-          alt="photoReview_IMG"
-          className="photoReviewIMG"
-          src={imgSrc}
-          onClick={() => this.childFunction()}
-        />
-      </>
+      <img
+        alt="photoReview_IMG"
+        className="photoReviewIMG"
+        src={imgSrc}
+        onClick={e => this.childFunction(e)}
+      />
     );
   }
 }

@@ -4,6 +4,7 @@ import GoodToKnow from './Components/ProductDetail/GoodToKnow';
 import PhotoReviewImg from './Components/ProductDetail/PhotoReviewImg';
 import PhotoReviewWrap from './Components/ProductDetail/PhotoReviewWrap';
 import './ProductDetail.scss';
+import { API } from '../../config.js';
 
 class ProductDetail extends Component {
   constructor() {
@@ -18,7 +19,7 @@ class ProductDetail extends Component {
   }
 
   componentDidMount() {
-    fetch(`http://10.58.7.141:8000/products/${this.props.match.params.id}`)
+    fetch(`${API.PRODUCT_DETAIL}/${this.props.match.params.id}`)
       .then(res => res.json())
       .then(productInfo =>
         this.setState({
@@ -93,7 +94,7 @@ class ProductDetail extends Component {
   };
 
   // goToCart = () => {
-  //   fetch('http://10.58.7.141:8000/users/cart', {
+  //   fetch(`${API.CART}`, {
   //     method: 'POST',
   //     body: JSON.stringify({
   //       BACK_itemOptionID: this.state.productData.options.option_id,

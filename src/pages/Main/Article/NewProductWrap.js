@@ -19,8 +19,8 @@ class newProductWrap extends Component {
         <div className="productImg_longHair">
           <img
             className="productImg_longHair_img"
-            src="./images/main/banner/middle/longhair.jpg"
             alt="long hair"
+            src="/images/main/banner/middle/longhair.jpg"
           />
         </div>
       </article>

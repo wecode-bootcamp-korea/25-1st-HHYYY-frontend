@@ -17,8 +17,8 @@ class TitleBanner extends Component {
         </div>
         <img
           className="titleBannerImg"
-          src="./images/main/title/title001.png"
           alt="strawberry title"
+          src="./images/main/title/title001.png"
         />
       </div>
     );
