@@ -13,13 +13,12 @@ class ProductNav extends Component {
             return (
               <li className="list">
                 <Link to="/product-category/${subInfo.sub_category_id}">
-                  {subInfo.sub_category_name} (
-                  {subInfo.sub_category_products_count})
+                  {subInfo.sub_category_name} &#40;
+                  {subInfo.sub_category_products_count}&#41;
                 </Link>
               </li>
             );
           })}
-          ;
         </ul>
       </div>
     );
