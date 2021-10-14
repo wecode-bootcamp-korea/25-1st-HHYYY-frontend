@@ -242,7 +242,13 @@ class ProductDetail extends Component {
           </div>
         </article>
         <MiddleHeader name="상품 상세 정보" />
-        <article className="itemIntroduce" id="introduceTab">
+
+        <article className="itemIntroduce">
+          <h2 className="ingredients">
+            <b>Ingredients</b>
+            <br />
+            {productData.ingredients}
+          </h2>
           <p className="textArea">
             <h1 className="how">HHYYY</h1>
             <br />
@@ -266,6 +272,9 @@ class ProductDetail extends Component {
           />
           <p className="textArea">
             <h1 className="how">사용 방법</h1>
+            <br />
+            {productData.how_to}
+            <br />
             <br />
             물을 받은 욕조에 배쓰 밤을 넣으면 기포를 내며 녹습니다. 배쓰 밤이
             녹으며 시작되는 황홀한 변화를 즐겨보세요. 다 녹은 배쓰 밤은 온몸에
