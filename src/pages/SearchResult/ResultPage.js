@@ -12,22 +12,17 @@ class ResultPage extends Component {
     };
   }
   componentDidMount = () => {
-    fetch(
-      `http://10.58.7.141:8000/products?search=${
-        this.props.location.search.split('=')[1]
-      }`,
-      {
-        method: 'POST',
-        body: JSON.stringify({
-          id: this.state.id,
-          products_count: this.state.count,
-          name: this.state.name,
-          thumbnail_url: this.state.thumbnail_image,
-          price: this.state.price,
-          tags: this.state.tags,
-        }),
-      }
-    )
+    fetch(`${API.SEARCH}${this.props.location.search.split('=')[1]}`, {
+      method: 'POST',
+      body: JSON.stringify({
+        id: this.state.id,
+        products_count: this.state.count,
+        name: this.state.name,
+        thumbnail_url: this.state.thumbnail_image,
+        price: this.state.price,
+        tags: this.state.tags,
+      }),
+    })
       .then(response => response.json())
       .then(result =>
         this.setState({
