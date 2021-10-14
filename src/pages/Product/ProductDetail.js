@@ -15,6 +15,7 @@ class ProductDetail extends Component {
       classON: false,
       imgClick: false,
       quantity: 1,
+      review: [],
     };
   }
 
@@ -24,6 +25,7 @@ class ProductDetail extends Component {
       .then(productInfo =>
         this.setState({
           productData: productInfo.product_info,
+          review: productInfo.product_info.photo_reviews,
         })
       );
   }
@@ -115,7 +117,7 @@ class ProductDetail extends Component {
   render() {
     const { productData, classON, imgClick, quantity, photoReviewData } =
       this.state;
-    console.log(photoReviewData);
+    console.log(this.state.review);
     return (
       <section className="productDetail">
         <article className="productInfo">
@@ -212,10 +214,10 @@ class ProductDetail extends Component {
                     imgClick={imgClick}
                     reviewData={photoReviewData}
                   />
-                  {productData.review_images?.map((src, idx) => (
+                  {this.state.review?.map((photoData, idx) => (
                     <PhotoReviewImg
                       key={idx}
-                      imgSrc={src}
+                      imgSrc={photoData}
                       popUpEvent={this.reviewImgClick}
                     />
                   ))}
