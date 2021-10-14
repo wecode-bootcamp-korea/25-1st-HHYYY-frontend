@@ -31,38 +31,45 @@ class Search extends Component {
     this.setState({ isSearch: !isSearch });
   };
 
-  handleSearchResult = e => {
+  handleSearchResult = () => {
     const { searchWord } = this.state;
-    e.preventDefault();
     if (searchWord.length > 0) {
       this.props.history.push('/search-result');
+      this.setState({
+        searchWord: '',
+      });
     }
-    this.setState({
-      searchWord: ' ',
-    });
+  };
+
+  enterSearchBtn = e => {
+    if (e.key === 'Enter') {
+      this.handleSearchResult();
+    }
   };
 
   render() {
     // console.log(this.state.searchWord);
-    // const { inputSearch, searchWord } = this.state;
+    const { searchWord } = this.state;
     // const filtered = inputSearch.filter(searchdata =>
     //   searchdata.name.includes(searchWord)
     // );
     return (
       <div className="search">
         <input
-          name="searched"
+          name="inputSerach"
           className="searchInput"
           type="search"
           placeholder="더 풍성하게 돌아온 NEW 기프트"
           onChange={this.handleSearchWord}
+          onKeyPress={this.enterSearchBtn}
+          value={searchWord}
         />
         <button
           className="searchBtn"
           onClick={this.handleSearchResult}
           searchWord={this.state.searchWord}
         >
-          <i className="fas fa-search fa-2x" />
+          <i className="fas fa-search fa-3x" />
         </button>
       </div>
     );

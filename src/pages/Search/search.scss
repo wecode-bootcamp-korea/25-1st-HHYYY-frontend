@@ -1,8 +1,12 @@
 .search {
+  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 200px;
+  height: 150px;
+  z-index: 40;
+  width: 100%;
+  background-color: black;
 
   .searchInput {
     border: 0;
@@ -20,7 +24,9 @@
   }
 
   .searchBtn {
+    padding: 20px;
     border: none;
-    background-color: white;
+    background-color: black;
+    color: white;
   }
 }
