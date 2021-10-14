@@ -11,16 +11,19 @@ class ResultPage extends Component {
     };
   }
   componentDidMount = () => {
-    fetch('api주소', {
-      method: 'POST',
-      body: JSON.stringify({
-        products_count: this.state.count,
-        name: this.state.name,
-        thumbnail_url: this.state.thumbnail_image,
-        price: this.state.price,
-        tags: this.state.tags,
-      }),
-    })
+    fetch(
+      '`{http://10.58.7.141:8000/products?search=${this.props.inputSearchWord}}`',
+      {
+        method: 'POST',
+        body: JSON.stringify({
+          products_count: this.state.count,
+          name: this.state.name,
+          thumbnail_url: this.state.thumbnail_image,
+          price: this.state.price,
+          tags: this.state.tags,
+        }),
+      }
+    )
       .then(response => response.json())
       .then(result =>
         this.setState({
@@ -31,7 +34,7 @@ class ResultPage extends Component {
   };
 
   render() {
-    const { name, price, tags, thumbnail_url, products_count } = this.state;
+    const { products_count } = this.state;
 
     return (
       <div className="resultPage">
