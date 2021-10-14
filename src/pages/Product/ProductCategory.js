@@ -66,7 +66,7 @@ class ProductCategory extends Component {
           {/* 상품 카테고리 Nav */}
           <ProductNav navMenuInfo={navInfo} />
           {/*상품 분류*/}
-          <ProductList productData={productsData} />
+          <ProductList navMenuInfo={navInfo} productData={productsData} />
         </section>
       </>
     );

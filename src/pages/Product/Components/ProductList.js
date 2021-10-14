@@ -5,11 +5,11 @@ import './ProductList.scss';
 
 class ProductList extends Component {
   render() {
-    const { productData } = this.props;
+    const { productData, navMenuInfo } = this.props;
     return (
       <>
         <div className="productsWrap">
-          <ProductFilter products={productData} />
+          <ProductFilter navMenuInfo={navMenuInfo} />
           <div className="prdList">
             {productData.map((product, idx) => (
               <ProductCard key={idx} products={product} />

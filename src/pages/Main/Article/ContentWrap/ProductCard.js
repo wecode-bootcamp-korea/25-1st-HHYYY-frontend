@@ -9,7 +9,7 @@ class ProductCard extends Component {
       <div className="productCard">
         <Link to={`/product-detail/${products.id}`}>
           <div className="productImg">
-            <img src={products.thumbnail_url} alt={products.name} />
+            <img src={products.thumnbail_url} alt={products.name} />
           </div>
         </Link>
         <p className="productName">{products.name}</p>

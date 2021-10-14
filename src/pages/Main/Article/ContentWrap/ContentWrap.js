@@ -26,7 +26,7 @@ class ContentWrap extends Component {
     return (
       <article className="contentWrap">
         <header className="productWrap">
-          <h2 className="productWrap_text">나만 알고 싶은 향기</h2>
+          <h2 className="productWrap_text">나만 알고 싶은 비누</h2>
           <div className="productsList">
             {categoryList.map(product => (
               <ProductCard key={product.id} products={product} />
