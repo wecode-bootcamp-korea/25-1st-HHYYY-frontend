@@ -43,7 +43,7 @@ class Header extends Component {
         <nav>
           <div className="logo">
             <Link to="/main" className="logo">
-              훈훈한 연들
+              HHYYY
             </Link>
           </div>
           <Menu onMouseEnter={this.handlerDropdownOpen} />

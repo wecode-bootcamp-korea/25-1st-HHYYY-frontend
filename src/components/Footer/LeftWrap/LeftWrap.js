@@ -7,7 +7,7 @@ class LeftWrap extends Component {
     return (
       <div className="leftWrap">
         <div className="logo">
-          <Link to="/main">훈훈한 연들</Link>
+          <Link to="/main">HHYYY</Link>
         </div>
         <dl className="serviceWrap">
           <dt>
