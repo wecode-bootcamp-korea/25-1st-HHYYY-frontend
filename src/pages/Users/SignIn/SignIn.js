@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import { API } from '../../../config';
 import SigninBox from './SigninBox';
 
 import './signin.scss';
@@ -44,7 +45,7 @@ class Signin extends Component {
   goToMain = e => {
     e.preventDefault();
     this.props.history.push('/main');
-    fetch('http://localhost:3000', {
+    fetch(`${API.SIGNIN}`, {
       method: 'POST',
       body: JSON.stringify({
         email: this.state.inputIdValue,
