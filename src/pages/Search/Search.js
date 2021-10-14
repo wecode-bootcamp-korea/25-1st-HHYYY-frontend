@@ -12,14 +12,6 @@ class Search extends Component {
     };
   }
 
-  // componentDidMount() {
-  //   fetch('#')
-  //     .then(response => response.json())
-  //     .then(data => {
-  //       this.setState({ inputSearch: data });
-  //     });
-  // }
-
   handleSearchWord = e => {
     this.setState({
       searchWord: e.target.value,
@@ -34,7 +26,7 @@ class Search extends Component {
   handleSearchResult = () => {
     const { searchWord } = this.state;
     if (searchWord.length > 0) {
-      this.props.history.push('/search-result');
+      this.props.history.push(`/search-result?q=${searchWord}`);
       this.setState({
         searchWord: '',
       });
@@ -50,9 +42,6 @@ class Search extends Component {
   render() {
     // console.log(this.state.searchWord);
     const { searchWord } = this.state;
-    // const filtered = inputSearch.filter(searchdata =>
-    //   searchdata.name.includes(searchWord)
-    // );
     return (
       <div className="search">
         <input

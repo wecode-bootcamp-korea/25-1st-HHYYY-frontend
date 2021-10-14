@@ -9,49 +9,49 @@ class FooterIcons extends Component {
           <li>
             <img
               className="fIconsV"
-              src="./images/footer/vegetarian.png"
-              title="Vegetarian"
               alt="Vegetarian"
+              src="/images/footer/vegetarian.png"
+              title="Vegetarian"
             />
           </li>
           <li>
             <img
               className="fIconsEB"
-              src="./images/footer/ethical.png"
-              title="Ethical Buying"
               alt="Ethical Buying"
+              src="/images/footer/ethical.png"
+              title="Ethical Buying"
             />
           </li>
           <li>
             <img
               className="fIconsCF"
-              src="./images/footer/crueltyfree.png"
-              title="Cruelty Free"
               alt="Cruelty Free"
+              src="/images/footer/crueltyfree.png"
+              title="Cruelty Free"
             />
           </li>
           <li>
             <img
               className="fIconsFC"
-              src="./images/footer/fresh.png"
-              title="Freshest Cosmetics"
               alt="Freshest Cosmetics"
+              src="/images/footer/fresh.png"
+              title="Freshest Cosmetics"
             />
           </li>
           <li>
             <img
               className="fIconsHM"
-              src="./images/footer/handmade.png"
-              title="Handmade"
               alt="Handmade"
+              src="/images/footer/handmade.png"
+              title="Handmade"
             />
           </li>
           <li>
             <img
               className="fIconsNP"
-              src="./images/footer/nakedpackaging.png"
-              title="Naked Packaging"
               alt="Naked Packaging"
+              src="/images/footer/nakedpackaging.png"
+              title="Naked Packaging"
             />
           </li>
         </ul>

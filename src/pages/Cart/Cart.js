@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-// import EmptyCart from './component/EmptyCart';
+import EmptyCart from './component/EmptyCart';
 import OrderTable from './component/OrderTable';
+import { API } from '../../config';
 
 import './cart.scss';
 import './component/orderTable.scss';
@@ -16,13 +17,15 @@ class Cart extends Component {
   }
 
   componentDidMount() {
-    const { isEmptyCart } = this.state;
-    if (isEmptyCart.length > 0) {
-      <OrderTable />;
-    } else {
-      <isEmptyCart />;
-    }
-    this.setState({ isEmptyCart: !isEmptyCart });
+    fetch(`${API.CART}`, {
+      headers: {
+        Authorization: localStorage.getItem('token'),
+      },
+    })
+      .then(res => res.json())
+      .then(inCart => {
+        this.setState({ isEmptyCart: inCart.cart_list });
+      });
   }
 
   render() {
@@ -40,8 +43,7 @@ class Cart extends Component {
               <span className="outProgress">Order Confirmed</span>
             </div>
           </header>
-          {/* {<EmptyCart />} */}
-          {!isEmptyCart && <OrderTable />}
+          {isEmptyCart.length > 0 ? <OrderTable /> : <EmptyCart />}
         </article>
       </>
     );

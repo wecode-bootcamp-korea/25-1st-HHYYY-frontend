@@ -1,36 +1,30 @@
 {
   "cart_list": [
     {
-      "id": 1,
-      "product_name": "슬리피",
-      "category_name": "로션",
-      "quantity": 1,
-      "size": 95,
-      "product_price": "22,000",
-      "image": "/images/productImg/main2.png",
-      "price": "22,000"
-    },
-    {
-      "id": "cart_id_2",
-      "product_name": "아이스라떼",
-      "category_name": "커피",
-      "quantity": 3,
-      "size": 190,
-      "product_price": "62,000",
-      "image": "/images/productImg/secondimg.png",
-      "price": "25,000"
-    },
-    {
-      "id": "cart_id_3",
-      "product_name": "허브티",
-      "category_name": "티",
-      "quantity": 1,
+      "cart_id": 2,
+      "product_id": 2,
+      "product_name": "딸기비누",
+      "category_name": "솝",
       "size": 50,
-      "product_price": "18,000",
-      "image": "/images/productImg/third.jpeg",
-      "price": "29,000"
+      "quantity": 3,
+      "product_price": 7000,
+      "product_image": " https://images.unsplash.com/photo-1610935591451-8a456e1b1d41?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80",
+      "price": 21000
+    },
+    {
+      "cart_id": 3,
+      "product_id": 1,
+      "product_name": "오이비누",
+      "category_name": "솝",
+      "size": 50,
+      "quantity": 1,
+      "product_price": 5000,
+      "product_image": "https://images.unsplash.com/photo-1584305574647-0cc949a2bb9f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80",
+      "price": 5000
     }
   ],
-  "total_price": "장바구니 총 가격",
-  "shipping": "배송비"
+  "total_quantity": 4,
+  "total_price": 26000,
+  "shipping": 2500,
+  "order_price": 28500
 }

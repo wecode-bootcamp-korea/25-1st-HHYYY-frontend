@@ -43,7 +43,7 @@ class Header extends Component {
         <nav>
           <div className="logo">
             <Link to="/main" className="logo">
-              훈훈한 연들
+              HHYYY
             </Link>
           </div>
           <Menu onMouseEnter={this.handlerDropdownOpen} />
@@ -53,7 +53,9 @@ class Header extends Component {
                 <i className="fas fa-search" />
               </li>
               <li className="menuIconsList">
-                <i className="fas fa-shopping-bag" />
+                <Link to="/cart" className="cartLink">
+                  <i className="fas fa-shopping-bag" />
+                </Link>
               </li>
               <li
                 className="menuIconsList"

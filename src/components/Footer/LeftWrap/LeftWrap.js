@@ -7,13 +7,13 @@ class LeftWrap extends Component {
     return (
       <div className="leftWrap">
         <div className="logo">
-          <Link to="/main">훈훈한 연들</Link>
+          <Link to="/main">HHYYY</Link>
         </div>
         <dl className="serviceWrap">
           <dt>
             고객센터 <span> 1644-2357</span>
           </dt>
-          <dd class="email">
+          <dd className="email">
             <a href="mailto:order@lush.co.kr">order@hoonhoons.co.kr</a>
           </dd>
           <dd className="phoneLine">
@@ -27,7 +27,7 @@ class LeftWrap extends Component {
             기업선물
             <span>070-2349-3411</span>
           </dt>
-          <dd class="email">
+          <dd className="email">
             <a href="mailto:order@lush.co.kr">order@hoonhoons.co.kr</a>
           </dd>
         </dl>
@@ -43,23 +43,6 @@ class LeftWrap extends Component {
           <Link to="/main" target="_blank">
             <i className="fab fa-youtube" alt="Youtube" title="Youtube"></i>
           </Link>
-
-          {/*          <Link to="/main" target="_blank">
-            <img
-              src="./images/footer/kakaotalk.png"
-              className="kakaotalk"
-              alt="kakaotalk"
-              title="kakaotalk"
-            />
-          </Link>
-
-          <Link to="/main" target="_blank">
-            <img
-              src="./images/footer/naver.png"
-              className="naver"
-              alt="naver"
-              title="naver" /> 
-          </Link>*/}
         </div>
       </div>
     );

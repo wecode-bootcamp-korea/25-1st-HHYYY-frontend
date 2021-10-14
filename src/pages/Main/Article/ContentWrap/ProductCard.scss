@@ -1,19 +1,8 @@
 .productCard {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 300px;
-  height: 400px;
-  margin-left: 25px;
-
+  width: 100px;
   .productImg {
-    width: 270px;
-    height: 270px;
-    padding: 10px;
-
     img {
-      width: 250px;
-      height: 250px;
+      width: 100%;
     }
   }
 
