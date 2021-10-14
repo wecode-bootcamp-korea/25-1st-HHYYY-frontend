@@ -43,23 +43,6 @@ class LeftWrap extends Component {
           <Link to="/main" target="_blank">
             <i className="fab fa-youtube" alt="Youtube" title="Youtube"></i>
           </Link>
-
-          {/*          <Link to="/main" target="_blank">
-            <img
-              src="./images/footer/kakaotalk.png"
-              className="kakaotalk"
-              alt="kakaotalk"
-              title="kakaotalk"
-            />
-          </Link>
-
-          <Link to="/main" target="_blank">
-            <img
-              src="./images/footer/naver.png"
-              className="naver"
-              alt="naver"
-              title="naver" /> 
-          </Link>*/}
         </div>
       </div>
     );

@@ -1,22 +1,24 @@
 import React, { Component } from 'react';
-import './ProductCard.scss';
+import { Link } from 'react-router-dom';
+import './ResultProductCard.scss';
 
-class ProductCard extends Component {
+class ResultProductCard extends Component {
   render() {
     const { products } = this.props;
+
     return (
-      <div className="productCard">
+      <Link to={`/product-detail/${products.id}`} className="productCard">
         <div className="productImg">
-          <img src={products.thumbnail_image} alt={products.name} />
+          <img alt={products.name} src={products.thumbnail_image} />
         </div>
         <p className="productName">{products.name}</p>
         <p className="productTag">
           #{products.tags[0]} #{products.tags[1]}
         </p>
         <p className="productPrice">₩ {products.price}</p>
-      </div>
+      </Link>
     );
   }
 }
 
-export default ProductCard;
+export default ResultProductCard;
