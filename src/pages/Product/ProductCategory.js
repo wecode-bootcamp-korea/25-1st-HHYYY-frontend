@@ -22,7 +22,7 @@ class ProductCategory extends Component {
         })
       );
     fetch(
-      `http://10.58.7.141:8000/products?category=${this.props.match.params.id}&offset=0&limit=10`
+      `http://10.58.7.141:8000/products?category=${this.props.match.params.id}&offset=0&limit=4`
     )
       .then(res => res.json())
       .then(listData =>
@@ -33,9 +33,23 @@ class ProductCategory extends Component {
       );
   }
 
+  componentDidUpdate(prevProps) {
+    if (prevProps.match.params.id !== this.props.match.params.id) {
+      fetch(
+        `http://10.58.7.141:8000/products?category=${this.props.match.params.id}&offset=0&limit=10`
+      )
+        .then(res => res.json())
+        .then(listData =>
+          this.setState({
+            headerTitle: listData.category_info,
+            productsData: listData.products_list,
+          })
+        );
+    }
+  }
+
   render() {
     const { headerTitle, productsData, navInfo } = this.state;
-    console.log(navInfo.category_name);
     return (
       <>
         <div className="categoryTitle">

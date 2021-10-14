@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ProductCard from './ProductCard';
 import './ContentWrap.scss';
+import { API } from '../../../../../src/config.js';
 
 class ContentWrap extends Component {
   constructor() {
@@ -11,7 +12,7 @@ class ContentWrap extends Component {
   }
 
   componentDidMount() {
-    fetch('http://10.58.7.141:8000/products?category=3')
+    fetch(`${API.SEARCH_RESULT}?category=1&offset=1&limit=4`)
       .then(res => res.json())
       .then(itemData =>
         this.setState({
@@ -33,10 +34,7 @@ class ContentWrap extends Component {
           </div>
         </header>
         <div className="bannerRolling">
-          <img
-            alt="pink beach"
-            src="./images/main/banner/middle/pinkbeach.jpg"
-          />
+          <img alt="pink beach" src="/images/main/banner/middle/soap.jpg" />
         </div>
       </article>
     );
