@@ -245,9 +245,12 @@ class ProductDetail extends Component {
 
         <article className="itemIntroduce">
           <h2 className="ingredients">
-            <b>Ingredients</b>
-            <br />
-            {productData.ingredients}
+            <b>Ingredients?</b>&nbsp;
+            {productData.ingredients ? (
+              productData.ingredients
+            ) : (
+              <b>재료 준비 중입니다. 잠시 기다려 주세요. :)</b>
+            )}
           </h2>
           <p className="textArea">
             <h1 className="how">HHYYY</h1>
