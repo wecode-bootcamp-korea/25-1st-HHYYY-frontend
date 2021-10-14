@@ -15,14 +15,15 @@
 
     .productsList {
       display: flex;
-      align-items: center;
       width: 900px;
+      align-items: center;
+      margin-top: 30px;
     }
   }
 
   .bannerRolling {
     display: inline-block;
-    width: 280px;
+    width: 300px;
     min-width: 400px;
     height: 596px;
     margin-top: -80px;

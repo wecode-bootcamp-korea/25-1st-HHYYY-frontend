@@ -37,7 +37,7 @@ class ProductCategory extends Component {
   componentDidUpdate(prevProps) {
     if (prevProps.match.params.id !== this.props.match.params.id) {
       fetch(
-        `${API.PRODUCT_DETAIL}/products?category=${this.props.match.params.id}&offset=0&limit=10`
+        `${API.PRODUCT_DETAIL}?category=${this.props.match.params.id}&offset=0&limit=10`
       )
         .then(res => res.json())
         .then(listData =>

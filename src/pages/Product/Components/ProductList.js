@@ -9,7 +9,7 @@ class ProductList extends Component {
     return (
       <>
         <div className="productsWrap">
-          <ProductFilter />
+          <ProductFilter products={productData} />
           <div className="prdList">
             {productData.map((product, idx) => (
               <ProductCard key={idx} products={product} />

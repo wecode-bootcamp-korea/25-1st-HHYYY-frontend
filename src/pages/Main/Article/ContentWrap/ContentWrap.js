@@ -12,7 +12,7 @@ class ContentWrap extends Component {
   }
 
   componentDidMount() {
-    fetch(`${API.SEARCH_RESULT}?category=1&offset=1&limit=4`)
+    fetch(`${API.PRODUCT_DETAIL}?category=1&offset=1&limit=3`)
       .then(res => res.json())
       .then(itemData =>
         this.setState({
