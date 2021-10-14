@@ -12,9 +12,9 @@ class ProductDetail extends Component {
     super();
     this.state = {
       productData: [],
-      photoReviewData: [],
+
       classON: false,
-      imgClick: false,
+
       quantity: 1,
     };
   }
@@ -77,21 +77,6 @@ class ProductDetail extends Component {
     }
   };
 
-  reviewImgClick = () => {
-    const { imgClick } = this.state;
-    this.setState({
-      imgClick: !imgClick,
-    });
-    fetch(`${API.BASE_URL}/reviews/${2}`)
-      .then(res => res.json())
-      .then(info =>
-        this.setState({
-          photoReviewData: info.review_info,
-        })
-      );
-    // 사진 IMG 파일 클릭시, 사진 파일을 받아오는 API
-  };
-
   goToCart = () => {
     fetch(`${API.CART}`, {
       method: 'POST',
@@ -116,7 +101,7 @@ class ProductDetail extends Component {
   render() {
     const { productData, classON, imgClick, quantity, photoReviewData } =
       this.state;
-    console.log(photoReviewData);
+    console.log(productData.photo_reviews);
     return (
       <section className="productDetail">
         <article className="productInfo">
@@ -131,9 +116,12 @@ class ProductDetail extends Component {
             <article className="navigatorWrap">
               <span className="whereIsIt">홈 {'>'} </span>
               <span className="whereIsIt">
-                {productData.main_category_name} {'>'}{' '}
+                {productData.main_category_name} {'>'}
               </span>
-              <span className="whereIsIt">{productData.sub_category_name}</span>
+              <span className="whereIsIt">
+                &nbsp;
+                {productData.sub_category_name}
+              </span>
             </article>
             <header className="itemTitle">
               <h2 className="itemName">{productData.name}</h2>
@@ -216,15 +204,15 @@ class ProductDetail extends Component {
               <h2 className="photoListText">포토리뷰 모아보기</h2>
               <div className="photoImgList">
                 <span className="photoWrap">
-                  <PhotoReviewWrap
+                  {/* <PhotoReviewWrap
                     imgClick={imgClick}
                     reviewData={photoReviewData}
-                  />
-                  {productData.review_images?.map((src, idx) => (
+                  /> */}
+                  {productData.photo_reviews?.map(imgData => (
                     <PhotoReviewImg
-                      key={idx}
-                      imgSrc={src}
-                      popUpEvent={this.reviewImgClick}
+                      key={imgData.review_id}
+                      imgSrc={imgData.image_url}
+                      imgID={imgData.review_id}
                     />
                   ))}
                 </span>
