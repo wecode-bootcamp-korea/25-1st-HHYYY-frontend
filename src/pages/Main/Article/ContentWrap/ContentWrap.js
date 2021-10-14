@@ -11,9 +11,7 @@ class ContentWrap extends Component {
   }
 
   componentDidMount() {
-    fetch(
-      `http://10.58.6.213:8000/products?category=${this.props.location.search}`
-    )
+    fetch('http://10.58.7.141:8000/products?category=2')
       .then(res => res.json())
       .then(itemData =>
         this.setState({

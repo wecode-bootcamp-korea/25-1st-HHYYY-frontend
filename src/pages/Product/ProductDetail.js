@@ -18,8 +18,7 @@ class ProductDetail extends Component {
   }
 
   componentDidMount() {
-    fetch('/data/ProductDetail.json')
-      // fetch(`http://10.58.6.213:8000/products/${this.props.match.params.id}`)
+    fetch(`http://10.58.7.141:8000/products/${this.props.match.params.id}`)
       .then(res => res.json())
       .then(productInfo =>
         this.setState({
@@ -94,7 +93,7 @@ class ProductDetail extends Component {
   };
 
   // goToCart = () => {
-  //   fetch('http://10.58.4.36:8000/users/cart', {
+  //   fetch('http://10.58.7.141:8000/users/cart', {
   //     method: 'POST',
   //     body: JSON.stringify({
   //       BACK_itemOptionID: this.state.productData.options.option_id,
