@@ -37,137 +37,137 @@ $theme-color-background-font: rgb(204, 204, 204);
   max-width: 90%;
   margin-left: auto;
   margin-right: auto;
-}
 
-.join {
-  padding: 0 100px;
-}
-
-.top {
-  @include flex-center;
-  flex-direction: column;
-  padding-top: 40px;
-  padding-bottom: 90px;
-
-  h2 {
-    font-size: 42px;
-  }
-}
-
-.process {
-  @include flex-center;
-  text-align: center;
-  padding-top: 30px;
-  font-size: 16px;
-}
-
-.this {
-  padding-right: 30px;
-}
-
-.arrow {
-  color: $theme-color-background-font;
-}
-
-.next {
-  padding-left: 30px;
-  color: $theme-color-background-font;
-}
-
-.title {
-  @include flex-space-between;
-  padding-bottom: 15px;
-  border-bottom: 1px solid black;
-
-  h3 {
-    font-size: 28px;
+  .join {
+    padding: 0 100px;
   }
 
-  i {
-    @include red-dot;
-  }
+  .top {
+    @include flex-center;
+    flex-direction: column;
+    padding-top: 40px;
+    padding-bottom: 90px;
 
-  p {
-    @include sub-text;
-    padding-left: 12px;
-    margin-top: 17px;
-  }
-}
-
-.filloutForm {
-  border: 1px 0;
-  padding: 20px 0;
-  border-bottom: 1px solid $theme-color-border;
-
-  table {
-    width: 100%;
-  }
-}
-
-.required,
-.notrequired {
-  padding: 10px 0 10px 23px;
-  @include sub-text;
-  text-align: left;
-}
-
-.required {
-  i {
-    @include red-dot;
-    padding-right: 15px;
-  }
-}
-
-.notrequired {
-  padding-left: 43px;
-}
-
-input.text,
-input.password {
-  padding: 0 5px;
-  @include sub-text;
-}
-
-.text {
-  border: 1px solid white;
-  line-height: 36px;
-  padding: 0 10px;
-  width: 380px;
-  border: 1px solid $theme-color-border;
-}
-
-.txt-field {
-  padding: 10px 0;
-}
-
-.text::placeholder {
-  font-size: 14px;
-  font-weight: 300;
-}
-
-.btn {
-  @include flex-center;
-  padding-top: 40px;
-
-  button {
-    cursor: pointer;
-    margin: 0 10px;
-    width: 280px;
-    border: 1px solid #000;
-    background: #000;
-    height: 63px;
-    line-height: 60px;
-
-    em {
-      color: #fff;
-      font-size: 16px;
-      font-weight: 300;
-      text-align: center;
-      font-style: normal;
+    h2 {
+      font-size: 42px;
     }
   }
-}
 
-.error {
-  @include sub-text;
+  .process {
+    @include flex-center;
+    text-align: center;
+    padding-top: 30px;
+    font-size: 16px;
+  }
+
+  .this {
+    padding-right: 30px;
+  }
+
+  .arrow {
+    color: $theme-color-background-font;
+  }
+
+  .next {
+    padding-left: 30px;
+    color: $theme-color-background-font;
+  }
+
+  .title {
+    @include flex-space-between;
+    padding-bottom: 15px;
+    border-bottom: 1px solid black;
+
+    h3 {
+      font-size: 28px;
+    }
+
+    i {
+      @include red-dot;
+    }
+
+    p {
+      @include sub-text;
+      padding-left: 12px;
+      margin-top: 17px;
+    }
+  }
+
+  .filloutForm {
+    border: 1px 0;
+    padding: 20px 0;
+    border-bottom: 1px solid $theme-color-border;
+
+    table {
+      width: 100%;
+    }
+  }
+
+  .required,
+  .notrequired {
+    padding: 10px 0 10px 23px;
+    @include sub-text;
+    text-align: left;
+  }
+
+  .required {
+    i {
+      @include red-dot;
+      padding-right: 15px;
+    }
+  }
+
+  .notrequired {
+    padding-left: 43px;
+  }
+
+  input.text,
+  input.password {
+    padding: 0 5px;
+    @include sub-text;
+  }
+
+  .text {
+    border: 1px solid white;
+    line-height: 36px;
+    padding: 0 10px;
+    width: 380px;
+    border: 1px solid $theme-color-border;
+  }
+
+  .txt-field {
+    padding: 10px 0;
+  }
+
+  .text::placeholder {
+    font-size: 14px;
+    font-weight: 300;
+  }
+
+  .btn {
+    @include flex-center;
+    padding-top: 40px;
+
+    button {
+      cursor: pointer;
+      margin: 0 10px;
+      width: 280px;
+      border: 1px solid #000;
+      background: #000;
+      height: 63px;
+      line-height: 60px;
+
+      em {
+        color: #fff;
+        font-size: 16px;
+        font-weight: 300;
+        text-align: center;
+        font-style: normal;
+      }
+    }
+  }
+
+  .error {
+    @include sub-text;
+  }
 }

@@ -3,13 +3,44 @@ import ProductCard from '../../components/Product/ProductCard';
 import './ResultPage.scss';
 
 class ResultPage extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      products_list: [],
+      products_count: '',
+    };
+  }
+  componentDidMount = () => {
+    fetch('api주소', {
+      method: 'POST',
+      body: JSON.stringify({
+        products_count: this.state.count,
+        name: this.state.name,
+        thumbnail_url: this.state.thumbnail_image,
+        price: this.state.price,
+        tags: this.state.tags,
+      }),
+    })
+      .then(response => response.json())
+      .then(result =>
+        this.setState({
+          products_list: result.products_list,
+          products_count: result.products_count,
+        })
+      );
+  };
+
   render() {
+    const { name, price, tags, thumbnail_url, products_count } = this.state;
+
     return (
       <div className="resultPage">
         <div className="content">
           <div className="result">
             <div className="listHeadingBox">
-              <h2>[핑크] 검색결과 6개</h2>
+              <h2>
+                {`[${this.props.inputSearchWord}] 검색결과 ${products_count}개`}
+              </h2>
             </div>
             <div className="itemList">
               <div className="list">

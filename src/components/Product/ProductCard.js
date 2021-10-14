@@ -7,7 +7,7 @@ class ProductCard extends Component {
     return (
       <div className="productCard">
         <div className="productImg">
-          <img src={products.thumbnail_image} alt={products.name} />
+          <img alt={products.name} src={products.thumbnail_image} />
         </div>
         <p className="productName">{products.name}</p>
         <p className="productTag">
