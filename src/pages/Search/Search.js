@@ -12,13 +12,13 @@ class Search extends Component {
     };
   }
 
-  componentDidMount() {
-    fetch('#')
-      .then(response => response.json())
-      .then(data => {
-        this.setState({ inputSearch: data });
-      });
-  }
+  // componentDidMount() {
+  //   fetch('#')
+  //     .then(response => response.json())
+  //     .then(data => {
+  //       this.setState({ inputSearch: data });
+  //     });
+  // }
 
   handleSearchWord = e => {
     this.setState({
@@ -37,6 +37,9 @@ class Search extends Component {
     if (searchWord.length > 0) {
       this.props.history.push('/search-result');
     }
+    this.setState({
+      searchWord: ' ',
+    });
   };
 
   render() {
