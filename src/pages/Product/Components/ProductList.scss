@@ -1,10 +1,12 @@
 .productsWrap {
   width: 90%;
+  flex-wrap: wrap;
 
   .selectType {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
     margin-top: 20px;
 
     .productFilter {
@@ -17,6 +19,7 @@
 
   .prdList {
     display: flex;
+    flex-wrap: inherit;
     margin-top: 20px;
   }
 }
