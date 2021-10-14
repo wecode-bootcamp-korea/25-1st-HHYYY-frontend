@@ -7,41 +7,52 @@ class ProductCategory extends Component {
   constructor() {
     super();
     this.state = {
-      categoryInfo: [],
+      headerTitle: [],
+      productsData: [],
+      navInfo: [],
     };
   }
 
   componentDidMount() {
-    fetch('/data/ProductCategory.json')
-      // fetch(
-      //   `http://10.58.6.213:8000/products?category=${this.props.match.params.id}&offset=0&limit=10`
-      // )
+    fetch(
+      `http://10.58.7.141:8000/products?category=${this.props.match.params.id}&offset=0&limit=10`
+    )
       .then(res => res.json())
       .then(listData =>
         this.setState({
-          categoryInfo: listData,
+          headerTitle: listData.category_info,
+          productsData: listData.products_list,
+        })
+      );
+
+    fetch(`http://10.58.7.141:8000/navigator=${this.props.match.params.id}`)
+      .then(res => res.json())
+      .then(navData =>
+        this.setState({
+          navInfo: navData.navigator_list,
         })
       );
   }
 
   render() {
-    const { categoryInfo } = this.state;
+    const { headerTitle, productsData, navInfo } = this.state;
+    console.log(navInfo);
     return (
       <>
         <div className="categoryTitle">
-          <p className="subBigText">{categoryInfo.name}</p>
-          <p className="subSmallText">{categoryInfo.description}</p>
+          <p className="subBigText">{headerTitle.name}</p>
+          <p className="subSmallText">{headerTitle.description}</p>
           <img
             alt="product List img"
-            src={categoryInfo.category_image}
+            src={headerTitle.category_image}
             className="subImg"
           />
         </div>
         <section className="productSection">
           {/* 상품 카테고리 Nav */}
-          <ProductNav />
+          <ProductNav navInfo={navInfo} />
           {/*상품 분류*/}
-          <ProductList />
+          <ProductList productData={productsData} />
         </section>
       </>
     );

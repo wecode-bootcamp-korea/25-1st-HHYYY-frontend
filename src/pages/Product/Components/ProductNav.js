@@ -4,27 +4,19 @@ import './ProductNav.scss';
 
 class ProductNav extends Component {
   render() {
+    const { navInfo } = this.props;
     return (
       <div className="listCategoryWrap">
-        <h2 className="categoryName">베스트</h2>
+        <h2 className="categoryName">{navInfo.category_name}</h2>
         <ul className="listCategory">
           <li className="list">
-            <Link to="#">전체</Link>
+            <Link to="#">페이스</Link>
           </li>
           <li className="list">
-            <Link to="#">주간 베스트</Link>
+            <Link to="#">클렌저</Link>
           </li>
           <li className="list">
-            <Link to="#">별 다섯 개 후기</Link>
-          </li>
-          <li className="list">
-            <Link to="#">온라인 전용</Link>
-          </li>
-          <li className="list">
-            <Link to="#">국내제조</Link>
-          </li>
-          <li className="list">
-            <Link to="#">네이키드</Link>
+            <Link to="#">토너</Link>
           </li>
         </ul>
       </div>
