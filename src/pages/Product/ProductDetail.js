@@ -1,5 +1,6 @@
 /* eslint-disable no-lone-blocks */
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import MiddleHeader from './Components/ProductDetail/MiddleHeader';
 import GoodToKnow from './Components/ProductDetail/GoodToKnow';
 import PhotoReviewImg from './Components/ProductDetail/PhotoReviewImg';
@@ -11,9 +12,7 @@ class ProductDetail extends Component {
     super();
     this.state = {
       productData: [],
-
       classON: false,
-
       quantity: 1,
     };
   }
@@ -83,7 +82,7 @@ class ProductDetail extends Component {
         Authorization: localStorage.getItem('token'),
       },
       body: JSON.stringify({
-        option_id: this.state.productData.options.option_id,
+        option_id: this.state.productData.options?.option_id,
         quantity: this.state.quantity,
       }),
     })
@@ -95,6 +94,10 @@ class ProductDetail extends Component {
           alert('다시 시도해 주세요');
         }
       });
+  };
+
+  buyIt = () => {
+    this.props.history.push('/order-complete');
   };
 
   render() {
@@ -335,4 +338,4 @@ const VEGAN_LIST = [
   },
 ];
 
-export default ProductDetail;
+export default withRouter(ProductDetail);
