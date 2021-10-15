@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import ResultProductCard from './ResultProductCard';
+import { API } from '../../config';
 import './ResultPage.scss';
 
 class ResultPage extends Component {
