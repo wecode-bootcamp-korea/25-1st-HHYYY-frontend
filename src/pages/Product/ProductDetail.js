@@ -75,17 +75,12 @@ class ProductDetail extends Component {
     }
   };
 
-  // headers: {
-  //   Authorization: localStorage.getItem('token'),
-  // },
-
   goToCart = () => {
     const ID = this.state.productData.options[0].option_id;
     fetch(`${API.CART}`, {
       method: 'POST',
       headers: {
-        Authorization:
-          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6OX0.HXGkjlNypZWn_4Gj4P9LXF09oSZvtRi_TdSN8kP7jk4',
+        Authorization: localStorage.getItem('token'),
       },
       body: JSON.stringify({
         option_id: `${ID}`,
@@ -159,6 +154,14 @@ class ProductDetail extends Component {
                 <li className="itemInfoRow">
                   <span className="itemInfoDetail">상품무게</span>
                   {productData.options && productData.options[0].size}g
+                </li>
+                <li className="itemInfoRow">
+                  <span className="itemInfoDetail">성분표시</span>
+                  {productData.ingredients ? (
+                    productData.ingredients
+                  ) : (
+                    <b>재료 준비 중입니다. 잠시 기다려 주세요. :)</b>
+                  )}
                 </li>
                 <li className="itemInfoRow">
                   <span className="itemInfoDetail">구매수량</span>
@@ -244,14 +247,6 @@ class ProductDetail extends Component {
         <MiddleHeader name="상품 상세 정보" />
 
         <article className="itemIntroduce">
-          <h2 className="ingredients">
-            <b>Ingredients?</b>&nbsp;
-            {productData.ingredients ? (
-              productData.ingredients
-            ) : (
-              <b>재료 준비 중입니다. 잠시 기다려 주세요. :)</b>
-            )}
-          </h2>
           <p className="textArea">
             <h1 className="how">HHYYY</h1>
             <br />

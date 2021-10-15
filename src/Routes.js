@@ -6,7 +6,7 @@ import ProductCategory from './pages/Product/ProductCategory';
 import ProductDetail from './pages/Product/ProductDetail';
 import Search from './pages/Search/Search';
 import SearchResult from './pages/SearchResult/SearchResult';
-import SignUp from './pages/Users/SignUp/SignUp';
+import SignUp from './pages/Users/Signup/SignUp';
 import SignIn from './pages/Users/SignIn/SignIn';
 import Cart from './pages/Cart/Cart';
 import OrderComplete from './pages/Cart/OrderComplete';
