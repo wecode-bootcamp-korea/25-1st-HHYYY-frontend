@@ -75,24 +75,29 @@ class ProductDetail extends Component {
     }
   };
 
+  // headers: {
+  //   Authorization: localStorage.getItem('token'),
+  // },
+
   goToCart = () => {
+    const ID = this.state.productData.options[0].option_id;
     fetch(`${API.CART}`, {
       method: 'POST',
       headers: {
-        Authorization: localStorage.getItem('token'),
+        Authorization:
+          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6OX0.HXGkjlNypZWn_4Gj4P9LXF09oSZvtRi_TdSN8kP7jk4',
       },
       body: JSON.stringify({
-        option_id: this.state.productData.options?.option_id,
+        option_id: `${ID}`,
         quantity: this.state.quantity,
       }),
     })
       .then(response => response.json())
       .then(response => {
-        if (response.token) {
-          alert('장바구니에 담겼습니다');
-        } else {
-          alert('다시 시도해 주세요');
-        }
+        alert(
+          '장바구니에 성공적으로 담겨졌습니다! 잠시 후 페이지가 이동됩니다.'
+        );
+        this.props.history.push('/cart');
       });
   };
 
