@@ -13,7 +13,7 @@ class PhotoReviewImg extends Component {
   }
 
   reviewImgClick = () => {
-    const { imgClick, photo } = this.state;
+    const { imgClick } = this.state;
     const { imgID } = this.props;
     this.setState({
       imgClick: !imgClick,
@@ -26,6 +26,24 @@ class PhotoReviewImg extends Component {
         })
       );
     // 사진 IMG 파일 클릭시, 사진 파일을 받아오는 API
+  };
+
+  AverageToStars = average => {
+    const num = Math.floor(average);
+    switch (num) {
+      case 1:
+        return '★';
+      case 2:
+        return '★★';
+      case 3:
+        return '★★★';
+      case 4:
+        return '★★★★';
+      case 5:
+        return '★★★★★';
+      default:
+        return '★★★★★';
+    }
   };
 
   render() {
@@ -41,7 +59,7 @@ class PhotoReviewImg extends Component {
           <div className="bottomWrap">
             <div className="reviewUserInfo">
               <p className="userName">{photo.user_name}</p>
-              <p className="userStar">★★★★★</p>
+              <p className="userStar">{this.AverageToStars(photo.rating)}</p>
             </div>
             <div className="reviewContentWrap">
               <p className="reviewProductName">{photo.product_name}</p>
