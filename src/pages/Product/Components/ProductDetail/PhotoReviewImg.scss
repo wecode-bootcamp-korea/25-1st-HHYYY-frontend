@@ -1,0 +1,81 @@
+@import '../../../../styles/variable.scss';
+
+.imgPopUpON {
+  position: absolute;
+  width: 800px;
+  top: 100px;
+  border: 1px solid #808080;
+  z-index: 1;
+  background-color: white;
+
+  .imgSection {
+    text-align: center;
+    background-color: #dddddd;
+
+    .photo {
+      width: 40%;
+    }
+  }
+
+  .bottomWrap {
+    @include flex-center();
+
+    .reviewUserInfo {
+      display: inline-block;
+      width: 18%;
+
+      .userName {
+        padding-top: 35px;
+        padding-right: 50px;
+        text-align: center;
+        font-size: 18pt;
+      }
+
+      .userStar {
+        margin-bottom: 50px;
+        padding-top: 20px;
+        padding-right: 50px;
+        font-size: 15pt;
+      }
+    }
+
+    .reviewContentWrap {
+      display: inline-block;
+      width: 70%;
+      padding: 10px;
+
+      .reviewProductName {
+        padding: 10px;
+        border-bottom: 2px solid #dddddd;
+        font-size: 15pt;
+      }
+
+      .reviewProductContent {
+        padding: 20px 10px;
+        font-weight: 20;
+        border-bottom: 2px solid #dddddd;
+      }
+
+      .likeCount {
+        padding: 10px;
+
+        .countNumber {
+          margin-right: 20px;
+          font-size: 10pt;
+        }
+
+        .recommentBtn {
+          width: 64px;
+          height: 24px;
+          border: 1px solid #e0e0e0;
+          font-size: 13px;
+          color: #333333;
+        }
+      }
+    }
+  }
+}
+
+.imgPopUpOFF {
+  display: none;
+}

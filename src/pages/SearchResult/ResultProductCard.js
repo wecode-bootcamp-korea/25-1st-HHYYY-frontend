@@ -6,7 +6,7 @@ class ResultProductCard extends Component {
   render() {
     const { products } = this.props;
     return (
-      <Link to={`/product-detail/${products.id}`} className="productCard">
+      <Link to={`/product-detail/${products.id}`} className="ResultProductCard">
         <div className="productImg">
           <img alt={products.name} src={products.thumbnail_url} />
         </div>

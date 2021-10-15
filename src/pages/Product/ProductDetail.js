@@ -1,8 +1,9 @@
+/* eslint-disable no-lone-blocks */
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import MiddleHeader from './Components/ProductDetail/MiddleHeader';
 import GoodToKnow from './Components/ProductDetail/GoodToKnow';
 import PhotoReviewImg from './Components/ProductDetail/PhotoReviewImg';
-import PhotoReviewWrap from './Components/ProductDetail/PhotoReviewWrap';
 import './ProductDetail.scss';
 import { API } from '../../config.js';
 
@@ -11,9 +12,7 @@ class ProductDetail extends Component {
     super();
     this.state = {
       productData: [],
-      photoReviewData: [],
       classON: false,
-      imgClick: false,
       quantity: 1,
     };
   }
@@ -76,46 +75,38 @@ class ProductDetail extends Component {
     }
   };
 
-  reviewImgClick = () => {
-    const { imgClick } = this.state;
-    this.setState({
-      imgClick: !imgClick,
-    });
+  // headers: {
+  //   Authorization: localStorage.getItem('token'),
+  // },
 
-    fetch('/data/ReviewData.json')
-      // fetch(`http://10.58.6.213:8000/review/${this.props.match.params.id}`)
-      .then(res => res.json())
-      .then(info =>
-        this.setState({
-          photoReviewData: info.review_info[0],
-        })
-      );
-    // 사진 IMG 파일 클릭시, 사진 파일을 받아오는 API
+  goToCart = () => {
+    const ID = this.state.productData.options[0].option_id;
+    fetch(`${API.CART}`, {
+      method: 'POST',
+      headers: {
+        Authorization:
+          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6OX0.HXGkjlNypZWn_4Gj4P9LXF09oSZvtRi_TdSN8kP7jk4',
+      },
+      body: JSON.stringify({
+        option_id: `${ID}`,
+        quantity: this.state.quantity,
+      }),
+    })
+      .then(response => response.json())
+      .then(response => {
+        alert(
+          '장바구니에 성공적으로 담겨졌습니다! 잠시 후 페이지가 이동됩니다.'
+        );
+        this.props.history.push('/cart');
+      });
   };
 
-  // goToCart = () => {
-  //   fetch(`${API.CART}`, {
-  //     method: 'POST',
-  //     body: JSON.stringify({
-  //       BACK_itemOptionID: this.state.productData.options.option_id,
-  //       BACK_quantity: this.state.quantity,
-  //     }),
-  //   })
-  //     .then(response => response.json())
-  //     .then(response => {
-  //       if (response.token) {
-  //         localStorage.setItem('token', response.token);
-  //         alert('장바구니에 담겼습니다');
-  //         this.props.history.push('/Cart.js');
-  //       } else {
-  //         alert('다시 시도해 주세요');
-  //       }
-  //     });
-  // };
+  buyIt = () => {
+    this.props.history.push('/order-complete');
+  };
 
   render() {
-    const { productData, classON, imgClick, quantity, photoReviewData } =
-      this.state;
+    const { productData, classON, quantity } = this.state;
     return (
       <section className="productDetail">
         <article className="productInfo">
@@ -127,6 +118,16 @@ class ProductDetail extends Component {
             />
           </div>
           <div className="itemInfomation">
+            <article className="navigatorWrap">
+              <span className="whereIsIt">홈 {'>'} </span>
+              <span className="whereIsIt">
+                {productData.main_category_name} {'>'}
+              </span>
+              <span className="whereIsIt">
+                &nbsp;
+                {productData.sub_category_name}
+              </span>
+            </article>
             <header className="itemTitle">
               <h2 className="itemName">{productData.name}</h2>
               <p className="itemTag">
@@ -194,7 +195,9 @@ class ProductDetail extends Component {
               <button className="cartBtn" onClick={this.goToCart}>
                 장바구니
               </button>
-              <button className="buyBtn">구매하기</button>
+              <button className="buyBtn" onClick={this.buyIt}>
+                구매하기
+              </button>
             </div>
           </div>
         </article>
@@ -206,15 +209,11 @@ class ProductDetail extends Component {
               <h2 className="photoListText">포토리뷰 모아보기</h2>
               <div className="photoImgList">
                 <span className="photoWrap">
-                  <PhotoReviewWrap
-                    imgClick={imgClick}
-                    reviewData={photoReviewData}
-                  />
-                  {productData.review_images?.map((src, idx) => (
+                  {productData.photo_reviews?.map(imgData => (
                     <PhotoReviewImg
-                      key={idx}
-                      imgSrc={src}
-                      popUpEvent={this.reviewImgClick}
+                      key={imgData.review_id}
+                      imgSrc={imgData.image_url}
+                      imgID={imgData.review_id}
                     />
                   ))}
                 </span>
@@ -344,4 +343,4 @@ const VEGAN_LIST = [
   },
 ];
 
-export default ProductDetail;
+export default withRouter(ProductDetail);

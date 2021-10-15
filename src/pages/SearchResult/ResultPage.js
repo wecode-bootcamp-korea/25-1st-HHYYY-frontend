@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import ResultProductCard from './ResultProductCard';
-import './ResultPage.scss';
 import { API } from '../../config';
+import './ResultPage.scss';
 
 class ResultPage extends Component {
   constructor(props) {
@@ -57,7 +57,9 @@ class ResultPage extends Component {
               <div className="list">
                 <ul className="prodList">
                   {products_list.map(product => (
-                    <ResultProductCard products={product} />
+                    <div key={product.id}>
+                      <ResultProductCard products={product} />
+                    </div>
                   ))}
                 </ul>
               </div>
