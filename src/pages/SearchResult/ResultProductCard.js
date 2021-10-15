@@ -5,17 +5,16 @@ import './ResultProductCard.scss';
 class ResultProductCard extends Component {
   render() {
     const { products } = this.props;
-
     return (
       <Link to={`/product-detail/${products.id}`} className="ResultProductCard">
         <div className="productImg">
-          <img alt={products.name} src={products.thumbnail_image} />
+          <img alt={products.name} src={products.thumbnail_url} />
         </div>
-        <p className="productName">{products.name}</p>
-        <p className="productTag">
+        <p className="productName resultName">{products.name}</p>
+        <p className="productTag resultTag">
           #{products.tags[0]} #{products.tags[1]}
         </p>
-        <p className="productPrice">₩ {products.price}</p>
+        <p className="productPrice resultPrice">₩ {products.price}</p>
       </Link>
     );
   }

@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { withRouter } from 'react-router';
+import { withRouter } from 'react-router-dom';
 import './SignupForm.scss';
+import { API } from '../../../../config';
 
-class SignupForm extends Component {
+class SignUpForm extends Component {
   constructor() {
     super();
     this.state = {
@@ -24,7 +25,7 @@ class SignupForm extends Component {
   };
 
   handleSignUp = () => {
-    fetch('http://10.58.5.82:8000/users/signup', {
+    fetch(`${API.SIGNUP}`, {
       method: 'POST',
       body: JSON.stringify({
         email: this.state.emailVal,
@@ -237,4 +238,4 @@ class SignupForm extends Component {
   }
 }
 
-export default withRouter(SignupForm);
+export default withRouter(SignUpForm);

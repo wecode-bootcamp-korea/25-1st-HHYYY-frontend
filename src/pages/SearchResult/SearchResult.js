@@ -6,7 +6,7 @@ class SearchResult extends Component {
   render() {
     return (
       <div className="searchResult">
-        <ResultPage />;
+        <ResultPage />
       </div>
     );
   }

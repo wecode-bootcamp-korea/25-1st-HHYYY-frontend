@@ -66,12 +66,12 @@ class OrderTable extends Component {
             <table className="addCart">
               <colgroup>
                 <col style={{ width: '10%' }}></col>
-                <col style={{ widows: '40%' }}></col>
-                <col style={{ widows: '15%' }}></col>
-                <col style={{ widows: '10%' }}></col>
-                <col style={{ widows: '7%' }}></col>
-                <col style={{ widows: '10%' }}></col>
-                <col style={{ widows: '10%' }}></col>
+                <col style={{ width: '40%' }}></col>
+                <col style={{ width: '15%' }}></col>
+                <col style={{ width: '10%' }}></col>
+                <col style={{ width: '7%' }}></col>
+                <col style={{ width: '10%' }}></col>
+                <col style={{ width: '10%' }}></col>
               </colgroup>
               <thead>
                 <tr>
@@ -85,7 +85,6 @@ class OrderTable extends Component {
                   <th>금액</th>
                   <th>복지혜택</th>
                   <th>합계금액</th>
-                  <th>배송비</th>
                 </tr>
               </thead>
               <tbody>

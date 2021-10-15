@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './signinBox.scss';
 
-class SigninBox extends Component {
+class SignInBox extends Component {
   render() {
     const { onChange, inputIdValue, inputPwValue, onKeyUp } = this.props;
     return (
@@ -38,4 +38,4 @@ class SigninBox extends Component {
   }
 }
 
-export default SigninBox;
+export default SignInBox;

@@ -1,0 +1,33 @@
+{
+  "PRODUCTS_LIST": [
+    {
+      "id": 1,
+      "name": "딸기비누",
+      "thumbnail_image": "https://images.unsplash.com/photo-1610935591451-8a456e1b1d41?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80",
+      "price": 7000,
+      "tags": ["딸기향가득", "치훈님이좋아하는향"]
+    },
+    {
+      "id": 2,
+      "name": "딸기비누",
+      "thumbnail_image": "https://images.unsplash.com/photo-1610935591451-8a456e1b1d41?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80",
+      "price": 7000,
+      "tags": ["딸기향가득", "치훈님이좋아하는향"]
+    },
+    {
+      "id": 3,
+      "name": "딸기비누",
+      "thumbnail_image": "https://images.unsplash.com/photo-1610935591451-8a456e1b1d41?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80",
+      "price": 7000,
+      "tags": ["딸기향가득", "치훈님이좋아하는향"]
+    },
+    {
+      "id": 4,
+      "name": "딸기비누",
+      "thumbnail_url": "https://images.unsplash.com/photo-1610935591451-8a456e1b1d41?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80",
+      "price": 7000,
+      "tags": ["딸기향가득", "치훈님이좋아하는향"]
+    }
+  ],
+  "products_count": 4
+}
