@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import MiddleHeader from './Components/ProductDetail/MiddleHeader';
 import GoodToKnow from './Components/ProductDetail/GoodToKnow';
 import PhotoReviewImg from './Components/ProductDetail/PhotoReviewImg';
-import PhotoReviewWrap from './Components/ProductDetail/PhotoReviewWrap';
 import './ProductDetail.scss';
 import { API } from '../../config.js';
 
@@ -99,9 +98,7 @@ class ProductDetail extends Component {
   };
 
   render() {
-    const { productData, classON, imgClick, quantity, photoReviewData } =
-      this.state;
-    console.log(productData.photo_reviews);
+    const { productData, classON, quantity } = this.state;
     return (
       <section className="productDetail">
         <article className="productInfo">
@@ -204,10 +201,6 @@ class ProductDetail extends Component {
               <h2 className="photoListText">포토리뷰 모아보기</h2>
               <div className="photoImgList">
                 <span className="photoWrap">
-                  {/* <PhotoReviewWrap
-                    imgClick={imgClick}
-                    reviewData={photoReviewData}
-                  /> */}
                   {productData.photo_reviews?.map(imgData => (
                     <PhotoReviewImg
                       key={imgData.review_id}

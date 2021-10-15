@@ -8,56 +8,47 @@ class PhotoReviewImg extends Component {
     this.state = {
       closeBtnOFF: false,
       imgClick: false,
-      photoReviewData: {},
+      photo: {},
     };
   }
 
   reviewImgClick = () => {
-    const { imgClick } = this.state;
+    const { imgClick, photo } = this.state;
+    const { imgID } = this.props;
     this.setState({
       imgClick: !imgClick,
     });
-    fetch(`${API.REVIEW}/${this.props.imgID}`)
+    fetch(`${API.BASE_URL}/reviews/${imgID}`)
       .then(res => res.json())
       .then(info =>
         this.setState({
-          photoReviewData: info.review_info,
+          photo: info.review_info,
         })
       );
-    console.log(imgClick);
     // 사진 IMG 파일 클릭시, 사진 파일을 받아오는 API
   };
 
   render() {
-    const { imgSrc, imgClick, photoReviewData } = this.props;
+    const { imgSrc } = this.props;
+    const { imgClick, photo } = this.state;
 
     return (
       <>
         <article className={imgClick ? 'imgPopUpON' : 'imgPopUpOFF'}>
           <div className="imgSection">
-            <img
-              className="photo"
-              alt="photoReview_IMG"
-              src={photoReviewData && photoReviewData.image}
-            />
+            <img className="photo" alt="photoReview_IMG" src={photo.image} />
           </div>
           <div className="bottomWrap">
             <div className="reviewUserInfo">
-              <p className="userName">
-                {photoReviewData && photoReviewData.user_name}
-              </p>
+              <p className="userName">{photo.user_name}</p>
               <p className="userStar">★★★★★</p>
             </div>
             <div className="reviewContentWrap">
-              <p className="reviewProductName">
-                {photoReviewData && photoReviewData.product_name}
-              </p>
-              <div className="reviewProductContent">
-                {photoReviewData && photoReviewData.content}
-              </div>
+              <p className="reviewProductName">{photo.product_name}</p>
+              <div className="reviewProductContent">{photo.content}</div>
               <p className="likeCount">
                 <span className="countNumber">
-                  추천 수 : {photoReviewData && photoReviewData.like_count}
+                  추천 수 : {photo.like_count}
                 </span>
               </p>
             </div>
