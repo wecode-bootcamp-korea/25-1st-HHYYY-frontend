@@ -13,7 +13,6 @@
 .resultPage {
   .content {
     margin: 50px 0;
-    padding: 0 50px 50px 50px;
   }
 
   .result {
@@ -31,11 +30,13 @@
   }
 
   .prodList {
-    @include flex-space-evenly;
-    flex-wrap: wrap;
-    // justify-content: flex-start;
-    padding-top: 60px;
-    padding-bottom: 10px;
+    display: flex;
+    justify-items: space-evenly;
+    margin-top: 20px;
+
+    div {
+      margin-right: 20px;
+    }
   }
 
   .page {
